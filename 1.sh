@@ -16,6 +16,17 @@ echo 'export GOPATH=/root/GOPATH'>>~/.profile
 echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin'>>~/.profile
 source ~/.profile
 
+apt-get install -y build-essential checkinstall libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev zlib1g-dev openssl libffi-dev python3-dev python3-setuptools wget
+mkdir /tmp/Python37
+cd /tmp/Python37
+wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
+tar xvf Python-3.7.0.tar.xz
+cd /tmp/Python37/Python-3.7.0
+./configure --enable-optimizations
+make altinstall
+echo 'alias python3="python3.7"'>>~/.bashrc
+echo 'alias pip3="pip3.7"'>>~/.bashrc
+. ~/.bashrc
 yes|apt install python3 python3-pip
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
@@ -92,4 +103,4 @@ cd masnmapscan-V1.0
 pip install -r requirements.txt
 mv ~/script/6_port/masscan/bin/masscan ~/script/6_port/masnmapscan-V1.0
 
-gem install aquatone 
+gem install aquatone
