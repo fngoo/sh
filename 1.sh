@@ -1,7 +1,6 @@
 #!/bin/sh
 
 
-cd ~
 apt update
 yes|apt-get install git gcc make libpcap-dev
 yes|apt-get install ruby
