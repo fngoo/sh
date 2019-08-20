@@ -1,14 +1,16 @@
 #!/bin/sh
 
-
 apt update
-yes|apt-get install git gcc make libpcap-dev
+yes|apt-get install git gcc make libpcap-dev nano zlib*
 yes|apt-get install ruby
 yes|apt-get install ruby-dev
 yes|apt install golang-go
+#apt-get install -y build-essential checkinstall libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev zlib1g-dev openssl libffi-dev python3-dev python3-setuptools wget
+
 var=$(ruby -v|grep -oP ".\..\..")
 cd /etc/alternatives
 ln -sf /usr/bin/ruby$var ruby
+
 echo 'export EDITOR=nano'>>~/.profile
 echo 'export GOROOT=/usr/local/go'>>~/.profile
 mkdir ~/GOPATH
@@ -16,29 +18,27 @@ echo 'export GOPATH=/root/GOPATH'>>~/.profile
 echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin'>>~/.profile
 source ~/.profile
 
-apt-get install -y build-essential checkinstall libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev zlib1g-dev openssl libffi-dev python3-dev python3-setuptools wget
-mkdir /tmp/Python37
-cd /tmp/Python37
-wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
-tar xvf Python-3.7.0.tar.xz
-cd /tmp/Python37/Python-3.7.0
-./configure --enable-optimizations
-make altinstall
-echo 'alias python3="python3.7"'>>~/.bashrc
-echo 'alias pip3="pip3.7"'>>~/.bashrc
-. ~/.bashrc
-yes|apt install python3 python3-pip
+wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1rc2.tgz
+tar zxvf Python-3.7.1rc2.tgz
+cd Python-3.7.1rc2
+./configure
+make
+make install
+rm -rf /usr/bin/python3
+rm -rf /usr/bin/pip3
+ln -s /usr/local/bin/python3.7 /usr/bin/python3
+ln -s /usr/local/bin/pip3.7 /usr/bin/pip3
+
+python3 -m pip install --upgrade pip
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
-python3 get-pip.py
 rm -r get-pip.py
-
-
 
 mkdir ~/script
 
 python3 -m pip install --upgrade urlwatch
 python3 -m pip install pyyaml minidb requests keyring appdirs lxml cssselect
+urlwatch
 git clone https://github.com/fngoo/txt
 cd txt
 > /root/.config/urlwatch/urlwatch.yaml
@@ -54,7 +54,6 @@ pip install dnspython gevent
 git clone https://github.com/nsonaniya2010/SubDomainizer.git
 cd SubDomainizer
 python3 -m pip install -r requirements.txt
-
 
 mkdir ~/script/1_aws
 cd ~/script/1_aws
