@@ -1,10 +1,10 @@
 #!/bin/sh
 
 apt update
-yes|apt-get install git gcc g++ make libpcap-dev nano curl zlib* openssl libssl-dev libsqlite3-dev
+yes|apt install git gcc g++ make libpcap-dev nano curl zlib* openssl libssl-dev libsqlite3-dev
 
-yes|apt-get install ruby
-yes|apt-get install ruby-dev
+yes|apt install ruby
+yes|apt install ruby-dev
 var=$(ruby -v|grep -oP ".\..\..")
 cd /etc/alternatives
 ln -sf /usr/bin/ruby$var ruby
@@ -52,6 +52,9 @@ pip install dnspython gevent
 git clone https://github.com/nsonaniya2010/SubDomainizer.git
 cd SubDomainizer
 python3 -m pip install -r requirements.txt
+git clone https://github.com/aboul3la/Sublist3r.git
+cd Sublist3r
+python setup.py install
 
 mkdir ~/script/1_aws
 cd ~/script/1_aws
@@ -87,13 +90,9 @@ cd host2ip
 sed -e "s/ip\=\"N\/A\"/continue/g" host2ip.py|tee host2ip.py
 yes|apt install nmap
 cd ~/script/6_port
+git clone https://github.com/hellogoldsnakeman/masnmapscan-V1.0 && cd masnmapscan-V1.0 && pip install -r requirements.txt && touch ip.txt
 git clone https://github.com/robertdavidgraham/masscan
 cd masscan
 make -j
-cd ~/script/6_port
-git clone https://github.com/hellogoldsnakeman/masnmapscan-V1.0
-cd masnmapscan-V1.0
-pip install -r requirements.txt
-mv ~/script/6_port/masscan/bin/masscan ~/script/6_port/masnmapscan-V1.0
 
 gem install aquatone
