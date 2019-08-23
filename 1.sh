@@ -58,7 +58,7 @@ python setup.py install
 
 mkdir ~/script/1_aws
 cd ~/script/1_aws
-git clone https://github.com/jordanpotti/AWSBucketDump && cd AWSBucketDump && python3 -m pip install -r requirements.txt
+git clone https://github.com/fngoo/AWSBucketDump && cd AWSBucketDump && python3 -m pip install -r requirements.txt 
 
 mkdir ~/script/2_subjack
 cd ~/script/2_subjack
