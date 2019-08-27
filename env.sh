@@ -40,7 +40,7 @@ rm -r /root/txt
 
 mkdir /root/script/0_subdomain
 cd /root/
-go get -u github.com/subfinder/subfinder
+go get github.com/subfinder/subfinder
 pip install py-altdns
 cd /root/script/0_subdomain
 git clone https://github.com/infosec-au/altdns
