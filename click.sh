@@ -1,13 +1,8 @@
 #!/bin/sh
+cd /root
+git clone https://github.com/fngoo/sh
 cd /root/sh ; sh sh.sh ; cd /root/sh ; sh env.sh
-
-cd /root/
-yes|apt remove sendmail
-yes|apt remove postfix
-yes|apt install sharutils mailutils sendmail
-yes|apt install heirloom-mailx
-
-rm -r /root/sh ; cd /root
+cd /root ; rm -r /root/sh
 while true
 do
 git clone https://github.com/fngoo/sh
