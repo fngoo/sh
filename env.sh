@@ -93,3 +93,9 @@ git clone https://github.com/hellogoldsnakeman/masnmapscan-V1.0 && cd masnmapsca
 git clone https://github.com/robertdavidgraham/masscan
 cd masscan
 make -j
+
+cd /root/
+yes|apt remove sendmail
+yes|apt remove postfix
+yes|apt install sharutils mailutils sendmail
+yes|apt install heirloom-mailx
