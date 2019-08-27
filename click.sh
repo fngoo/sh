@@ -1,2 +1,2 @@
 #!/bin/sh
-cd /root/ ; sh sh.sh ; cd /root/ ; sh env.sh ; cd /root/ ; sh exe.sh
+cd /root/sh ; sh sh.sh ; cd /root/sh ; sh env.sh ; cd /root/sh ; sh exe.sh
