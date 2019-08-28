@@ -104,6 +104,6 @@ while true
 do
 cd /root/
 git clone https://github.com/fngoo/sh
-cd sh ; bash exe.sh
+cd sh ; chmod 777 * ; bash exe.sh
 cd /root/ ; rm -r /root/sh
 done
