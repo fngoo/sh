@@ -5,7 +5,7 @@ apt update
 yes|apt install git gcc g++ make libpcap-dev nano curl zlib* openssl libssl-dev libsqlite3-dev
 
 var=$(curl -L golang.org/dl/|grep -oP "(?<=\<a\ class\=\"download\ downloadBox\"\ href\=\").*?(?=linux\-amd64\.tar\.gz\"\>)")
-last=linux-amd64.tar.gz && var=$var$last && wget $var && load=${var//https\:\/\/dl\.google\.com\/go\//} && tar -xzf $load -C /usr/local && rm $load
+last=linux-amd64.tar.gz && var=$var$last && wget $var && load=${$var//https\:\/\/dl\.google\.com\/go\//} && tar -xzf $load -C /usr/local && rm $load
 echo 'export EDITOR=nano'>>/root/.profile
 echo 'export GOROOT=/usr/local/go'>>/root/.profile
 mkdir /root/GOPATH
