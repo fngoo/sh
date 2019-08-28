@@ -36,7 +36,7 @@ git clone https://github.com/fngoo/txt
 cd txt
 > /root/.config/urlwatch/urlwatch.yaml
 cat 1.txt >/root/.config/urlwatch/urlwatch.yaml
-rm -r /root/txt
+cd /root/ ; rm -r /root/txt
 
 mkdir /root/script/0_subdomain
 cd /root/
