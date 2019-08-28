@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 cd /root/
 mkdir /root/script
 mkdir /root/script/domains_Github
