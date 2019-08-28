@@ -2,7 +2,7 @@
 
 cd /root/
 apt update
-yes|apt install git gcc g++ make libpcap-dev nano curl zlib* openssl libssl-dev libsqlite3-dev
+yes|apt install git gcc g++ make libpcap-dev nano curl zlib* openssl libssl-dev libsqlite3-dev build-essential libssl-dev libffi-dev python-dev
 
 var=$(curl -L golang.org/dl/|grep -oP "(?<=\<a\ class\=\"download\ downloadBox\"\ href\=\").*?(?=linux\-amd64\.tar\.gz\"\>)") ; last=linux-amd64.tar.gz ; var=$var$last ; wget $var
 load=${var//https\:\/\/dl\.google\.com\/go\//} ; tar -xzf $load -C /usr/local ; rm $load
@@ -16,7 +16,7 @@ source /root/.profile
 wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
 tar zxvf Python-3.6.9.tgz && rm -rf Python-3.6.9.tgz
 cd Python-3.6.9
-./configure --enable-loadable-sqlite-extensions && make &&  make install
+./configure --enable-loadable-sqlite-extensions ; make ;  make install
 rm -rf /usr/bin/python3
 rm -rf /usr/bin/pip3
 ln -s /usr/local/bin/python3.6 /usr/bin/python3
