@@ -6,7 +6,7 @@
 mkdir /root/run/ ; mkdir /root/run/output
 touch /root/run/3_3.txt ; mv /root/3.txt /root/run/3.txt ; touch /root/run/zip.txt ; touch /root/run/zip1.txt
 
-comm -3 /root/run/3.txt /root/run/3_3.txt > /root/run/target.txt
+comm -3 /root/run/3.txt /root/run/3_3.txt > /root/run/target.txt ; sed 's/[[:space:]]//g' /root/run/target.txt > space.txt ; > /root/run/target.txt ; cat space.txt > /root/run/target.txt ; rm space.txt
 var=/root/run/target.txt ; output=/root/run/output
 
 if [ -s $var ]
@@ -14,7 +14,7 @@ then
 
 ###如果更新就删除旧版,下载新版
 curl -L github.com/chaitin/xray/releases|grep -oP "(?<=\<a\ href\=\"\/chaitin\/xray\/releases\/download\/).*?(?=\/xray\_linux\_amd64\.zip\")">/root/run/zip.txt
-comm -3 /root/run/zip.txt /root/run/zip1.txt > /root/run/release.txt
+comm -3 /root/run/zip.txt /root/run/zip1.txt > /root/run/release.txt ; sed 's/[[:space:]]//g' /root/run/release.txt > space.txt ; > /root/run/release.txt ; cat space.txt > /root/run/release.txt ; rm space.txt
 if [ -s /root/run/release.txt ]
 then
 rm -rf /root/run/xray_linux_amd64
