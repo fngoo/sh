@@ -91,7 +91,7 @@ sed -e "s/ip\=\"N\/A\"/continue/g" host2ip.py|tee host2ip.py
 cd /root/
 yes|apt install nmap
 cd /root/script/6_port
-git clone https://github.com/hellogoldsnakeman/masnmapscan-V1.0 && cd masnmapscan-V1.0 && pip install -r requirements.txt && touch ip.txt
+git clone https://github.com/fngoo/masnmapscan-V1.0 && cd masnmapscan-V1.0 && pip install -r requirements.txt && touch ip.txt
 git clone https://github.com/robertdavidgraham/masscan
 cd masscan
 make -j
