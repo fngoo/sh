@@ -27,8 +27,8 @@ mkdir $output/xray/
 xray=$output/xray/
 for line in `cat $var`
 do
-name=.txt ; txt=$line$name
-cd /root/run ; ./xray_linux_amd64 webscan --basic-crawler $line --text-output $xray$txt
+name=.html ; txt=$line$name ; head=http:// ; url=$head$line
+cd /root/run ; ./xray_linux_amd64 webscan --basic-crawler $url --html-output $xray$txt
 done
 fi
 ### masnmapscan模块
