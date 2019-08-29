@@ -22,6 +22,8 @@ rm -rf /usr/bin/pip3
 ln -s /usr/local/bin/python3.6 /usr/bin/python3
 ln -s /usr/local/bin/pip3.6 /usr/bin/pip3
 
+yes|apt install python-pip
+rm /usr/bin/lsb_release
 python3 -m pip install --upgrade pip
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
