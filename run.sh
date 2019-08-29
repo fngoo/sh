@@ -29,6 +29,7 @@ for line in `cat $var`
 do
 name=.txt ; txt=$line$name
 ./xray_linux_amd64 webscan --basci-crawler $line --text-output $xray$txt
+done
 fi
 ### masnmapscan模块
 cat $var > /root/script/6_port/host2ip/host.txt
