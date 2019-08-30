@@ -103,6 +103,13 @@ yes|apt remove postfix
 yes|apt install sharutils mailutils sendmail
 yes|apt install heirloom-mailx
 
+echo 'set smtp=smtp.office365.com:587'>>/etc/nail.rc
+echo 'set smtp-use-starttls'>>/etc/nail.rc
+echo 'set smtp-auth=login'>>/etc/nail.rc
+echo 'set smtp-auth-user="a410046251@out.com"'>>/etc/nail.rc
+echo 'set smtp-auth-password="sTeAma4100"'>>/etc/nail.rc
+echo 'set ssl-verify=ignore'>>/etc/nail.rc
+
 while true
 do
 cd /root/
