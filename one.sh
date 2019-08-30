@@ -1,110 +1,3 @@
-#!/bin/bash
-
-cd /root/
-apt update
-yes|apt install git gcc g++ make libpcap-dev nano curl zlib* openssl libssl-dev libsqlite3-dev build-essential libssl-dev libffi-dev python-dev parallel
-
-var=$(curl -L golang.org/dl/|grep -oP "(?<=\<a\ class\=\"download\ downloadBox\"\ href\=\").*?(?=linux\-amd64\.tar\.gz\"\>)") ; last=linux-amd64.tar.gz ; var=$var$last ; wget $var
-load=${var//https\:\/\/dl\.google\.com\/go\//} ; tar -xzf $load -C /usr/local ; rm $load
-echo 'export EDITOR=nano'>>/root/.profile
-echo 'export GOROOT=/usr/local/go'>>/root/.profile
-mkdir /root/GOPATH
-echo 'export GOPATH=/root/GOPATH'>>/root/.profile
-echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin'>>/root/.profile
-source /root/.profile
-
-wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
-tar zxvf Python-3.6.9.tgz && rm -rf Python-3.6.9.tgz
-cd Python-3.6.9
-./configure --enable-loadable-sqlite-extensions ; make ;  make install
-rm -rf /usr/bin/python3
-rm -rf /usr/bin/pip3
-ln -s /usr/local/bin/python3.6 /usr/bin/python3
-ln -s /usr/local/bin/pip3.6 /usr/bin/pip3
-
-yes|apt install python-pip
-rm /usr/bin/lsb_release
-python3 -m pip install --upgrade pip
-wget https://bootstrap.py
-pa.io/get-pip.py
-python get-pip.py
-rm -r get-pip.py
-
-mkdir /root/script
-
-cd /root/
-python3 -m pip install --upgrade urlwatch
-urlwatch
-git clone https://github.com/fngoo/txt
-cd txt
-> /root/.config/urlwatch/urlwatch.yaml
-cat 1.txt >/root/.config/urlwatch/urlwatch.yaml
-cd /root/ ; rm -r /root/txt
-
-mkdir /root/script/0_subdomain
-cd /root/
-go get github.com/subfinder/subfinder
-pip install py-altdns
-cd /root/script/0_subdomain
-git clone https://github.com/infosec-au/altdns
-cd altdns/
-python setup.py install
-cd /root/script/0_subdomain
-git clone https://github.com/lijiejie/subDomainsBrute.git
-pip install dnspython gevent
-cd /root/script/0_subdomain
-git clone https://github.com/nsonaniya2010/SubDomainizer.git
-cd SubDomainizer
-python3 -m pip install -r requirements.txt
-
-mkdir /root/script/1_aws
-cd /root/script/1_aws
-git clone https://github.com/fngoo/AWSBucketDump && cd AWSBucketDump && python3 -m pip install -r requirements.txt 
-
-mkdir /root/script/2_subjack
-cd /root/script/2_subjack
-cd /root/
-go get github.com/haccer/subjack
-
-mkdir /root/script/3_httprobe
-cd /root/script/3_httprobe
-cd /root/
-go get -u github.com/tomnomnom/httprobe
-
-mkdir /root/script/4_getjs
-cd /root/script/4_getjs
-cd /root/
-go get github.com/003random/getJS
-
-mkdir /root/script/5_dir
-cd /root/script/5_dir
-git clone https://github.com/maurosoria/dirsearch
-git clone https://github.com/fngoo/dir
-rm dirsearch/default.conf ; mv dir/default.conf dirsearch/default.conf
-mv dir/dict_mode_dict.txt dirsearch/dict_mode_dict.txt
-rm -r dir
-
-mkdir /root/script/6_port
-cd /root/script/6_port
-git clone https://github.com/gm09519/host2ip
-cd host2ip
-sed -e "s/ip\=\"N\/A\"/continue/g" host2ip.py|tee host2ip.py
-cd /root/
-yes|apt install nmap
-cd /root/script/6_port
-git clone https://github.com/fngoo/masnmapscan-V1.0 && cd masnmapscan-V1.0 && pip install -r requirements.txt && touch ip.txt
-git clone https://github.com/robertdavidgraham/masscan
-cd masscan
-make -j
-
-cd /root/
-yes|apt remove sendmail
-yes|apt remove postfix
-yes|apt install sharutils mailutils sendmail
-yes|apt install heirloom-mailx
-
-while true
-do
 cd /root/
 mkdir /root/script
 mkdir /root/script/domains_Github
@@ -119,7 +12,7 @@ curl -L https://github.com/arkadiyt/bounty-targets-data/blob/master/data/domains
 comm -3 mmoc.txt comm.txt > domains_urlwatch.txt ; sed 's/[[:space:]]//g' domains_urlwatch.txt > space.txt ; > domains_urlwatch.txt ; cat space.txt > domains_urlwatch.txt ; rm space.txt
 if [ -s domains_urlwatch.txt ]
 then
-    var=/root/script/domains_Github/domains/domains_urlwatch.txt ; mkdir /root/script/domains_Github/domains/domains ;output=/root/script/domains_Github/domains/domains
+    var=/root/script/domains_Github/domains/domains_urlwatch.txt ; mkdir /root/script/domains_Github/domains/domains ;output=/root/script/domains_Github/domains/domains ; export output=/root/script/domains_Github/domains/domains
     cat $var|tee -a /root/watch/1.txt
     touch /root/watch/2.txt;sort /root/watch/1.txt|uniq|tee -a /root/watch/2.txt;> /root/watch/1.txt;cat /root/watch/2.txt>>/root/watch/1.txt;rm /root/watch/2.txt
     touch $output/0_burp.txt ; cat $var >$output/0_burp.txt  ; cd /root/script/1_aws/AWSBucketDump ; python3 AWSBucketDump.py -l $var ; cat interesting_file.txt|grep -o -P "(?<=//).*?(?=/)" >> cliaws.txt ; sort cliaws.txt|uniq|tee awscli.txt ; sed -e "s/^/aws\ s3\ mv\ D\:\\\1\.txt\ s3\:\/\/&/g" awscli.txt|sed -e "s/$/&\ \-\-no\-sign\-request/g" >>  uploadaws.txt; sed -e "s/^/aws\ s3\ mv\ s3\:\/\/&/g" awscli.txt|sed -e "s/$/&\ D\:\\\aws_bucket\ \-\-recursive\ \-\-no\-sign\-request/g" >>  uploadaws.txt ; cp uploadaws.txt $output/1_AWS.txt ; > interesting_file.txt ; > cliaws.txt ; > awscli.txt ; > uploadaws.txt ; cd /root/script/2_subjack ; cd $output ; touch 2_Takeover1.txt;touch 2_Takeover2.txt;subjack -w $var   -ssl -a -o $output/2_Takeover1.txt  ; subjack -w $var    -a -o $output/2_Takeover2.txt ; cd /root/script/3_httprobe ; mkdir $output/3_js ; sed 's/^/https\:\/\//g' $var|tee httprobe.txt ; getJS -input httprobe.txt -complete -output getjs.txt ; cat getjs.txt|grep -o -P "(?<=//).*?(?=/)" >> grep.txt ; sort grep.txt|uniq|tee jstakeover.txt ; cd $output ; touch 3_2_takeover1.txt;touch 3_2_takeover2.txt;subjack -w /root/script/3_httprobe/jstakeover.txt  -ssl -a -o $output/3_2_takeover1.txt ; subjack -w /root/script/3_httprobe/jstakeover.txt  -a -o $output/3_2_takeover2.txt ; cd /root/script/3_httprobe; git clone https://github.com/fngoo/getjs ; mv getjs/getjs.sh getjs.sh ; sh getjs.sh ; mv getjs.txt $output/3_JSsource.txt ; rm -f getjs.sh ; rm -r getjs ; > httprobe.txt ; > getjs.txt ; > grep.txt ; > jstakeover.txt ; cd /root/script/4_getjs ; git clone https://github.com/fngoo/grep ; mv grep/grep.sh grep.sh ; rm -rf grep ; output=$output ; cd $output/3_js ; sh /root/script/4_getjs/grep.sh ; rm /root/script/4_getjs/grep.sh
@@ -140,7 +33,7 @@ curl -L https://github.com/arkadiyt/bounty-targets-data/blob/master/data/domains
 comm -3  comm.txt  mmoc.txt > domains_urlwatch.txt ; sed 's/[[:space:]]//g' domains_urlwatch.txt > space.txt ; > domains_urlwatch.txt ; cat space.txt > domains_urlwatch.txt ; rm space.txt
 if [ -s domains_urlwatch.txt ]
 then
-    var=/root/script/domains_Github/domains/domains_urlwatch.txt ; mkdir /root/script/domains_Github/domains/domains ;output=/root/script/domains_Github/domains/domains
+    var=/root/script/domains_Github/domains/domains_urlwatch.txt ; mkdir /root/script/domains_Github/domains/domains ;output=/root/script/domains_Github/domains/domains ; export output=/root/script/domains_Github/domains/domains
     cat $var|tee -a /root/watch/1.txt
     touch /root/watch/2.txt;sort /root/watch/1.txt|uniq|tee -a /root/watch/2.txt;> /root/watch/1.txt;cat /root/watch/2.txt>>/root/watch/1.txt;rm /root/watch/2.txt
     touch $output/0_burp.txt ; cat $var >$output/0_burp.txt  ; cd /root/script/1_aws/AWSBucketDump ; python3 AWSBucketDump.py -l $var ; cat interesting_file.txt|grep -o -P "(?<=//).*?(?=/)" >> cliaws.txt ; sort cliaws.txt|uniq|tee awscli.txt ; sed -e "s/^/aws\ s3\ mv\ D\:\\\1\.txt\ s3\:\/\/&/g" awscli.txt|sed -e "s/$/&\ \-\-no\-sign\-request/g" >>  uploadaws.txt; sed -e "s/^/aws\ s3\ mv\ s3\:\/\/&/g" awscli.txt|sed -e "s/$/&\ D\:\\\aws_bucket\ \-\-recursive\ \-\-no\-sign\-request/g" >>  uploadaws.txt ; cp uploadaws.txt $output/1_AWS.txt ; > interesting_file.txt ; > cliaws.txt ; > awscli.txt ; > uploadaws.txt ; cd /root/script/2_subjack ; cd $output ; touch 2_Takeover1.txt;touch 2_Takeover2.txt;subjack -w $var   -ssl -a -o $output/2_Takeover1.txt  ; subjack -w $var    -a -o $output/2_Takeover2.txt ; cd /root/script/3_httprobe ; mkdir $output/3_js ; sed 's/^/https\:\/\//g' $var|tee httprobe.txt ; getJS -input httprobe.txt -complete -output getjs.txt ; cat getjs.txt|grep -o -P "(?<=//).*?(?=/)" >> grep.txt ; sort grep.txt|uniq|tee jstakeover.txt ; cd $output ; touch 3_2_takeover1.txt;touch 3_2_takeover2.txt;subjack -w /root/script/3_httprobe/jstakeover.txt  -ssl -a -o $output/3_2_takeover1.txt ; subjack -w /root/script/3_httprobe/jstakeover.txt  -a -o $output/3_2_takeover2.txt ; cd /root/script/3_httprobe; git clone https://github.com/fngoo/getjs ; mv getjs/getjs.sh getjs.sh ; sh getjs.sh ; mv getjs.txt $output/3_JSsource.txt ; rm -f getjs.sh ; rm -r getjs ; > httprobe.txt ; > getjs.txt ; > grep.txt ; > jstakeover.txt ; cd /root/script/4_getjs ; git clone https://github.com/fngoo/grep ; mv grep/grep.sh grep.sh ; rm -rf grep ; output=$output ; cd $output/3_js ; sh /root/script/4_getjs/grep.sh ; rm /root/script/4_getjs/grep.sh
@@ -162,7 +55,7 @@ curl -L https://github.com/arkadiyt/bounty-targets-data/blob/master/data/wildcar
 comm -3 cards.txt wilds.txt > domains_urlwatch.txt ; sed 's/[[:space:]]//g' domains_urlwatch.txt > space.txt ; > domains_urlwatch.txt ; cat space.txt > domains_urlwatch.txt ; rm space.txt
 if [ -s domains_urlwatch.txt ]
 then
-    var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; mkdir /root/script/domains_Github/wildcards/domains ;output=/root/script/domains_Github/wildcards/domains
+    var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; mkdir /root/script/domains_Github/wildcards/domains ;output=/root/script/domains_Github/wildcards/domains ; export output=/root/script/domains_Github/wildcards/domains
     touch /root/script/0_subdomain/0_subfinder.txt ; subfinder  -dL $var -o /root/script/0_subdomain/0_subfinder.txt  -silent ; cd /root/script/0_subdomain/altdns ; touch /root/script/0_subdomain/0_altdns.txt ; altdns -i $var  -w words.txt -o /root/script/0_subdomain/0_altdns.txt -s 1.txt ; > 1.txt;cd /root/script/0_subdomain/subDomainsBrute ; touch /root/script/0_subdomain/0_subdomainbrute.txt
 
     for line in `cat $var`
@@ -200,7 +93,7 @@ curl -L https://github.com/arkadiyt/bounty-targets-data/blob/master/data/wildcar
 comm -3 wilds.txt cards.txt > domains_urlwatch.txt ; sed 's/[[:space:]]//g' domains_urlwatch.txt > space.txt ; > domains_urlwatch.txt ; cat space.txt > domains_urlwatch.txt ; rm space.txt
 if [ -s domains_urlwatch.txt ]
 then
-    var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; mkdir /root/script/domains_Github/wildcards/domains ;output=/root/script/domains_Github/wildcards/domains
+    var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; mkdir /root/script/domains_Github/wildcards/domains ;output=/root/script/domains_Github/wildcards/domains ; export output=/root/script/domains_Github/wildcards/domains
     touch /root/script/0_subdomain/0_subfinder.txt ; subfinder  -dL $var -o /root/script/0_subdomain/0_subfinder.txt  -silent ; cd /root/script/0_subdomain/altdns ; touch /root/script/0_subdomain/0_altdns.txt ; altdns -i $var  -w words.txt -o /root/script/0_subdomain/0_altdns.txt -s 1.txt ; > 1.txt;cd /root/script/0_subdomain/subDomainsBrute ; touch /root/script/0_subdomain/0_subdomainbrute.txt
 
     for line in `cat $var`
@@ -239,7 +132,7 @@ var=/root/script/domains_Github/wildcards/wilds.txt ; subfinder  -dL $var -o /ro
 comm -3 peek.txt keep.txt > domains_urlwatch.txt ; sed 's/[[:space:]]//g' domains_urlwatch.txt > space.txt ; > domains_urlwatch.txt ; cat space.txt > domains_urlwatch.txt ; rm space.txt
 if [ -s domains_urlwatch.txt ]
 then
-    var=/root/script/domains_Github/0_subdomain/domains_urlwatch.txt ; mkdir /root/script/domains_Github/0_subdomain/domains ;output=/root/script/domains_Github/0_subdomain/domains
+    var=/root/script/domains_Github/0_subdomain/domains_urlwatch.txt ; mkdir /root/script/domains_Github/0_subdomain/domains ;output=/root/script/domains_Github/0_subdomain/domains ; export output=/root/script/domains_Github/0_subdomain/domains
     cat $var|tee -a /root/watch/1.txt
     touch /root/watch/2.txt;sort /root/watch/1.txt|uniq|tee -a /root/watch/2.txt;> /root/watch/1.txt;cat /root/watch/2.txt>>/root/watch/1.txt;rm /root/watch/2.txt
     touch $output/0_burp.txt ; cat $var >$output/0_burp.txt  ; cd /root/script/1_aws/AWSBucketDump ; python3 AWSBucketDump.py -l $var ; cat interesting_file.txt|grep -o -P "(?<=//).*?(?=/)" >> cliaws.txt ; sort cliaws.txt|uniq|tee awscli.txt ; sed -e "s/^/aws\ s3\ mv\ D\:\\\1\.txt\ s3\:\/\/&/g" awscli.txt|sed -e "s/$/&\ \-\-no\-sign\-request/g" >>  uploadaws.txt; sed -e "s/^/aws\ s3\ mv\ s3\:\/\/&/g" awscli.txt|sed -e "s/$/&\ D\:\\\aws_bucket\ \-\-recursive\ \-\-no\-sign\-request/g" >>  uploadaws.txt ; cp uploadaws.txt $output/1_AWS.txt ; > interesting_file.txt ; > cliaws.txt ; > awscli.txt ; > uploadaws.txt ; cd /root/script/2_subjack ; cd $output ; touch 2_Takeover1.txt;touch 2_Takeover2.txt;subjack -w $var   -ssl -a -o $output/2_Takeover1.txt  ; subjack -w $var    -a -o $output/2_Takeover2.txt ; cd /root/script/3_httprobe ; mkdir $output/3_js ; sed 's/^/https\:\/\//g' $var|tee httprobe.txt ; getJS -input httprobe.txt -complete -output getjs.txt ; cat getjs.txt|grep -o -P "(?<=//).*?(?=/)" >> grep.txt ; sort grep.txt|uniq|tee jstakeover.txt ; cd $output ; touch 3_2_takeover1.txt;touch 3_2_takeover2.txt;subjack -w /root/script/3_httprobe/jstakeover.txt  -ssl -a -o $output/3_2_takeover1.txt ; subjack -w /root/script/3_httprobe/jstakeover.txt  -a -o $output/3_2_takeover2.txt ; cd /root/script/3_httprobe; git clone https://github.com/fngoo/getjs ; mv getjs/getjs.sh getjs.sh ; sh getjs.sh ; mv getjs.txt $output/3_JSsource.txt ; rm -f getjs.sh ; rm -r getjs ; > httprobe.txt ; > getjs.txt ; > grep.txt ; > jstakeover.txt ; cd /root/script/4_getjs ; git clone https://github.com/fngoo/grep ; mv grep/grep.sh grep.sh ; rm -rf grep ; output=$output ; cd $output/3_js ; sh /root/script/4_getjs/grep.sh ; rm /root/script/4_getjs/grep.sh
@@ -260,7 +153,7 @@ var=/root/script/domains_Github/wildcards/wilds.txt ; subfinder  -dL $var -o /ro
 comm -3 keep.txt peek.txt > domains_urlwatch.txt ; sed 's/[[:space:]]//g' domains_urlwatch.txt > space.txt ; > domains_urlwatch.txt ; cat space.txt > domains_urlwatch.txt ; rm space.txt
 if [ -s domains_urlwatch.txt ]
 then
-    var=/root/script/domains_Github/0_subdomain/domains_urlwatch.txt ; mkdir /root/script/domains_Github/0_subdomain/domains ;output=/root/script/domains_Github/0_subdomain/domains
+    var=/root/script/domains_Github/0_subdomain/domains_urlwatch.txt ; mkdir /root/script/domains_Github/0_subdomain/domains ;output=/root/script/domains_Github/0_subdomain/domains ; export output=/root/script/domains_Github/0_subdomain/domains
     cat $var|tee -a /root/watch/1.txt
     touch /root/watch/2.txt;sort /root/watch/1.txt|uniq|tee -a /root/watch/2.txt;> /root/watch/1.txt;cat /root/watch/2.txt>>/root/watch/1.txt;rm /root/watch/2.txt
     touch $output/0_burp.txt ; cat $var >$output/0_burp.txt  ; cd /root/script/1_aws/AWSBucketDump ; python3 AWSBucketDump.py -l $var ; cat interesting_file.txt|grep -o -P "(?<=//).*?(?=/)" >> cliaws.txt ; sort cliaws.txt|uniq|tee awscli.txt ; sed -e "s/^/aws\ s3\ mv\ D\:\\\1\.txt\ s3\:\/\/&/g" awscli.txt|sed -e "s/$/&\ \-\-no\-sign\-request/g" >>  uploadaws.txt; sed -e "s/^/aws\ s3\ mv\ s3\:\/\/&/g" awscli.txt|sed -e "s/$/&\ D\:\\\aws_bucket\ \-\-recursive\ \-\-no\-sign\-request/g" >>  uploadaws.txt ; cp uploadaws.txt $output/1_AWS.txt ; > interesting_file.txt ; > cliaws.txt ; > awscli.txt ; > uploadaws.txt ; cd /root/script/2_subjack ; cd $output ; touch 2_Takeover1.txt;touch 2_Takeover2.txt;subjack -w $var   -ssl -a -o $output/2_Takeover1.txt  ; subjack -w $var    -a -o $output/2_Takeover2.txt ; cd /root/script/3_httprobe ; mkdir $output/3_js ; sed 's/^/https\:\/\//g' $var|tee httprobe.txt ; getJS -input httprobe.txt -complete -output getjs.txt ; cat getjs.txt|grep -o -P "(?<=//).*?(?=/)" >> grep.txt ; sort grep.txt|uniq|tee jstakeover.txt ; cd $output ; touch 3_2_takeover1.txt;touch 3_2_takeover2.txt;subjack -w /root/script/3_httprobe/jstakeover.txt  -ssl -a -o $output/3_2_takeover1.txt ; subjack -w /root/script/3_httprobe/jstakeover.txt  -a -o $output/3_2_takeover2.txt ; cd /root/script/3_httprobe; git clone https://github.com/fngoo/getjs ; mv getjs/getjs.sh getjs.sh ; sh getjs.sh ; mv getjs.txt $output/3_JSsource.txt ; rm -f getjs.sh ; rm -r getjs ; > httprobe.txt ; > getjs.txt ; > grep.txt ; > jstakeover.txt ; cd /root/script/4_getjs ; git clone https://github.com/fngoo/grep ; mv grep/grep.sh grep.sh ; rm -rf grep ; output=$output ; cd $output/3_js ; sh /root/script/4_getjs/grep.sh ; rm /root/script/4_getjs/grep.sh
@@ -366,4 +259,3 @@ rm -r $output
 fi
 
 urlwatch
-done
