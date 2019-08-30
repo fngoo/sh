@@ -103,7 +103,7 @@ yes|apt remove postfix
 yes|apt install sharutils mailutils sendmail
 yes|apt install heirloom-mailx
 
-while
+while true
 do
 cd /root/
 mkdir /root/script
