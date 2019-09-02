@@ -2,7 +2,7 @@
 
 cd /root/
 apt update
-yes|apt install git gcc g++ make libpcap-dev nano curl zlib* openssl libssl-dev libsqlite3-dev build-essential libssl-dev libffi-dev python-dev parallel
+yes|apt install git gcc g++ make libpcap-dev nano curl zlib* openssl libssl-dev libsqlite3-dev build-essential libssl-dev libffi-dev python-dev parallel tmux silversearcher-ag
 
 var=$(curl -L golang.org/dl/|grep -oP "(?<=\<a\ class\=\"download\ downloadBox\"\ href\=\").*?(?=linux\-amd64\.tar\.gz\"\>)") ; last=linux-amd64.tar.gz ; var=$var$last ; wget $var
 load=${var//https\:\/\/dl\.google\.com\/go\//} ; tar -xzf $load -C /usr/local ; rm $load
