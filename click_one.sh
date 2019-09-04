@@ -3,6 +3,7 @@
 cd /root/
 apt update
 yes|apt install git gcc g++ make libpcap-dev nano wget curl zlib* openssl libssl-dev libsqlite3-dev build-essential libssl-dev libffi-dev python-dev parallel tmux aria2
+echo 'set -g prefix C-a'>>/root/.tmux.conf ; echo 'unbind C-b'>>/root/.tmux.conf
 wget https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 tar xzvf ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 cp ripgrep-11.0.2-x86_64-unknown-linux-musl/rg  /usr/local/bin/
