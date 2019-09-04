@@ -109,6 +109,7 @@ yes|apt remove postfix
 yes|apt install sharutils mailutils sendmail
 yes|apt install heirloom-mailx
 
+> /etc/nail.rc
 echo 'set smtp=smtp.qq.com'>>/etc/nail.rc
 echo 'set smtp-use-starttls'>>/etc/nail.rc
 echo 'set smtp-auth=login'>>/etc/nail.rc
