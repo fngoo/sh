@@ -8,6 +8,13 @@ wget https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep-11.0
 tar xzvf ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 cp ripgrep-11.0.2-x86_64-unknown-linux-musl/rg  /usr/local/bin/
 
+yes|apt install ruby
+yes|apt install ruby-dev
+var=$(ruby -v|grep -oP ".\..\..")
+cd /etc/alternatives
+ln -sf /usr/bin/ruby$var ruby
+
+cd /root
 var=$(curl -L golang.org/dl/|grep -oP "(?<=\<a\ class\=\"download\ downloadBox\"\ href\=\").*?(?=linux\-amd64\.tar\.gz\"\>)") ; last=linux-amd64.tar.gz ; var=$var$last ; wget $var
 load=${var//https\:\/\/dl\.google\.com\/go\//} ; tar -xzf $load -C /usr/local ; rm $load
 echo 'export EDITOR=nano'>>/root/.profile
@@ -62,6 +69,10 @@ cd /root/script/0_subdomain
 git clone https://github.com/nsonaniya2010/SubDomainizer.git
 cd SubDomainizer
 python3 -m pip install -r requirements.txt
+cd /root/script/0_subdomain
+https://github.com/fngoo/massdns
+cd massdns ; make
+cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 
 mkdir /root/script/1_aws
 cd /root/script/1_aws
