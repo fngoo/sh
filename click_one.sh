@@ -87,6 +87,10 @@ mkdir /root/script/3_httprobe
 cd /root/script/3_httprobe
 cd /root/
 go get -u github.com/tomnomnom/httprobe
+cd /root/script/3_httprobe
+git clone https://github.com/Cillian-Collins/dirscraper
+cd /root/script/3_httprobe/dirscraper
+pip install -r requirements.txt
 
 mkdir /root/script/4_getjs
 cd /root/script/4_getjs
