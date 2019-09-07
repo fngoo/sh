@@ -2,7 +2,7 @@
 
 cd /root/
 apt update
-yes|apt install git gcc g++ make libpcap-dev nano wget curl zlib* openssl libssl-dev libsqlite3-dev build-essential libssl-dev libffi-dev python-dev parallel tmux aria2
+yes|apt install git gcc g++ make libpcap-dev iftop nano wget curl zlib* openssl libssl-dev libsqlite3-dev build-essential libssl-dev libffi-dev python-dev parallel tmux aria2
 echo 'set -g prefix C-a'>>/root/.tmux.conf ; echo 'unbind C-b'>>/root/.tmux.conf
 wget https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 tar xzvf ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
@@ -88,9 +88,7 @@ cd /root/script/3_httprobe
 cd /root/
 go get -u github.com/tomnomnom/httprobe
 cd /root/script/3_httprobe
-git clone https://github.com/Cillian-Collins/dirscraper
-cd /root/script/3_httprobe/dirscraper
-pip install -r requirements.txt
+pip3 install dirhunt
 
 mkdir /root/script/4_getjs
 cd /root/script/4_getjs
