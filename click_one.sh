@@ -88,7 +88,7 @@ cd /root/script/3_httprobe
 cd /root/
 go get -u github.com/tomnomnom/httprobe
 cd /root/script/3_httprobe
-pip3 install dirhunt
+git clone https://github.com/fngoo/webcrawler
 
 mkdir /root/script/4_getjs
 cd /root/script/4_getjs
