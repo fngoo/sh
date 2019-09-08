@@ -88,7 +88,7 @@ cd /root/script/3_httprobe
 cd /root/
 go get -u github.com/tomnomnom/httprobe
 cd /root/script/3_httprobe
-git clone https://github.com/fngoo/webcrawler
+git clone https://github.com/fngoo/webcrawler ; mv webcrawler/crawler.py crawler.py
 
 mkdir /root/script/4_getjs
 cd /root/script/4_getjs
