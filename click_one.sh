@@ -91,6 +91,8 @@ cd /root/script/3_httprobe
 git clone https://github.com/verovaleros/webcrawler ; mv webcrawler/crawler.py crawler.py ; rm -r webcrawler
 cd /root/script/3_httprobe
 git clone https://github.com/s0md3v/Arjun
+cd /root/script/3_httprobe
+git clone https://github.com/fngoo/XSStrike
 
 mkdir /root/script/4_getjs
 cd /root/script/4_getjs
