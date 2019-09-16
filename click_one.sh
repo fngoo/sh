@@ -2,17 +2,17 @@
 
 cd /root/
 apt update
-yes|apt install git gcc g++ make libpcap-dev iftop nano wget curl zlib* openssl libssl-dev libsqlite3-dev build-essential libssl-dev libffi-dev python-dev parallel tmux aria2
+yes|apt install ruby ruby-dev libcurl4-openssl-dev make zlib1g-dev git gcc g++ make libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev libpcap-dev iftop nano wget curl zlib* openssl libssl-dev libsqlite3-dev build-essential libssl-dev libcurl4-openssl-dev libffi-dev python-dev parallel tmux aria2
 echo 'set -g prefix C-a'>>/root/.tmux.conf ; echo 'unbind C-b'>>/root/.tmux.conf
 wget https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 tar xzvf ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 cp ripgrep-11.0.2-x86_64-unknown-linux-musl/rg  /usr/local/bin/
 
-yes|apt install ruby
-yes|apt install ruby-dev
-var=$(ruby -v|grep -oP ".\..\..")
-cd /etc/alternatives
-ln -sf /usr/bin/ruby$var ruby
+#yes|apt install ruby
+#yes|apt install ruby-dev
+#var=$(ruby -v|grep -oP ".\..\..")
+#cd /etc/alternatives
+#ln -sf /usr/bin/ruby$var ruby
 
 cd /root
 var=$(curl -L golang.org/dl/|grep -oP "(?<=\<a\ class\=\"download\ downloadBox\"\ href\=\").*?(?=linux\-amd64\.tar\.gz\"\>)") ; last=linux-amd64.tar.gz ; var=$var$last ; wget $var
@@ -93,6 +93,8 @@ cd /root/script/3_httprobe
 git clone https://github.com/s0md3v/Arjun
 cd /root/script/3_httprobe
 git clone https://github.com/fngoo/XSStrike
+cd /root/script/3_httprobe
+git clone https://github.com/Threezh1/JSFinder
 
 mkdir /root/script/4_getjs
 cd /root/script/4_getjs
