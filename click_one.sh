@@ -7,6 +7,7 @@ echo 'set -g prefix C-a'>>/root/.tmux.conf ; echo 'unbind C-b'>>/root/.tmux.conf
 wget https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 tar xzvf ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 cp ripgrep-11.0.2-x86_64-unknown-linux-musl/rg  /usr/local/bin/
+rm ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 
 #yes|apt install ruby
 #yes|apt install ruby-dev
