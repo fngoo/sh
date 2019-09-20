@@ -96,6 +96,8 @@ cd /root/script/3_httprobe
 git clone https://github.com/fngoo/XSStrike
 cd /root/script/3_httprobe
 git clone https://github.com/Threezh1/JSFinder
+cd /root/
+go get github.com/tomnomnom/waybackurls
 
 mkdir /root/script/4_getjs
 cd /root/script/4_getjs
