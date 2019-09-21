@@ -208,3 +208,10 @@ then
     > /root/script/domains_Github/wildcards/domains_urlwatch.txt
 fi
 sort -u /root/httprobe_all.txt -o /root/httprobe_all.txt
+
+
+
+
+#keep moni
+cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
+
