@@ -285,3 +285,59 @@ touch /root/run/3_3.txt ; mv /root/watch/1.txt /root/run/3.txt ; touch /root/run
 comm -3 /root/run/3.txt /root/run/3_3.txt > /root/run/target.txt ; sed 's/[[:space:]]//g' /root/run/target.txt > space.txt ; > /root/run/target.txt ; cat space.txt > /root/run/target.txt ; rm space.txt
 
 var=/root/run/target.txt ; export var=/root/run/target.txt ; output=/root/run/output
+
+
+
+if [ -s $var ]
+
+then
+
+cat $var > /root/var.txt
+for i in $(seq 1 100 `wc -l  /root/var.txt | grep -o -P ".*?(?=\ )"`)
+do
+let add=i+100
+sed -n ''$i','$add'p' /root/var.txt > $var
+
+###如果更新就删除旧版,下载新版
+
+curl -L github.com/chaitin/xray/releases|grep -oP "(?<=\<a\ href\=\"\/chaitin\/xray\/releases\/download\/).*?(?=\/xray\_linux\_amd64\.zip\")" > /root/run/zip.txt
+
+sort -u /root/run/zip.txt -o /root/run/zip.txt ; sort -u /root/run/zip1.txt -o /root/run/zip1.txt
+
+comm -3 /root/run/zip.txt /root/run/zip1.txt > /root/run/release.txt ; sed 's/[[:space:]]//g' /root/run/release.txt > space.txt ; > /root/run/release.txt ; cat space.txt > /root/run/release.txt ; rm space.txt
+
+if [ -s /root/run/release.txt ]
+
+then
+
+rm -rf /root/run/xray_linux_amd64
+
+release=`head -1 /root/run/release.txt|tail -1`
+
+head=https://github.com/chaitin/xray/releases/download/;footer=/xray_linux_amd64.zip;wget=$head$release$footer
+
+wget -P /root/run/ $wget
+
+unzip /root/run/xray_linux_amd64.zip -d /root/run/ ; rm /root/run/xray_linux_amd64.zip ; > /root/run/zip1.txt ; cat /root/run/zip.txt>/root/run/zip1.txt ; > /root/run/zip.txt ;> /root/run/release.txt
+
+### xray使用
+
+mkdir $output/xray/
+
+xray=$output/xray/
+
+cd /root/run
+
+head=1
+
+echo '#!/bin/bash' >> exe.sh
+
+for line in `cat /root/httprobe_all.txt`
+
+do
+
+#length=`wc -l /root/httprobe_all.txt|grep -o -P ".*?(?=\ )"`
+#for((head=1;head<$length;head+=1))
+#do
+
+name=.html ; txt=$head$name ; head=http:// ; url=$head$line
