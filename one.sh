@@ -341,3 +341,47 @@ do
 #do
 
 name=.html ; txt=$head$name ; head=http:// ; url=$head$line
+
+echo '#!/bin/bash' >> $head.sh
+echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
+echo "rm $head.sh" >> $head.sh
+echo "bash $head.sh" >> exe.sh
+
+head=$((head+1))
+
+done
+
+cat /root/run/exe.sh | parallel --jobs 0 --progress --delay 1
+rm /root/run/exe.sh
+
+
+fi
+
+### masnmapscan模块
+
+cat $var > /root/script/6_port/host2ip/host.txt
+
+cd /root/script/6_port/host2ip ; python host2ip.py ; cat ip.txt > /root/script/6_port/masnmapscan-V1.0/ip.txt ; cd /root/script/6_port/masnmapscan-V1.0 ; python masnmapcan-V1.0.py
+
+cp /root/script/6_port/masnmapscan-V1.0/scan_url_port.txt $output/masscan_detail.txt ; cp /root/script/6_port/masnmapscan-V1.0/masscan.json $output/masscan.txt ; > /root/script/6_port/masnmapscan-V1.0/scan_url_port.txt ; > /root/script/6_port/masnmapscan-V1.0/ip.txt ; > /root/script/6_port/masnmapscan-V1.0/masscan.json ; > /root/script/6_port/host2ip/host.txt ; > /root/script/6_port/host2ip/ip.txt
+
+
+
+### urlwatch添加
+
+echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
+
+
+
+### 发邮件 ； 清空$output ； 发确认信息 ； 结束if urlwatch
+
+rm /root/httprobe_all.txt ; mkdir $output/root ; var=${var/target.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_scan.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname *;fname=$slash$dayzoom$addname$zip ; echo ":D"|mailx -r "410046251@qq.com" -s "port" -A $output$fname 410046251@qq.com
+
+rm -r $output
+
+> $var ; cat /root/run/3.txt > /root/run/3_3.txt
+
+done
+urlwatch
+fi
+rm /root/var.txt
