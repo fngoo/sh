@@ -91,7 +91,7 @@ go get -u github.com/tomnomnom/httprobe
 cd /root/script/3_httprobe
 git clone https://github.com/verovaleros/webcrawler ; mv webcrawler/crawler.py crawler.py ; rm -r webcrawler
 cd /root/script/3_httprobe
-git clone https://github.com/s0md3v/Arjun
+git clone https://github.com/fngoo/Arjun
 cd /root/script/3_httprobe
 git clone https://github.com/fngoo/XSStrike
 cd /root/script/3_httprobe
