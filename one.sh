@@ -351,7 +351,7 @@ head=$((head+1))
 
 done
 
-cat /root/run/exe.sh | parallel --jobs 0 --progress --delay 1 --load 90%
+cat /root/run/exe.sh | parallel --jobs 0 --progress --delay 1
 rm /root/run/exe.sh
 
 
