@@ -385,3 +385,4 @@ done
 urlwatch
 fi
 rm /root/var.txt
+rm /root/screenlog.0
