@@ -139,6 +139,10 @@ echo 'set smtp-auth-user="410046251@qq.com"'>>/etc/nail.rc
 echo 'set smtp-auth-password="yukboddswvyscaeh"'>>/etc/nail.rc
 echo 'set ssl-verify=ignore'>>/etc/nail.rc
 
+wget -qO- https://get.docker.com/ | bash
+docker pull ysrc/xunfeng
+docker run -d -p 8000:80 -v /opt/data:/data ysrc/xunfeng:latest
+
 while true
 do
 cd /root
