@@ -150,6 +150,8 @@ ulimit -s unlimited
 ulimit -t unlimited
 ulimit -v unlimited
 
+aptitude install debian-keyring debian-archive-keyring
+
 while true
 do
 cd /root
