@@ -143,6 +143,13 @@ wget -qO- https://get.docker.com/ | bash
 docker pull ysrc/xunfeng
 docker run -d -p 8000:80 -v /opt/data:/data ysrc/xunfeng:latest
 
+ulimit -u 10240
+ulimit -d unlimited
+ulimit -m unlimited
+ulimit -s unlimited
+ulimit -t unlimited
+ulimit -v unlimited
+
 while true
 do
 cd /root
