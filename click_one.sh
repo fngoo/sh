@@ -96,7 +96,7 @@ cd /root/script/3_httprobe
 git clone https://github.com/fngoo/XSStrike
 cd /root/script/3_httprobe
 #git clone https://github.com/Threezh1/JSFinder
-git clone https://github.com/GerbenJavado/LinkFinder
+git clone https://github.com/GerbenJavado/LinkFinder ; cd LinkFinder ; pip3 install -r requirements.txt ; python3 setup.py install
 cd /root/
 go get github.com/tomnomnom/waybackurls
 
