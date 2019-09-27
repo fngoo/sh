@@ -95,7 +95,8 @@ git clone https://github.com/fngoo/Arjun
 cd /root/script/3_httprobe
 git clone https://github.com/fngoo/XSStrike
 cd /root/script/3_httprobe
-git clone https://github.com/Threezh1/JSFinder
+#git clone https://github.com/Threezh1/JSFinder
+git clone https://github.com/GerbenJavado/LinkFinder
 cd /root/
 go get github.com/tomnomnom/waybackurls
 
