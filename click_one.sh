@@ -139,6 +139,8 @@ echo 'set smtp-auth-user="410046251@qq.com"'>>/etc/nail.rc
 echo 'set smtp-auth-password="yukboddswvyscaeh"'>>/etc/nail.rc
 echo 'set ssl-verify=ignore'>>/etc/nail.rc
 
+aptitude install debian-keyring debian-archive-keyring
+
 wget -qO- https://get.docker.com/ | bash
 docker pull ysrc/xunfeng
 docker run -d -p 8000:80 -v /opt/data:/data ysrc/xunfeng:latest
@@ -149,8 +151,6 @@ ulimit -m unlimited
 ulimit -s unlimited
 ulimit -t unlimited
 ulimit -v unlimited
-
-aptitude install debian-keyring debian-archive-keyring
 
 while true
 do
