@@ -15,6 +15,14 @@ rm ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 #cd /etc/alternatives
 #ln -sf /usr/bin/ruby$var ruby
 
+
+aptitude install debian-keyring debian-archive-keyring
+
+wget -qO- https://get.docker.com/ | bash
+docker pull ysrc/xunfeng
+docker run -d -p 8000:80 -v /opt/data:/data ysrc/xunfeng:latest
+
+
 cd /root
 var=$(curl -L golang.org/dl/|grep -oP "(?<=\<a\ class\=\"download\ downloadBox\"\ href\=\").*?(?=linux\-amd64\.tar\.gz\"\>)") ; last=linux-amd64.tar.gz ; var=$var$last ; wget $var
 load=${var//https\:\/\/dl\.google\.com\/go\//} ; tar -xzf $load -C /usr/local ; rm $load
@@ -140,18 +148,6 @@ echo 'set smtp-auth-user="410046251@qq.com"'>>/etc/nail.rc
 echo 'set smtp-auth-password="yukboddswvyscaeh"'>>/etc/nail.rc
 echo 'set ssl-verify=ignore'>>/etc/nail.rc
 
-aptitude install debian-keyring debian-archive-keyring
-
-wget -qO- https://get.docker.com/ | bash
-docker pull ysrc/xunfeng
-docker run -d -p 8000:80 -v /opt/data:/data ysrc/xunfeng:latest
-
-ulimit -u 10240
-ulimit -d unlimited
-ulimit -m unlimited
-ulimit -s unlimited
-ulimit -t unlimited
-ulimit -v unlimited
 
 while true
 do
