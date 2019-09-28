@@ -321,6 +321,7 @@ wget -P /root/run/ $wget
 
 unzip /root/run/xray_linux_amd64.zip -d /root/run/ ; rm /root/run/xray_linux_amd64.zip ; > /root/run/zip1.txt ; cat /root/run/zip.txt>/root/run/zip1.txt ; > /root/run/zip.txt ;> /root/run/release.txt
 
+
 ### xray使用
 
 mkdir $output/xray/
@@ -328,6 +329,10 @@ mkdir $output/xray/
 xray=$output/xray/
 
 cd /root/run
+
+./xray_linux_amd64
+
+sed -e "s/    ie_feature: false/    ie_feature: true/g" config.yaml > 1.txt ; mv 1.txt config.yaml
 
 head=1
 
