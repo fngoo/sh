@@ -80,7 +80,7 @@ cd SubDomainizer
 python3 -m pip install -r requirements.txt
 cd /root/script/0_subdomain
 git clone https://github.com/blechschmidt/massdns
-cd massdns ; make
+cd massdns ; make ; make install
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 
 mkdir /root/script/1_aws
