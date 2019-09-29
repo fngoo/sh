@@ -33,7 +33,7 @@ then
     python3 dirsearch.py  -u $line -e * -w dict_mode_dict.txt -t 30 --timeout=6 --max-retries=1 --plain-text-report=$output/5_dir/$line.txt ; sed -e "/0B\ \-/d" $output/5_dir/$line.txt|tee sed.txt ; > $output/5_dir/$line.txt ; cat sed.txt > $output/5_dir/$line.txt ; rm sed.txt ; grep -E "301|403" $output/5_dir/$line.txt|grep  "http.*"|tee $output/5_dir/301_403_$line.haha
     done
     cat $output/5_dir/*.txt > $output/5_dir_all.txt ; sort $output/5_dir_all.txt|uniq|tee sort.txt ; > $output/5_dir_all.txt ; cat sort.txt > $output/5_dir_all.txt ; rm sort.txt ; cat $output/5_dir/*.haha > $output/5_dir/5_301_403.txt ; sort $output/5_dir/5_301_403.txt|uniq|tee sort.txt ; > $output/5_dir/5_301_403.txt ; cat sort.txt > $output/5_dir/5_301_403.txt ; rm sort.txt ; cd $output/5_dir ;  rename 's/\.haha/\.txt/'  ./*
-    cat $output/3_httprobe.txt >> /root/httprobe_all.txt ; mkdir $output/root ; var=${var/domains_urlwatch.txt/}; cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_domains.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname * ; fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip; echo ":D"|mailx -r "410046251@qq.com" -s "Github_domains"  410046251@qq.com
+    cat $output/3_httprobe.txt >> /root/httprobe_all.txt ; mkdir $output/root ; var=${var/domains_urlwatch.txt/}; cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_domains.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname * ; fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip; curl -X POST -H "Content-type:application/json" --data '{"text":"1"}'  https://hooks.sla.com/services/TM26L9ZEE/BM78UTLGH/wkGCgWEa5Fs4ebeC7asZZXRR
 
     #var切片结束
     done
@@ -69,7 +69,7 @@ then
     python3 dirsearch.py  -u $line -e * -w dict_mode_dict.txt -t 30 --timeout=6 --max-retries=1 --plain-text-report=$output/5_dir/$line.txt ; sed -e "/0B\ \-/d" $output/5_dir/$line.txt|tee sed.txt ; > $output/5_dir/$line.txt ; cat sed.txt > $output/5_dir/$line.txt ; rm sed.txt ; grep -E "301|403" $output/5_dir/$line.txt|grep  "http.*"|tee $output/5_dir/301_403_$line.haha
     done
     cat $output/5_dir/*.txt > $output/5_dir_all.txt ; sort $output/5_dir_all.txt|uniq|tee sort.txt ; > $output/5_dir_all.txt ; cat sort.txt > $output/5_dir_all.txt ; rm sort.txt ; cat $output/5_dir/*.haha > $output/5_dir/5_301_403.txt ; sort $output/5_dir/5_301_403.txt|uniq|tee sort.txt ; > $output/5_dir/5_301_403.txt ; cat sort.txt > $output/5_dir/5_301_403.txt ; rm sort.txt ; cd $output/5_dir ;  rename 's/\.haha/\.txt/'  ./*
-    cat $output/3_httprobe.txt >> /root/httprobe_all.txt ; mkdir $output/root ;var=${var/domains_urlwatch.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_domains.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname * ; fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip; echo ":D"|mailx -r "410046251@qq.com" -s "Github_domains"  410046251@qq.com
+    cat $output/3_httprobe.txt >> /root/httprobe_all.txt ; mkdir $output/root ;var=${var/domains_urlwatch.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_domains.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname * ; fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip; curl -X POST -H "Content-type:application/json" --data '{"text":"1"}'  https://hooks.sla.com/services/TM26L9ZEE/BM78UTLGH/wkGCgWEa5Fs4ebeC7asZZXRR
 
     #var切片结束
     done
@@ -136,7 +136,7 @@ then
     done
     cat $output/5_dir/*.txt > $output/5_dir_all.txt ; sort $output/5_dir_all.txt|uniq|tee sort.txt ; > $output/5_dir_all.txt ; cat sort.txt > $output/5_dir_all.txt ; rm sort.txt ; cat $output/5_dir/*.haha > $output/5_dir/5_301_403.txt ; sort $output/5_dir/5_301_403.txt|uniq|tee sort.txt ; > $output/5_dir/5_301_403.txt ; cat sort.txt > $output/5_dir/5_301_403.txt ; rm sort.txt ; cd $output/5_dir ;  rename 's/\.haha/\.txt/'  ./*
     
-    cat $output/3_httprobe.txt >> /root/httprobe_all.txt ; mkdir $output/root ;var=${var/domains_urlwatch.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root  ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_wildcards.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname * ; fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip; echo ":D"|mailx -r "410046251@qq.com" -s "Github_wildcards"  410046251@qq.com
+    cat $output/3_httprobe.txt >> /root/httprobe_all.txt ; mkdir $output/root ;var=${var/domains_urlwatch.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root  ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_wildcards.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname * ; fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip; curl -X POST -H "Content-type:application/json" --data '{"text":"2"}'  https://hooks.sla.com/services/TM26L9ZEE/BM78UTLGH/wkGCgWEa5Fs4ebeC7asZZXRR
     #var切片结束
     done
     rm /root/var.txt
@@ -200,7 +200,7 @@ then
     done
     cat $output/5_dir/*.txt > $output/5_dir_all.txt ; sort $output/5_dir_all.txt|uniq|tee sort.txt ; > $output/5_dir_all.txt ; cat sort.txt > $output/5_dir_all.txt ; rm sort.txt ; cat $output/5_dir/*.haha > $output/5_dir/5_301_403.txt ; sort $output/5_dir/5_301_403.txt|uniq|tee sort.txt ; > $output/5_dir/5_301_403.txt ; cat sort.txt > $output/5_dir/5_301_403.txt ; rm sort.txt ; cd $output/5_dir ;  rename 's/\.haha/\.txt/'  ./*
     
-    cat $output/3_httprobe.txt >> /root/httprobe_all.txt ; mkdir $output/root ; var=${var/domains_urlwatch.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_wildcards.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname * ; fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip; echo ":D"|mailx -r "410046251@qq.com" -s "Github_wildcards"  410046251@qq.com
+    cat $output/3_httprobe.txt >> /root/httprobe_all.txt ; mkdir $output/root ; var=${var/domains_urlwatch.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_wildcards.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname * ; fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip; curl -X POST -H "Content-type:application/json" --data '{"text":"2"}'  https://hooks.sla.com/services/TM26L9ZEE/BM78UTLGH/wkGCgWEa5Fs4ebeC7asZZXRR
     #var切片结束
     done
     rm /root/var.txt
@@ -231,7 +231,7 @@ var=/root/script/domains_Github/wildcards/wilds.txt ; subfinder  -dL $var -o /ro
 #    python3 dirsearch.py  -u $line -e * -w dict_mode_dict.txt -t 30 --timeout=6 --max-retries=1 --plain-text-report=$output/5_dir/$line.txt ; sed -e "/0B\ \-/d" $output/5_dir/$line.txt|tee sed.txt ; > $output/5_dir/$line.txt ; cat sed.txt > $output/5_dir/$line.txt ; rm sed.txt ; grep -E "301|403" $output/5_dir/$line.txt|grep  "http.*"|tee $output/5_dir/301_403_$line.haha
 #    done
 #    cat $output/5_dir/*.txt > $output/5_dir_all.txt ; sort $output/5_dir_all.txt|uniq|tee sort.txt ; > $output/5_dir_all.txt ; cat sort.txt > $output/5_dir_all.txt ; rm sort.txt ; cat $output/5_dir/*.haha > $output/5_dir/5_301_403.txt ; sort $output/5_dir/5_301_403.txt|uniq|tee sort.txt ; > $output/5_dir/5_301_403.txt ; cat sort.txt > $output/5_dir/5_301_403.txt ; rm sort.txt ; cd $output/5_dir ;  rename 's/\.haha/\.txt/'  ./*
-#    cat $output/3_httprobe.txt >> /root/httprobe_all.txt ; mkdir $output/root ; var=${var/domains_urlwatch.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_monis.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname * ; fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip; echo ":D"| mailx -r "410046251@qq.com" -s "0_subdomain"  410046251@qq.com
+#    cat $output/3_httprobe.txt >> /root/httprobe_all.txt ; mkdir $output/root ; var=${var/domains_urlwatch.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_monis.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname * ; fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip; curl -X POST -H "Content-type:application/json" --data '{"text":"3"}'  https://hooks.sla.com/services/TM26L9ZEE/BM78UTLGH/wkGCgWEa5Fs4ebeC7asZZXRR
 #
 #    cd /root/script/domains_Github/0_subdomain/domains ; rm -rf *
 #    > /root/script/domains_Github/0_subdomain/keep.txt
@@ -259,7 +259,7 @@ then
     python3 dirsearch.py  -u $line -e * -w dict_mode_dict.txt -t 30 --timeout=6 --max-retries=1 --plain-text-report=$output/5_dir/$line.txt ; sed -e "/0B\ \-/d" $output/5_dir/$line.txt|tee sed.txt ; > $output/5_dir/$line.txt ; cat sed.txt > $output/5_dir/$line.txt ; rm sed.txt ; grep -E "301|403" $output/5_dir/$line.txt|grep  "http.*"|tee $output/5_dir/301_403_$line.haha
     done
     cat $output/5_dir/*.txt > $output/5_dir_all.txt ; sort $output/5_dir_all.txt|uniq|tee sort.txt ; > $output/5_dir_all.txt ; cat sort.txt > $output/5_dir_all.txt ; rm sort.txt ; cat $output/5_dir/*.haha > $output/5_dir/5_301_403.txt ; sort $output/5_dir/5_301_403.txt|uniq|tee sort.txt ; > $output/5_dir/5_301_403.txt ; cat sort.txt > $output/5_dir/5_301_403.txt ; rm sort.txt ; cd $output/5_dir ;  rename 's/\.haha/\.txt/'  ./*
-    cat $output/3_httprobe.txt >> /root/httprobe_all.txt ; mkdir $output/root ; var=${var/domains_urlwatch.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_monis.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname * ; fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip; echo ":D"| mailx -r "410046251@qq.com" -s "0_subdomain"  410046251@qq.com
+    cat $output/3_httprobe.txt >> /root/httprobe_all.txt ; mkdir $output/root ; var=${var/domains_urlwatch.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_monis.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname * ; fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip; curl -X POST -H "Content-type:application/json" --data '{"text":"3"}'  https://hooks.sla.com/services/TM26L9ZEE/BM78UTLGH/wkGCgWEa5Fs4ebeC7asZZXRR
 
     cd /root/script/domains_Github/0_subdomain/domains ; rm -rf *
     > /root/script/domains_Github/0_subdomain/peek.txt
@@ -381,7 +381,7 @@ echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash 
 
 ### 发邮件 ； 清空$output ； 发确认信息 ； 结束if urlwatch
 
-rm /root/httprobe_all.txt ; mkdir $output/root ; var=${var/target.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_scan.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname *;fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip ; echo ":D"|mailx -r "410046251@qq.com" -s "port"  410046251@qq.com
+rm /root/httprobe_all.txt ; mkdir $output/root ; var=${var/target.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_scan.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname *;fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip ; curl -X POST -H "Content-type:application/json" --data '{"text":"scan"}'  https://hooks.sla.com/services/TM26L9ZEE/BM78UTLGH/wkGCgWEa5Fs4ebeC7asZZXRR
 
 rm -r $output
 
