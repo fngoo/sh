@@ -134,20 +134,6 @@ git clone https://github.com/robertdavidgraham/masscan
 cd masscan
 make -j
 
-cd /root/
-yes|apt remove sendmail
-yes|apt remove postfix
-yes|apt install sharutils mailutils sendmail
-yes|apt install heirloom-mailx
-
-> /etc/nail.rc
-echo 'set smtp=smtp.qq.com'>>/etc/nail.rc
-echo 'set smtp-use-starttls'>>/etc/nail.rc
-echo 'set smtp-auth=login'>>/etc/nail.rc
-echo 'set smtp-auth-user="410046251@qq.com"'>>/etc/nail.rc
-echo 'set smtp-auth-password="yukboddswvyscaeh"'>>/etc/nail.rc
-echo 'set ssl-verify=ignore'>>/etc/nail.rc
-
 
 while true
 do
