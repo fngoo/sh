@@ -134,6 +134,8 @@ git clone https://github.com/robertdavidgraham/masscan
 cd masscan
 make -j
 
+cd /root/
+git clone https://github.com/fngoo/xunfeng ; sh xunfeng/xunfeng.sh ; rm -r /root/xunfeng
 
 while true
 do
