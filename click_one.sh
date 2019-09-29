@@ -16,7 +16,7 @@ rm ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 #ln -sf /usr/bin/ruby$var ruby
 
 
-aptitude install debian-keyring debian-archive-keyring
+yes|aptitude install debian-keyring debian-archive-keyring
 
 wget -qO- https://get.docker.com/ | bash
 docker pull ysrc/xunfeng
