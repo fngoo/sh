@@ -79,7 +79,7 @@ git clone https://github.com/nsonaniya2010/SubDomainizer.git
 cd SubDomainizer
 python3 -m pip install -r requirements.txt
 cd /root/script/0_subdomain
-git clone https://github.com/fngoo/massdns
+git clone https://github.com/blechschmidt/massdns
 cd massdns ; make
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 
