@@ -41,6 +41,10 @@ wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
 rm -r get-pip.py
 
+cd /root/
+git clone https://github.com/fngoo/xunfeng ; sh xunfeng/xunfeng.sh ; rm -r /root/xunfeng
+
+
 
 
 
@@ -125,9 +129,6 @@ git clone https://github.com/fngoo/masnmapscan-V1.0 && cd masnmapscan-V1.0 && pi
 git clone https://github.com/robertdavidgraham/masscan
 cd masscan
 make -j
-
-cd /root/
-git clone https://github.com/fngoo/xunfeng ; sh xunfeng/xunfeng.sh ; rm -r /root/xunfeng
 
 while true
 do
