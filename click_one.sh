@@ -58,6 +58,7 @@ cd txt
 > /root/.config/urlwatch/urlwatch.yaml
 cat 1.txt >/root/.config/urlwatch/urlwatch.yaml
 cd /root/ ; rm -r /root/txt
+> /root/.config/urlwatch/urls.yaml
 
 mkdir /root/script/0_subdomain
 cd /root/
