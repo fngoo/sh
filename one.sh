@@ -285,7 +285,7 @@ touch /root/run/3_3.txt ; mv /root/watch/1.txt /root/run/3.txt ; touch /root/run
 
 comm -3 /root/run/3.txt /root/run/3_3.txt > /root/run/target.txt ; sed 's/[[:space:]]//g' /root/run/target.txt > space.txt ; > /root/run/target.txt ; cat space.txt > /root/run/target.txt ; rm space.txt
 
-var=/root/run/target.txt ; export var=/root/run/target.txt ; output=/root/run/output
+var=/root/run/target.txt ; export var=/root/run/target.txt ; output=/root/run/output ; export output=/root/run/output
 
 
 
@@ -375,19 +375,33 @@ cp /root/script/6_port/masnmapscan-V1.0/scan_url_port.txt $output/masscan_detail
 
 ### urlwatch添加
 
-echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
-
+#echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
+num=1
+echo "#!/bin/bash" >> exe.sh
+for url in `cat /root/httprobe_all.txt`
+do
+mkdir $num
+echo "#!/bin/bash" >> $num/$num.sh
+echo "urlwatch --add url=$url" >> $num/$num.sh
+echo "rm -r $num" >> $num/$num.sh
+echo "bash $num/$num.sh" >> exe.sh
+num=$((num+1))
+done
+cat exe.sh | parallel --jobs 0 --progress --delay 0.5
+rm exe.sh
+rm -r dir_*
 
 
 ### 发邮件 ； 清空$output ； 发确认信息 ； 结束if urlwatch
 
-rm /root/httprobe_all.txt ; mkdir $output/root ; var=${var/target.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_scan.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname *;fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip ; curl -X POST -H "Content-type:application/json" --data '{"text":"scan"}' https://hooks.slack.com/services/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
+mkdir $output/root ; var=${var/target.txt/} ;cp $var*.txt $output/root ; cp /root/watch/* $output/root ; cd $output;date|sed -e 's/\ /\_/g'|sed -e 's/\://g' > /root/time.txt;slash=/;dayzoom=`cat /root/time.txt`;addname=_scan.txt;zip=.zip;fname=$dayzoom$addname$zip;zip -q -r $fname *;fname=$slash$dayzoom$addname$zip ; mv $output$fname /root/zip ; curl -X POST -H "Content-type:application/json" --data '{"text":"scan"}' https://hooks.slack.com/services/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
 
 rm -r $output
 
 > $var ; cat /root/run/3.txt > /root/run/3_3.txt
 
 done
+rm /root/httprobe_all.txt
 urlwatch
 fi
 rm /root/var.txt
