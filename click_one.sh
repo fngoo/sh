@@ -83,7 +83,9 @@ cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 
 mkdir /root/script/1_aws
 cd /root/script/1_aws
-git clone https://github.com/fngoo/AWSBucketDump && cd AWSBucketDump && python3 -m pip install -r requirements.txt 
+git clone https://github.com/fngoo/AWSBucketDump && cd AWSBucketDump && python3 -m pip install -r requirements.txt
+cd /root/script/1_aws
+git clone https://github.com/initstring/cloud_enum ; cd cloud_enum && python3 -m pip install -r requirements.txt
 
 mkdir /root/script/2_subjack
 cd /root/script/2_subjack
