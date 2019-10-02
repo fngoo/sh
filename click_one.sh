@@ -64,8 +64,6 @@ echo '1' > /root/.config/urlwatch/urls.yaml
 mkdir /root/script/git
 cd /root/script/git
 git clone https://github.com/fngoo/GSIL ; cd GSIL ; pip3 install -r requirements.txt
-a=2e3a08c60f266db5cacc ; b=68346fcb62492c87ec83 ; c=6479c6801c0e130b91e842b18316eca ; d=340961c40 ; e=9b6cdc05e4dcb878966f118b7175d00 ; f=438139b3d
-q=$a$b ; w=$c$d ; e=$e$f ; echo "tokens : ${q},${w},${e}" >> config.gsil
 
 mkdir /root/script/0_subdomain
 cd /root/
