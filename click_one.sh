@@ -9,11 +9,11 @@ tar xzvf ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 cp ripgrep-11.0.2-x86_64-unknown-linux-musl/rg  /usr/local/bin/
 rm ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 
-#yes|apt install ruby
-#yes|apt install ruby-dev
-#var=$(ruby -v|grep -oP ".\..\..")
-#cd /etc/alternatives
-#ln -sf /usr/bin/ruby$var ruby
+yes|apt install ruby
+yes|apt install ruby-dev
+var=$(ruby -v|grep -oP ".\..\..")
+cd /etc/alternatives
+ln -sf /usr/bin/ruby$var ruby
 
 cd /root
 var=$(curl -L golang.org/dl/|grep -oP "(?<=\<a\ class\=\"download\ downloadBox\"\ href\=\").*?(?=linux\-amd64\.tar\.gz\"\>)") ; last=linux-amd64.tar.gz ; var=$var$last ; wget $var
@@ -114,8 +114,11 @@ go get github.com/tomnomnom/waybackurls
 
 mkdir /root/script/4_getjs
 cd /root/script/4_getjs
+git clone https://github.com/FortyNorthSecurity/EyeWitness
+cd EyeWitness/setup ; bash setup.sh ; bash setup.sh
 cd /root/
 go get github.com/003random/getJS
+
 
 mkdir /root/script/5_dir
 cd /root/script/5_dir
