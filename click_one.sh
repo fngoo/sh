@@ -63,7 +63,7 @@ echo '1' > /root/.config/urlwatch/urls.yaml
 
 mkdir /root/script/git
 cd /root/script/git
-git clone https://github.com/fngoo/GSIL ; cd GSIL ; pip3 install -r requirements.txt
+git clone https://github.com/UnkL4b/GitMiner ; cd GitMiner ; pip3 install -r requirements.txt
 
 mkdir /root/script/0_subdomain
 cd /root/
