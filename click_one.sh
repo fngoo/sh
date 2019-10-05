@@ -63,7 +63,8 @@ echo '1' > /root/.config/urlwatch/urls.yaml
 
 mkdir /root/script/git
 cd /root/script/git
-git clone https://github.com/fngoo/GitMiner ; cd GitMiner ; pip3 install -r requirements.txt
+git clone https://github.com/dongfangyuxiao/github_dis
+pip install truffleHog
 
 mkdir /root/script/0_subdomain
 cd /root/
