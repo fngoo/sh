@@ -63,7 +63,7 @@ echo '1' > /root/.config/urlwatch/urls.yaml
 
 mkdir /root/script/git
 cd /root/script/git
-git clone https://github.com/dongfangyuxiao/github_dis
+git clone https://github.com/fngoo/github_dis
 pip install truffleHog
 
 mkdir /root/script/0_subdomain
