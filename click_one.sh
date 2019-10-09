@@ -37,9 +37,10 @@ ln -s /usr/local/bin/pip3.6 /usr/bin/pip3
 yes|apt install python-pip
 rm /usr/bin/lsb_release
 python3 -m pip install --upgrade pip
-wget https://bootstrap.pypa.io/get-pip.py
-python get-pip.py
-rm -r get-pip.py
+python -m pip install --upgrade pip
+#wget https://bootstrap.pypa.io/get-pip.py
+#python get-pip.py
+#rm -r get-pip.py
 
 cd /root/
 git clone https://github.com/fngoo/xunfeng ; sh xunfeng/xunfeng.sh ; rm -r /root/xunfeng
