@@ -116,7 +116,7 @@ go get github.com/tomnomnom/waybackurls
 mkdir /root/script/4_getjs
 cd /root/script/4_getjs
 git clone https://github.com/FortyNorthSecurity/EyeWitness
-cd EyeWitness/setup ; bash setup.sh ; bash setup.sh ; pip install --upgrade pyasn1-modules
+cd EyeWitness/setup ; bash setup.sh ; bash setup.sh ; pip3 install --upgrade pyasn1-modules
 cd /root/
 go get github.com/003random/getJS
 
