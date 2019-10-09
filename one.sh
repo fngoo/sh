@@ -110,7 +110,7 @@ xray=$output/xray/
 cd /root/run
 
 
-#head=1
+head=0
 
 #echo '#!/bin/bash' >> exe.sh
 
@@ -119,17 +119,17 @@ for line in `cat /root/httprobe_all.txt`
 do
 
 #length=`wc -l /root/httprobe_all.txt|grep -o -P ".*?(?=\ )"`
-#for((head=1;head<$length;head+=1))
+#for((head=0;head<$length;head+=1))
 #do
 
-name=.html ; txt=$head$name ; head=http:// ; url=$head$line
+name=.html ; txt=$head$name ;  url=$head$line
 
 #echo '#!/bin/bash' >> $head.sh
 #echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
 #echo "rm $head.sh" >> $head.sh
 #echo "bash $head.sh" >> exe.sh
 
-#head=$((head+1))
+head=$((head+1))
 ./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
 done
 
@@ -149,23 +149,23 @@ cp /root/script/6_port/masnmapscan-V1.0/scan_url_port.txt $output/masscan_detail
 
 
 
-### urlwatch添加
-
-#echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
-num=1
-echo "#!/bin/bash" >> exe.sh
-for url in `cat /root/httprobe_all.txt`
-do
-mkdir $num
-echo "#!/bin/bash" >> $num/$num.sh
-echo "urlwatch --add url=$url" >> $num/$num.sh
-echo "rm -r $num" >> $num/$num.sh
-echo "bash $num/$num.sh" >> exe.sh
-num=$((num+1))
-done
-cat exe.sh | parallel --jobs 0 --delay 0.5
-rm exe.sh
-rm -r dir_*
+#### urlwatch添加
+#
+##echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
+#num=1
+#echo "#!/bin/bash" >> exe.sh
+#for url in `cat /root/httprobe_all.txt`
+#do
+#mkdir $num
+#echo "#!/bin/bash" >> $num/$num.sh
+#echo "urlwatch --add url=$url" >> $num/$num.sh
+#echo "rm -r $num" >> $num/$num.sh
+#echo "bash $num/$num.sh" >> exe.sh
+#num=$((num+1))
+#done
+#cat exe.sh | parallel --jobs 0 --delay 0.5
+#rm exe.sh
+#rm -r dir_*
 
 
 ### 发邮件 ； 清空$output ； 发确认信息 ； 结束if urlwatch
@@ -178,7 +178,7 @@ rm -r $output
 
 done
 rm /root/httprobe_all.txt
-urlwatch
+#urlwatch
 fi
 rm /root/var.txt
 rm /root/screenlog.0
@@ -304,7 +304,7 @@ cd /root/run
 
 
 
-#head=1
+head=0
 
 #echo '#!/bin/bash' >> exe.sh
 
@@ -313,17 +313,17 @@ for line in `cat /root/httprobe_all.txt`
 do
 
 #length=`wc -l /root/httprobe_all.txt|grep -o -P ".*?(?=\ )"`
-#for((head=1;head<$length;head+=1))
+#for((head=0;head<$length;head+=1))
 #do
 
-name=.html ; txt=$head$name ; head=http:// ; url=$head$line
+name=.html ; txt=$head$name ;  url=$head$line
 
 #echo '#!/bin/bash' >> $head.sh
 #echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
 #echo "rm $head.sh" >> $head.sh
 #echo "bash $head.sh" >> exe.sh
 
-#head=$((head+1))
+head=$((head+1))
 ./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
 done
 
@@ -343,23 +343,23 @@ cp /root/script/6_port/masnmapscan-V1.0/scan_url_port.txt $output/masscan_detail
 
 
 
-### urlwatch添加
-
-#echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
-num=1
-echo "#!/bin/bash" >> exe.sh
-for url in `cat /root/httprobe_all.txt`
-do
-mkdir $num
-echo "#!/bin/bash" >> $num/$num.sh
-echo "urlwatch --add url=$url" >> $num/$num.sh
-echo "rm -r $num" >> $num/$num.sh
-echo "bash $num/$num.sh" >> exe.sh
-num=$((num+1))
-done
-cat exe.sh | parallel --jobs 0 --delay 0.5
-rm exe.sh
-rm -r dir_*
+#### urlwatch添加
+#
+##echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
+#num=1
+#echo "#!/bin/bash" >> exe.sh
+#for url in `cat /root/httprobe_all.txt`
+#do
+#mkdir $num
+#echo "#!/bin/bash" >> $num/$num.sh
+#echo "urlwatch --add url=$url" >> $num/$num.sh
+#echo "rm -r $num" >> $num/$num.sh
+#echo "bash $num/$num.sh" >> exe.sh
+#num=$((num+1))
+#done
+#cat exe.sh | parallel --jobs 0 --delay 0.5
+#rm exe.sh
+#rm -r dir_*
 
 
 ### 发邮件 ； 清空$output ； 发确认信息 ； 结束if urlwatch
@@ -372,7 +372,7 @@ rm -r $output
 
 done
 rm /root/httprobe_all.txt
-urlwatch
+#urlwatch
 fi
 rm /root/var.txt
 rm /root/screenlog.0
@@ -528,7 +528,7 @@ cd /root/run
 
 
 
-#head=1
+head=0
 
 #echo '#!/bin/bash' >> exe.sh
 
@@ -537,17 +537,17 @@ for line in `cat /root/httprobe_all.txt`
 do
 
 #length=`wc -l /root/httprobe_all.txt|grep -o -P ".*?(?=\ )"`
-#for((head=1;head<$length;head+=1))
+#for((head=0;head<$length;head+=1))
 #do
 
-name=.html ; txt=$head$name ; head=http:// ; url=$head$line
+name=.html ; txt=$head$name ;  url=$head$line
 
 #echo '#!/bin/bash' >> $head.sh
 #echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
 #echo "rm $head.sh" >> $head.sh
 #echo "bash $head.sh" >> exe.sh
 
-#head=$((head+1))
+head=$((head+1))
 ./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
 done
 
@@ -567,23 +567,23 @@ cp /root/script/6_port/masnmapscan-V1.0/scan_url_port.txt $output/masscan_detail
 
 
 
-### urlwatch添加
-
-#echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
-num=1
-echo "#!/bin/bash" >> exe.sh
-for url in `cat /root/httprobe_all.txt`
-do
-mkdir $num
-echo "#!/bin/bash" >> $num/$num.sh
-echo "urlwatch --add url=$url" >> $num/$num.sh
-echo "rm -r $num" >> $num/$num.sh
-echo "bash $num/$num.sh" >> exe.sh
-num=$((num+1))
-done
-cat exe.sh | parallel --jobs 0 --delay 0.5
-rm exe.sh
-rm -r dir_*
+#### urlwatch添加
+#
+##echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
+#num=1
+#echo "#!/bin/bash" >> exe.sh
+#for url in `cat /root/httprobe_all.txt`
+#do
+#mkdir $num
+#echo "#!/bin/bash" >> $num/$num.sh
+#echo "urlwatch --add url=$url" >> $num/$num.sh
+#echo "rm -r $num" >> $num/$num.sh
+#echo "bash $num/$num.sh" >> exe.sh
+#num=$((num+1))
+#done
+#cat exe.sh | parallel --jobs 0 --delay 0.5
+#rm exe.sh
+#rm -r dir_*
 
 
 ### 发邮件 ； 清空$output ； 发确认信息 ； 结束if urlwatch
@@ -596,7 +596,7 @@ rm -r $output
 
 done
 rm /root/httprobe_all.txt
-urlwatch
+#urlwatch
 fi
 rm /root/var.txt
 rm /root/screenlog.0
@@ -751,7 +751,7 @@ cd /root/run
 
 
 
-#head=1
+head=0
 
 #echo '#!/bin/bash' >> exe.sh
 
@@ -760,17 +760,17 @@ for line in `cat /root/httprobe_all.txt`
 do
 
 #length=`wc -l /root/httprobe_all.txt|grep -o -P ".*?(?=\ )"`
-#for((head=1;head<$length;head+=1))
+#for((head=0;head<$length;head+=1))
 #do
 
-name=.html ; txt=$head$name ; head=http:// ; url=$head$line
+name=.html ; txt=$head$name ;  url=$head$line
 
 #echo '#!/bin/bash' >> $head.sh
 #echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
 #echo "rm $head.sh" >> $head.sh
 #echo "bash $head.sh" >> exe.sh
 
-#head=$((head+1))
+head=$((head+1))
 ./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
 done
 
@@ -790,23 +790,23 @@ cp /root/script/6_port/masnmapscan-V1.0/scan_url_port.txt $output/masscan_detail
 
 
 
-### urlwatch添加
-
-#echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
-num=1
-echo "#!/bin/bash" >> exe.sh
-for url in `cat /root/httprobe_all.txt`
-do
-mkdir $num
-echo "#!/bin/bash" >> $num/$num.sh
-echo "urlwatch --add url=$url" >> $num/$num.sh
-echo "rm -r $num" >> $num/$num.sh
-echo "bash $num/$num.sh" >> exe.sh
-num=$((num+1))
-done
-cat exe.sh | parallel --jobs 0 --delay 0.5
-rm exe.sh
-rm -r dir_*
+#### urlwatch添加
+#
+##echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
+#num=1
+#echo "#!/bin/bash" >> exe.sh
+#for url in `cat /root/httprobe_all.txt`
+#do
+#mkdir $num
+#echo "#!/bin/bash" >> $num/$num.sh
+#echo "urlwatch --add url=$url" >> $num/$num.sh
+#echo "rm -r $num" >> $num/$num.sh
+#echo "bash $num/$num.sh" >> exe.sh
+#num=$((num+1))
+#done
+#cat exe.sh | parallel --jobs 0 --delay 0.5
+#rm exe.sh
+#rm -r dir_*
 
 
 ### 发邮件 ； 清空$output ； 发确认信息 ； 结束if urlwatch
@@ -819,7 +819,7 @@ rm -r $output
 
 done
 rm /root/httprobe_all.txt
-urlwatch
+#urlwatch
 fi
 rm /root/var.txt
 rm /root/screenlog.0
@@ -950,7 +950,7 @@ cd /root/run
 
 
 
-#head=1
+head=0
 
 #echo '#!/bin/bash' >> exe.sh
 
@@ -959,17 +959,17 @@ for line in `cat /root/httprobe_all.txt`
 do
 
 #length=`wc -l /root/httprobe_all.txt|grep -o -P ".*?(?=\ )"`
-#for((head=1;head<$length;head+=1))
+#for((head=0;head<$length;head+=1))
 #do
 
-name=.html ; txt=$head$name ; head=http:// ; url=$head$line
+name=.html ; txt=$head$name ;  url=$head$line
 
 #echo '#!/bin/bash' >> $head.sh
 #echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
 #echo "rm $head.sh" >> $head.sh
 #echo "bash $head.sh" >> exe.sh
 
-#head=$((head+1))
+head=$((head+1))
 ./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
 done
 
@@ -991,21 +991,21 @@ cp /root/script/6_port/masnmapscan-V1.0/scan_url_port.txt $output/masscan_detail
 
 ### urlwatch添加
 
-#echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
-num=1
-echo "#!/bin/bash" >> exe.sh
-for url in `cat /root/httprobe_all.txt`
-do
-mkdir $num
-echo "#!/bin/bash" >> $num/$num.sh
-echo "urlwatch --add url=$url" >> $num/$num.sh
-echo "rm -r $num" >> $num/$num.sh
-echo "bash $num/$num.sh" >> exe.sh
-num=$((num+1))
-done
-cat exe.sh | parallel --jobs 0 --delay 0.5
-rm exe.sh
-rm -r dir_*
+##echo '#!/bin/bash'> $output/urlwatch.sh ; cat $var > $output/urlwatch.sh ; bash $output/urlwatch.sh ; mv $output/urlwatch.sh $output/urlwatch.txt
+#num=1
+#echo "#!/bin/bash" >> exe.sh
+#for url in `cat /root/httprobe_all.txt`
+#do
+#mkdir $num
+#echo "#!/bin/bash" >> $num/$num.sh
+#echo "urlwatch --add url=$url" >> $num/$num.sh
+#echo "rm -r $num" >> $num/$num.sh
+#echo "bash $num/$num.sh" >> exe.sh
+#num=$((num+1))
+#done
+#cat exe.sh | parallel --jobs 0 --delay 0.5
+#rm exe.sh
+#rm -r dir_*
 
 
 ### 发邮件 ； 清空$output ； 发确认信息 ； 结束if urlwatch
@@ -1018,7 +1018,7 @@ rm -r $output
 
 done
 rm /root/httprobe_all.txt
-urlwatch
+#urlwatch
 fi
 rm /root/var.txt
 rm /root/screenlog.0
