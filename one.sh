@@ -83,7 +83,6 @@ sed -n ''$i','$add'p' /root/run/target.txt > $var ; var=$var ; export var=$var
 
 curl -L github.com/chaitin/xray/releases|grep -oP "(?<=\<a\ href\=\"\/chaitin\/xray\/releases\/download\/).*?(?=\/xray\_linux\_amd64\.zip\")" > /root/run/zip.txt
 
-sort -u /root/run/zip.txt -o /root/run/zip.txt ; sort -u /root/run/zip1.txt -o /root/run/zip1.txt
 
 comm -3 /root/run/zip.txt /root/run/zip1.txt > /root/run/release.txt ; sed 's/[[:space:]]//g' /root/run/release.txt > space.txt ; > /root/run/release.txt ; cat space.txt > /root/run/release.txt ; rm space.txt
 
@@ -280,7 +279,6 @@ sed -n ''$i','$add'p' /root/run/target.txt > $var ; var=$var ; export var=$var
 
 curl -L github.com/chaitin/xray/releases|grep -oP "(?<=\<a\ href\=\"\/chaitin\/xray\/releases\/download\/).*?(?=\/xray\_linux\_amd64\.zip\")" > /root/run/zip.txt
 
-sort -u /root/run/zip.txt -o /root/run/zip.txt ; sort -u /root/run/zip1.txt -o /root/run/zip1.txt
 
 comm -3 /root/run/zip.txt /root/run/zip1.txt > /root/run/release.txt ; sed 's/[[:space:]]//g' /root/run/release.txt > space.txt ; > /root/run/release.txt ; cat space.txt > /root/run/release.txt ; rm space.txt
 
@@ -507,7 +505,6 @@ sed -n ''$i','$add'p' /root/run/target.txt > $var ; var=$var ; export var=$var
 
 curl -L github.com/chaitin/xray/releases|grep -oP "(?<=\<a\ href\=\"\/chaitin\/xray\/releases\/download\/).*?(?=\/xray\_linux\_amd64\.zip\")" > /root/run/zip.txt
 
-sort -u /root/run/zip.txt -o /root/run/zip.txt ; sort -u /root/run/zip1.txt -o /root/run/zip1.txt
 
 comm -3 /root/run/zip.txt /root/run/zip1.txt > /root/run/release.txt ; sed 's/[[:space:]]//g' /root/run/release.txt > space.txt ; > /root/run/release.txt ; cat space.txt > /root/run/release.txt ; rm space.txt
 
@@ -733,7 +730,6 @@ sed -n ''$i','$add'p' /root/run/target.txt > $var ; var=$var ; export var=$var
 
 curl -L github.com/chaitin/xray/releases|grep -oP "(?<=\<a\ href\=\"\/chaitin\/xray\/releases\/download\/).*?(?=\/xray\_linux\_amd64\.zip\")" > /root/run/zip.txt
 
-sort -u /root/run/zip.txt -o /root/run/zip.txt ; sort -u /root/run/zip1.txt -o /root/run/zip1.txt
 
 comm -3 /root/run/zip.txt /root/run/zip1.txt > /root/run/release.txt ; sed 's/[[:space:]]//g' /root/run/release.txt > space.txt ; > /root/run/release.txt ; cat space.txt > /root/run/release.txt ; rm space.txt
 
@@ -935,7 +931,6 @@ sed -n ''$i','$add'p' /root/run/target.txt > $var ; var=$var ; export var=$var
 
 curl -L github.com/chaitin/xray/releases|grep -oP "(?<=\<a\ href\=\"\/chaitin\/xray\/releases\/download\/).*?(?=\/xray\_linux\_amd64\.zip\")" > /root/run/zip.txt
 
-sort -u /root/run/zip.txt -o /root/run/zip.txt ; sort -u /root/run/zip1.txt -o /root/run/zip1.txt
 
 comm -3 /root/run/zip.txt /root/run/zip1.txt > /root/run/release.txt ; sed 's/[[:space:]]//g' /root/run/release.txt > space.txt ; > /root/run/release.txt ; cat space.txt > /root/run/release.txt ; rm space.txt
 
