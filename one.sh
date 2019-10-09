@@ -109,13 +109,10 @@ xray=$output/xray/
 
 cd /root/run
 
-./xray_linux_amd64
 
-sed -e "s/    ie_feature: false/    ie_feature: true/g" config.yaml > 1.txt ; mv 1.txt config.yaml
+#head=1
 
-head=1
-
-echo '#!/bin/bash' >> exe.sh
+#echo '#!/bin/bash' >> exe.sh
 
 for line in `cat /root/httprobe_all.txt`
 
@@ -127,17 +124,17 @@ do
 
 name=.html ; txt=$head$name ; head=http:// ; url=$head$line
 
-echo '#!/bin/bash' >> $head.sh
-echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
-echo "rm $head.sh" >> $head.sh
-echo "bash $head.sh" >> exe.sh
+#echo '#!/bin/bash' >> $head.sh
+#echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
+#echo "rm $head.sh" >> $head.sh
+#echo "bash $head.sh" >> exe.sh
 
-head=$((head+1))
-
+#head=$((head+1))
+./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
 done
 
-cat /root/run/exe.sh | parallel --jobs 0 --delay 1
-rm /root/run/exe.sh
+#cat /root/run/exe.sh | parallel --jobs 0 --delay 1
+#rm /root/run/exe.sh
 
 
 fi
@@ -305,13 +302,11 @@ xray=$output/xray/
 
 cd /root/run
 
-./xray_linux_amd64
 
-sed -e "s/    ie_feature: false/    ie_feature: true/g" config.yaml > 1.txt ; mv 1.txt config.yaml
 
-head=1
+#head=1
 
-echo '#!/bin/bash' >> exe.sh
+#echo '#!/bin/bash' >> exe.sh
 
 for line in `cat /root/httprobe_all.txt`
 
@@ -323,17 +318,17 @@ do
 
 name=.html ; txt=$head$name ; head=http:// ; url=$head$line
 
-echo '#!/bin/bash' >> $head.sh
-echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
-echo "rm $head.sh" >> $head.sh
-echo "bash $head.sh" >> exe.sh
+#echo '#!/bin/bash' >> $head.sh
+#echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
+#echo "rm $head.sh" >> $head.sh
+#echo "bash $head.sh" >> exe.sh
 
-head=$((head+1))
-
+#head=$((head+1))
+./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
 done
 
-cat /root/run/exe.sh | parallel --jobs 0 --delay 1
-rm /root/run/exe.sh
+#cat /root/run/exe.sh | parallel --jobs 0 --delay 1
+#rm /root/run/exe.sh
 
 
 fi
@@ -531,13 +526,11 @@ xray=$output/xray/
 
 cd /root/run
 
-./xray_linux_amd64
 
-sed -e "s/    ie_feature: false/    ie_feature: true/g" config.yaml > 1.txt ; mv 1.txt config.yaml
 
-head=1
+#head=1
 
-echo '#!/bin/bash' >> exe.sh
+#echo '#!/bin/bash' >> exe.sh
 
 for line in `cat /root/httprobe_all.txt`
 
@@ -549,17 +542,17 @@ do
 
 name=.html ; txt=$head$name ; head=http:// ; url=$head$line
 
-echo '#!/bin/bash' >> $head.sh
-echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
-echo "rm $head.sh" >> $head.sh
-echo "bash $head.sh" >> exe.sh
+#echo '#!/bin/bash' >> $head.sh
+#echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
+#echo "rm $head.sh" >> $head.sh
+#echo "bash $head.sh" >> exe.sh
 
-head=$((head+1))
-
+#head=$((head+1))
+./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
 done
 
-cat /root/run/exe.sh | parallel --jobs 0 --delay 1
-rm /root/run/exe.sh
+#cat /root/run/exe.sh | parallel --jobs 0 --delay 1
+#rm /root/run/exe.sh
 
 
 fi
@@ -756,13 +749,11 @@ xray=$output/xray/
 
 cd /root/run
 
-./xray_linux_amd64
 
-sed -e "s/    ie_feature: false/    ie_feature: true/g" config.yaml > 1.txt ; mv 1.txt config.yaml
 
-head=1
+#head=1
 
-echo '#!/bin/bash' >> exe.sh
+#echo '#!/bin/bash' >> exe.sh
 
 for line in `cat /root/httprobe_all.txt`
 
@@ -774,17 +765,17 @@ do
 
 name=.html ; txt=$head$name ; head=http:// ; url=$head$line
 
-echo '#!/bin/bash' >> $head.sh
-echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
-echo "rm $head.sh" >> $head.sh
-echo "bash $head.sh" >> exe.sh
+#echo '#!/bin/bash' >> $head.sh
+#echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
+#echo "rm $head.sh" >> $head.sh
+#echo "bash $head.sh" >> exe.sh
 
-head=$((head+1))
-
+#head=$((head+1))
+./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
 done
 
-cat /root/run/exe.sh | parallel --jobs 0 --delay 1
-rm /root/run/exe.sh
+#cat /root/run/exe.sh | parallel --jobs 0 --delay 1
+#rm /root/run/exe.sh
 
 
 fi
@@ -957,13 +948,11 @@ xray=$output/xray/
 
 cd /root/run
 
-./xray_linux_amd64
 
-sed -e "s/    ie_feature: false/    ie_feature: true/g" config.yaml > 1.txt ; mv 1.txt config.yaml
 
-head=1
+#head=1
 
-echo '#!/bin/bash' >> exe.sh
+#echo '#!/bin/bash' >> exe.sh
 
 for line in `cat /root/httprobe_all.txt`
 
@@ -975,17 +964,17 @@ do
 
 name=.html ; txt=$head$name ; head=http:// ; url=$head$line
 
-echo '#!/bin/bash' >> $head.sh
-echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
-echo "rm $head.sh" >> $head.sh
-echo "bash $head.sh" >> exe.sh
+#echo '#!/bin/bash' >> $head.sh
+#echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
+#echo "rm $head.sh" >> $head.sh
+#echo "bash $head.sh" >> exe.sh
 
-head=$((head+1))
-
+#head=$((head+1))
+./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
 done
 
-cat /root/run/exe.sh | parallel --jobs 0 --delay 1
-rm /root/run/exe.sh
+#cat /root/run/exe.sh | parallel --jobs 0 --delay 1
+#rm /root/run/exe.sh
 
 
 fi
