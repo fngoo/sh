@@ -50,16 +50,16 @@ git clone https://github.com/fngoo/xunfeng ; sh xunfeng/xunfeng.sh ; rm -r /root
 
 mkdir /root/script
 
-cd /root/
-python3 -m pip install --upgrade urlwatch
-urlwatch
-git clone https://github.com/fngoo/txt
-cd txt
-> /root/.config/urlwatch/urlwatch.yaml
-cat 1.txt >/root/.config/urlwatch/urlwatch.yaml
-cd /root/ ; rm -r /root/txt
-echo '1' > /root/.config/urlwatch/urls.yaml
-> /root/.config/urlwatch/urls.yaml
+#cd /root/
+#python3 -m pip install --upgrade urlwatch
+#urlwatch
+#git clone https://github.com/fngoo/txt
+#cd txt
+#> /root/.config/urlwatch/urlwatch.yaml
+#cat 1.txt >/root/.config/urlwatch/urlwatch.yaml
+#cd /root/ ; rm -r /root/txt
+#echo '1' > /root/.config/urlwatch/urls.yaml
+#> /root/.config/urlwatch/urls.yaml
 
 mkdir /root/script/git
 cd /root/script/git
