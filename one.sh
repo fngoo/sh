@@ -110,7 +110,7 @@ xray=$output/xray/
 cd /root/run
 
 
-head=0
+#head=0
 
 #echo '#!/bin/bash' >> exe.sh
 
@@ -119,18 +119,18 @@ for line in `cat /root/httprobe_all.txt`
 do
 
 #length=`wc -l /root/httprobe_all.txt|grep -o -P ".*?(?=\ )"`
-#for((head=0;head<$length;head+=1))
+#for((#head=0;head<$length;head+=1))
 #do
 
 name=.html ; txt=$head$name ;  url=$head$line
 
 #echo '#!/bin/bash' >> $head.sh
-#echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
+#echo "./xray_linux_amd64 webscan --url $line --json-output 1.txt" >> $head.sh
 #echo "rm $head.sh" >> $head.sh
 #echo "bash $head.sh" >> exe.sh
 
-head=$((head+1))
-./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
+#head=$((head+1))
+./xray_linux_amd64 webscan --url "$line" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo ' ' >> $output/xray/xray.txt ; rm 1.txt
 done
 
 #cat /root/run/exe.sh | parallel --jobs 0 --delay 1
@@ -304,7 +304,7 @@ cd /root/run
 
 
 
-head=0
+#head=0
 
 #echo '#!/bin/bash' >> exe.sh
 
@@ -313,18 +313,18 @@ for line in `cat /root/httprobe_all.txt`
 do
 
 #length=`wc -l /root/httprobe_all.txt|grep -o -P ".*?(?=\ )"`
-#for((head=0;head<$length;head+=1))
+#for((#head=0;head<$length;head+=1))
 #do
 
 name=.html ; txt=$head$name ;  url=$head$line
 
 #echo '#!/bin/bash' >> $head.sh
-#echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
+#echo "./xray_linux_amd64 webscan --url $line --json-output 1.txt" >> $head.sh
 #echo "rm $head.sh" >> $head.sh
 #echo "bash $head.sh" >> exe.sh
 
-head=$((head+1))
-./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
+#head=$((head+1))
+./xray_linux_amd64 webscan --url "$line" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo ' ' >> $output/xray/xray.txt ; rm 1.txt
 done
 
 #cat /root/run/exe.sh | parallel --jobs 0 --delay 1
@@ -528,7 +528,7 @@ cd /root/run
 
 
 
-head=0
+#head=0
 
 #echo '#!/bin/bash' >> exe.sh
 
@@ -537,18 +537,18 @@ for line in `cat /root/httprobe_all.txt`
 do
 
 #length=`wc -l /root/httprobe_all.txt|grep -o -P ".*?(?=\ )"`
-#for((head=0;head<$length;head+=1))
+#for((#head=0;head<$length;head+=1))
 #do
 
 name=.html ; txt=$head$name ;  url=$head$line
 
 #echo '#!/bin/bash' >> $head.sh
-#echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
+#echo "./xray_linux_amd64 webscan --url $line --json-output 1.txt" >> $head.sh
 #echo "rm $head.sh" >> $head.sh
 #echo "bash $head.sh" >> exe.sh
 
-head=$((head+1))
-./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
+#head=$((head+1))
+./xray_linux_amd64 webscan --url "$line" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo ' ' >> $output/xray/xray.txt ; rm 1.txt
 done
 
 #cat /root/run/exe.sh | parallel --jobs 0 --delay 1
@@ -751,7 +751,7 @@ cd /root/run
 
 
 
-head=0
+#head=0
 
 #echo '#!/bin/bash' >> exe.sh
 
@@ -760,18 +760,18 @@ for line in `cat /root/httprobe_all.txt`
 do
 
 #length=`wc -l /root/httprobe_all.txt|grep -o -P ".*?(?=\ )"`
-#for((head=0;head<$length;head+=1))
+#for((#head=0;head<$length;head+=1))
 #do
 
 name=.html ; txt=$head$name ;  url=$head$line
 
 #echo '#!/bin/bash' >> $head.sh
-#echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
+#echo "./xray_linux_amd64 webscan --url $line --json-output 1.txt" >> $head.sh
 #echo "rm $head.sh" >> $head.sh
 #echo "bash $head.sh" >> exe.sh
 
-head=$((head+1))
-./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
+#head=$((head+1))
+./xray_linux_amd64 webscan --url "$line" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo ' ' >> $output/xray/xray.txt ; rm 1.txt
 done
 
 #cat /root/run/exe.sh | parallel --jobs 0 --delay 1
@@ -950,7 +950,7 @@ cd /root/run
 
 
 
-head=0
+#head=0
 
 #echo '#!/bin/bash' >> exe.sh
 
@@ -959,18 +959,18 @@ for line in `cat /root/httprobe_all.txt`
 do
 
 #length=`wc -l /root/httprobe_all.txt|grep -o -P ".*?(?=\ )"`
-#for((head=0;head<$length;head+=1))
+#for((#head=0;head<$length;head+=1))
 #do
 
 name=.html ; txt=$head$name ;  url=$head$line
 
 #echo '#!/bin/bash' >> $head.sh
-#echo "./xray_linux_amd64 webscan --url $line --html-output $xray$txt" >> $head.sh
+#echo "./xray_linux_amd64 webscan --url $line --json-output 1.txt" >> $head.sh
 #echo "rm $head.sh" >> $head.sh
 #echo "bash $head.sh" >> exe.sh
 
-head=$((head+1))
-./xray_linux_amd64 webscan --url "$line" --html-output $xray$txt
+#head=$((head+1))
+./xray_linux_amd64 webscan --url "$line" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo ' ' >> $output/xray/xray.txt ; rm 1.txt
 done
 
 #cat /root/run/exe.sh | parallel --jobs 0 --delay 1
