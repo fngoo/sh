@@ -181,7 +181,7 @@ rm /root/httprobe_all.txt
 #urlwatch
 fi
 rm /root/var.txt
-rm /root/screenlog.0
+> /root/screenlog.0
 
 
 
@@ -375,7 +375,7 @@ rm /root/httprobe_all.txt
 #urlwatch
 fi
 rm /root/var.txt
-rm /root/screenlog.0
+> /root/screenlog.0
 
 
 
@@ -599,7 +599,7 @@ rm /root/httprobe_all.txt
 #urlwatch
 fi
 rm /root/var.txt
-rm /root/screenlog.0
+> /root/screenlog.0
 
 
 
@@ -822,7 +822,7 @@ rm /root/httprobe_all.txt
 #urlwatch
 fi
 rm /root/var.txt
-rm /root/screenlog.0
+> /root/screenlog.0
 
 
 
@@ -1021,4 +1021,4 @@ rm /root/httprobe_all.txt
 #urlwatch
 fi
 rm /root/var.txt
-rm /root/screenlog.0
+> /root/screenlog.0
