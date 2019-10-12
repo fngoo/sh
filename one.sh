@@ -425,7 +425,7 @@ then
     cd /root/script/0_subdomain/massdns
     for brute in `cat $var`
     do
-    python scripts/subbrute.py lists/names.txt $brute | massdns -r lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt
+    python scripts/subbrute.py lists/names.txt $brute | massdns -r lists/resolvers.txt —-root -t A --hashmap-size 3000 -o S -w results.txt
     awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u results.txt -o results.txt
     cat results.txt >> $var ; sort -u $var -o $var
     done
@@ -658,7 +658,7 @@ then
     done
        
 
-    cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
+    cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt —-root -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
 
     cat $var > /root/var.txt
     seq=$(seq 1 100 `wc -l  /root/var.txt | grep -o -P ".*?(?=\ )"`)
