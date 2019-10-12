@@ -47,8 +47,6 @@ git clone https://github.com/fngoo/xunfeng ; sh xunfeng/xunfeng.sh ; rm -r /root
 
 
 
-
-script /root/screenlog.0
 mkdir /root/script
 
 #cd /root/
