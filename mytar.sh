@@ -425,7 +425,7 @@ then
     cd /root/script/0_subdomain/massdns
     for brute in `cat $var`
     do
-    python scripts/subbrute.py lists/names.txt $brute | massdns -r lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt
+    python scripts/subbrute.py lists/names.txt $brute | massdns -r lists/resolvers.txt —-root -t A --hashmap-size 3000 -o S -w results.txt
     awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u results.txt -o results.txt
     cat results.txt >> $var ; sort -u $var -o $var
     done
@@ -652,7 +652,7 @@ then
     cd /root/script/0_subdomain/massdns
     for brute in `cat $var`
     do
-    python scripts/subbrute.py lists/names.txt $brute | massdns -r lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt
+    python scripts/subbrute.py lists/names.txt $brute | massdns -r lists/resolvers.txt —-root -t A --hashmap-size 3000 -o S -w results.txt
     awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u results.txt -o results.txt
     cat results.txt >> $var ; sort -u $var -o $var
     done
