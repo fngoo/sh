@@ -118,6 +118,7 @@ git clone https://github.com/FortyNorthSecurity/EyeWitness
 cd EyeWitness/setup ; bash setup.sh ; bash setup.sh ; pip3 install --upgrade pyasn1-modules
 cd /root/
 go get github.com/003random/getJS
+pip install vl
 
 
 mkdir /root/script/5_dir
