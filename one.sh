@@ -113,7 +113,7 @@ cd /root/run
 #head=0
 
 #echo '#!/bin/bash' >> exe.sh
-
+i=1
 for line in `cat /root/httprobe_all.txt`
 
 do
@@ -130,9 +130,12 @@ name=.html ; txt=$head$name ;  url=$head$line
 #echo "bash $head.sh" >> exe.sh
 
 #head=$((head+1))
-./xray_linux_amd64 webscan --url "$line" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo ' ' >> $output/xray/xray.txt ; rm 1.txt
+mkdir /root/dir_${i}
+echo "cd /root/dir_${i} ; cp -r /root/run/* /root/dir_${i} ; ./xray_linux_amd64 webscan --url \"$line\" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo \" \" >> $output/xray/xray.txt ; rm 1.txt ; cd ../ ; rm -r /root/dir_${i}" >> /root/exe.sh
+i=$((i+1))
 done
-
+cat /root/exe.sh | parallel --jobs 0 --delay 0.6 --retries 1 --timeout 600
+rm -r /root/dir_* ; rm /root/exe.sh
 #cat /root/run/exe.sh | parallel --jobs 0 --delay 1
 #rm /root/run/exe.sh
 
@@ -303,11 +306,10 @@ xray=$output/xray/
 cd /root/run
 
 
-
 #head=0
 
 #echo '#!/bin/bash' >> exe.sh
-
+i=1
 for line in `cat /root/httprobe_all.txt`
 
 do
@@ -324,9 +326,12 @@ name=.html ; txt=$head$name ;  url=$head$line
 #echo "bash $head.sh" >> exe.sh
 
 #head=$((head+1))
-./xray_linux_amd64 webscan --url "$line" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo ' ' >> $output/xray/xray.txt ; rm 1.txt
+mkdir /root/dir_${i}
+echo "cd /root/dir_${i} ; cp -r /root/run/* /root/dir_${i} ; ./xray_linux_amd64 webscan --url \"$line\" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo \" \" >> $output/xray/xray.txt ; rm 1.txt ; cd ../ ; rm -r /root/dir_${i}" >> /root/exe.sh
+i=$((i+1))
 done
-
+cat /root/exe.sh | parallel --jobs 0 --delay 0.6 --retries 1 --timeout 600
+rm -r /root/dir_* ; rm /root/exe.sh
 #cat /root/run/exe.sh | parallel --jobs 0 --delay 1
 #rm /root/run/exe.sh
 
@@ -527,11 +532,10 @@ xray=$output/xray/
 cd /root/run
 
 
-
 #head=0
 
 #echo '#!/bin/bash' >> exe.sh
-
+i=1
 for line in `cat /root/httprobe_all.txt`
 
 do
@@ -548,9 +552,12 @@ name=.html ; txt=$head$name ;  url=$head$line
 #echo "bash $head.sh" >> exe.sh
 
 #head=$((head+1))
-./xray_linux_amd64 webscan --url "$line" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo ' ' >> $output/xray/xray.txt ; rm 1.txt
+mkdir /root/dir_${i}
+echo "cd /root/dir_${i} ; cp -r /root/run/* /root/dir_${i} ; ./xray_linux_amd64 webscan --url \"$line\" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo \" \" >> $output/xray/xray.txt ; rm 1.txt ; cd ../ ; rm -r /root/dir_${i}" >> /root/exe.sh
+i=$((i+1))
 done
-
+cat /root/exe.sh | parallel --jobs 0 --delay 0.6 --retries 1 --timeout 600
+rm -r /root/dir_* ; rm /root/exe.sh
 #cat /root/run/exe.sh | parallel --jobs 0 --delay 1
 #rm /root/run/exe.sh
 
@@ -750,11 +757,10 @@ xray=$output/xray/
 cd /root/run
 
 
-
 #head=0
 
 #echo '#!/bin/bash' >> exe.sh
-
+i=1
 for line in `cat /root/httprobe_all.txt`
 
 do
@@ -771,9 +777,12 @@ name=.html ; txt=$head$name ;  url=$head$line
 #echo "bash $head.sh" >> exe.sh
 
 #head=$((head+1))
-./xray_linux_amd64 webscan --url "$line" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo ' ' >> $output/xray/xray.txt ; rm 1.txt
+mkdir /root/dir_${i}
+echo "cd /root/dir_${i} ; cp -r /root/run/* /root/dir_${i} ; ./xray_linux_amd64 webscan --url \"$line\" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo \" \" >> $output/xray/xray.txt ; rm 1.txt ; cd ../ ; rm -r /root/dir_${i}" >> /root/exe.sh
+i=$((i+1))
 done
-
+cat /root/exe.sh | parallel --jobs 0 --delay 0.6 --retries 1 --timeout 600
+rm -r /root/dir_* ; rm /root/exe.sh
 #cat /root/run/exe.sh | parallel --jobs 0 --delay 1
 #rm /root/run/exe.sh
 
@@ -949,11 +958,10 @@ xray=$output/xray/
 cd /root/run
 
 
-
 #head=0
 
 #echo '#!/bin/bash' >> exe.sh
-
+i=1
 for line in `cat /root/httprobe_all.txt`
 
 do
@@ -970,9 +978,12 @@ name=.html ; txt=$head$name ;  url=$head$line
 #echo "bash $head.sh" >> exe.sh
 
 #head=$((head+1))
-./xray_linux_amd64 webscan --url "$line" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo ' ' >> $output/xray/xray.txt ; rm 1.txt
+mkdir /root/dir_${i}
+echo "cd /root/dir_${i} ; cp -r /root/run/* /root/dir_${i} ; ./xray_linux_amd64 webscan --url \"$line\" --json-output 1.txt ; cat 1.txt >> $output/xray/xray.txt ; echo \" \" >> $output/xray/xray.txt ; rm 1.txt ; cd ../ ; rm -r /root/dir_${i}" >> /root/exe.sh
+i=$((i+1))
 done
-
+cat /root/exe.sh | parallel --jobs 0 --delay 0.6 --retries 1 --timeout 600
+rm -r /root/dir_* ; rm /root/exe.sh
 #cat /root/run/exe.sh | parallel --jobs 0 --delay 1
 #rm /root/run/exe.sh
 
