@@ -103,7 +103,7 @@ go get -u github.com/tomnomnom/httprobe
 cd /root/script/3_httprobe
 git clone https://github.com/verovaleros/webcrawler ; mv webcrawler/crawler.py crawler.py ; rm -r webcrawler
 cd /root/script/3_httprobe
-git clone https://github.com/fngoo/Arjun
+git clone https://github.com/s0md3v/Arjun
 cd /root/script/3_httprobe
 git clone https://github.com/fngoo/XSStrike ; cd /root/script/3_httprobe/XSStrike ; pip3 install -r requirements.txt
 cd /root/script/3_httprobe
