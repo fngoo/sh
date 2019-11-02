@@ -45,6 +45,10 @@ python -m pip install --upgrade pip
 cd /root/
 git clone https://github.com/fngoo/xunfeng ; sh xunfeng/xunfeng.sh ; rm -r /root/xunfeng
 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+dpkg -i ./google-chrome-stable_current_amd64.deb
+apt-get -f install
+rm google-chrome-stable_current_amd64.deb
 
 
 mkdir /root/script
