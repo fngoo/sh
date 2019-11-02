@@ -95,6 +95,7 @@ mkdir /root/script/2_subjack
 cd /root/script/2_subjack
 cd /root/
 go get github.com/haccer/subjack
+go get -u github.com/rverton/webanalyze/...
 
 mkdir /root/script/3_httprobe
 cd /root/script/3_httprobe
