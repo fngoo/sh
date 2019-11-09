@@ -12,3 +12,8 @@ screen -x -S http -X stuff $'\n'
 
 echo "du hast"
 echo "Rammstein - Du Hast"
+echo ""
+echo ""
+echo ""
+echo "http://ip:62345"
+echo "tail -f screenlog.0"
