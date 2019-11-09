@@ -11,3 +11,4 @@ screen -x -S http -X stuff "$cmd"
 screen -x -S http -X stuff $'\n'
 
 echo "du hast"
+echo "Rammstein - Du Hast"
