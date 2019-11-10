@@ -133,7 +133,7 @@ mkdir /root/script/6_port
 cd /root/script/6_port
 git clone https://github.com/gm09519/host2ip
 cd host2ip
-sed -e "s/ip\=\"N\/A\"/continue/g" host2ip.py|tee host2ip.py
+sed "s,ip=\"N\/A\",continue,g" host2ip.py host2ip.py > 1.py ; mv 1.py host2ip.py
 cd /root/
 yes|apt install nmap
 cd /root/script/6_port
