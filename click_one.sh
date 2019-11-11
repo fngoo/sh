@@ -137,7 +137,10 @@ sed "s,ip=\"N\/A\",continue,g" host2ip.py host2ip.py > 1.py ; mv 1.py host2ip.py
 cd /root/
 yes|apt install nmap
 cd /root/script/6_port
-git clone https://github.com/fngoo/masnmapscan-V1.0 && cd masnmapscan-V1.0 && pip install -r requirements.txt && touch ip.txt
+git clone https://github.com/fngoo/masscan_to_nmap-1
+cd masscan_to_nmap-1
+pip install prettytable
+pip install -r requirements.txt
 git clone https://github.com/robertdavidgraham/masscan
 cd masscan
 make -j
