@@ -11,28 +11,29 @@ git clone https://github.com/fngoo/sh
 bash sh/du_hast.sh
 ```
 ***
-- [x] 一键部署，SSH进程分离（screen）
-- [x] 根据服务器配置控制线程数（parallel)
-- [x] Web代码热插拔（Github）
-- [x] Web控制输入（Github repo（硬编码））  
+- [x] 一键部署
+- [x] 运行后与SSH进程分离
+- [x] 根据服务器配置控制并行数
+- [x] Web代码热插拔
+- [x] Web控制输入  
 ***
 - [x] DNS解析
 - [x] 子域名收集
 - [x] Github敏感信息发现
-- [x] 云存储桶/容器检测 泄露/错误配置（AWS S3/AZURE/GOOGLE CLOUD)
-- [x] 子域名劫持探测（包含引用的JavaScript所属域名）
+- [x] 云存储桶/容器检测 泄露/错误配置
+- [x] 子域名及引用的JavaScript所属域名劫持探测
 - [ ] HTTP Smuggling
 - [x] 常见Web服务端口截图
 - [x] Web组件识别
-- [x] 端点爬取
+- [x] 爬虫
 - [ ] waybackMachine URL
-- [x] 端点隐藏参数发现
-- [x] XSS扫描（GET方法）
+- [x] 隐藏参数发现
+- [x] XSS
 - [x] HTML敏感信息
 - [x] JavaScript敏感信息
-- [x] JavaScript中端点提取
+- [x] JavaScript端点提取
 - [x] 敏感目录/文件扫描，截图
-- [x] 漏洞扫描及常见PoC利用（无cookie）
+- [x] 漏洞扫描及部分PoC利用
 - [x] 主机开放端口扫描及端口服务识别  
 ***
 - [x] 新输出提醒（Slack api（硬编码）)
