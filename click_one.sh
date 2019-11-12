@@ -43,7 +43,7 @@ python -m pip install --upgrade pip
 #rm -r get-pip.py
 
 cd /root/
-git clone https://github.com/fngoo/xunfeng ; sh xunfeng/xunfeng.sh ; rm -r /root/xunfeng
+#git clone https://github.com/fngoo/xunfeng ; sh xunfeng/xunfeng.sh ; rm -r /root/xunfeng
 
 
 mkdir /root/script
