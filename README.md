@@ -26,6 +26,6 @@ https://github.com/fngoo/sh/blob/master/click_one.sh
 - [x] 漏洞扫描及常见PoC利用（无cookie）
 - [x] 主机开放端口扫描及端口服务识别  
 
-- [x] 流程结束输出提醒（Slack api（硬编码）)
+- [x] 新输出提醒（Slack api（硬编码）)
 - [x] Web端查看输出（Python SimpleHTTPServer）
 - [x] Exploit DB Web PoC更新监控，如与Web组件记录关键词匹配则提醒（Slack api（硬编码））
