@@ -10,5 +10,4 @@ screen -x -S http -X stuff "$cmd"
 screen -x -S http -X stuff $'\n'
 
 
-echo "http://ip:62345"
-echo "tail -f screenlog.0"
+echo "output.zip will be in here." ; echo "http://ip:62345/zip" ; echo "output.txt will be in here." ; echo "http://ip:62345/z_juice"
