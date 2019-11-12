@@ -1,19 +1,19 @@
-注意 脚本目标输入及Slack api采用硬编码，使用时需修改以下文件指定行数
-https://github.com/fngoo/new_Ex/blob/master/new_Ex.sh
-96
-197
-https://github.com/fngoo/sh/blob/master/one.sh
-15
-40
-58
-83
-102
-156
-175
-227
-287
+脚本目标输入及Slack api采用硬编码，使用时需修改以下文件指定行数  
+https://github.com/fngoo/new_Ex/blob/master/new_Ex.sh  
+96  
+197  
+https://github.com/fngoo/sh/blob/master/one.sh  
+15  
+40  
+58  
+83  
+102  
+156  
+175  
+227  
+287  
 ***
-适用于Debian Server
+适用于Debian Server  
 注意，此shell脚本的行为包括端口扫描，大量发包，长期占用CPU
 ```
 apt update
