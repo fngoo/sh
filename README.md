@@ -1,4 +1,5 @@
-脚本目标输入及Slack api采用硬编码，使用时需修改以下文件指定行数  
+>用于可自动化测试的攻击面的胶水脚本，粘合了大量来自Github的轮子，有部分轮子经过小幅度修改
+脚本采用硬编码，使用时需修改以下文件指定行数  
 https://github.com/fngoo/new_Ex/blob/master/new_Ex.sh  
 96  
 197  
@@ -15,16 +16,14 @@ https://github.com/fngoo/sh/blob/master/one.sh
 ***
 适用于Debian Server  
 注意，此shell脚本的行为包括端口扫描，大量发包，长期占用CPU
+**在使用本工具进行检测时，您应确保该行为符合当地的法律法规，并且已经取得了足够的授权。请勿对非授权目标进行扫描。**  
+**如您在使用本工具的过程中存在任何非法行为，您需自行承担相应后果，fngoo将不承担任何法律及连带责任。**
 ```
 apt update
 yes|apt install git
 git clone https://github.com/fngoo/sh
 bash sh/du_hast.sh
 ```
-***
-用于可自动化测试的攻击面  
-粘合了大量来自Github的轮子，有部分轮子经过小幅度修改  
-https://github.com/fngoo/sh/blob/master/click_one.sh
 ***
 - [x] 一键部署，SSH进程分离（screen）
 - [x] 根据服务器配置控制线程数（parallel)
