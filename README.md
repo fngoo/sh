@@ -42,5 +42,6 @@ bash sh/du_hast.sh
 - [x] Web端查看输出（Python SimpleHTTPServer）
 - [x] Exploit DB Web PoC更新监控，如与Web组件记录关键词匹配则提醒（Slack api（硬编码））  
 ***
-![](https://screenshot.net/zh/rq49lam)  
-![](https://screenshot.net/zh/wj40rfl)  
+#Web端查看输出  
+![](https://github.com/fngoo/sh/blob/master/image/example.png)  
+![](https://github.com/fngoo/sh/blob/master/image/txt.png)  
