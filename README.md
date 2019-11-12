@@ -1,4 +1,6 @@
 >一个用于漏洞赏金项目的胶水脚本，粘合了大量来自Github的轮子，有部分轮子经过小幅度修改  
+https://github.com/fngoo/sh/blob/master/click_one.sh  
+***
 脚本采用硬编码，使用时需修改以下文件指定行数  
 https://github.com/fngoo/new_Ex/blob/master/new_Ex.sh  
 96  
