@@ -13,7 +13,7 @@ https://github.com/fngoo/sh/blob/master/click_one.sh
 - [x] Debian一键部署，SSH进程分离（screen）
 - [x] 根据服务器配置控制线程数（parallel)
 - [x] Web实现代码热插拔（Github）
-- [x] Web控制输入（Github repo）
+- [x] Web控制输入（Github repo（硬编码））
 
 - [x] DNS解析
 - [x] 子域名收集
@@ -35,6 +35,6 @@ https://github.com/fngoo/sh/blob/master/click_one.sh
 - [x] 漏洞扫描及常见PoC利用（无cookie）
 - [x] 主机开放端口扫描及端口服务识别
 
-- [x] 输出提醒（Slack api)
+- [x] 输出提醒（Slack api（硬编码）)
 - [x] Web端查看输出（Python SimpleHTTPServer）
-- [x] Exploit DB Web PoC更新监控，如与Web组件记录关键词匹配则提醒（Slack api）
+- [x] Exploit DB Web PoC更新监控，如与Web组件记录关键词匹配则提醒（Slack api（硬编码））
