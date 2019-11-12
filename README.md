@@ -1,11 +1,11 @@
 >一个用于漏洞赏金项目的胶水脚本，粘合了大量来自Github的轮子，有部分轮子经过小幅度修改  
 https://github.com/fngoo/sh/blob/master/click_one.sh  
 ***
-脚本的输入采用硬编码并且使用了大量git clone套娃，故使用前需要数个fork及edit操作  
+由于脚本的输入采用硬编码并且使用了大量git clone套娃，故仅供参考  
 ***
 注意，此shell脚本包括端口扫描，大量发包，长期占用CPU等行为  
 **在使用本工具进行检测时，您应确保该行为符合当地的法律法规，并且已经取得了足够的授权。请勿对非授权目标进行扫描。**  
-**如您在使用本工具的过程中存在任何非法行为，您需自行承担相应后果，fngoo将不承担任何法律及连带责任。**
+**本程序仅供于学习交流，如您在使用本工具的过程中存在任何非法行为，您需自行承担相应后果，本程序开发者将不承担任何法律及连带责任。**
 ```
 仅适用于Debian Server  
 apt update
@@ -40,4 +40,7 @@ bash sh/du_hast.sh
 ***
 - [x] 新输出提醒（Slack api（硬编码）)
 - [x] Web端查看输出（Python SimpleHTTPServer）
-- [x] Exploit DB Web PoC更新监控，如与Web组件记录关键词匹配则提醒（Slack api（硬编码））
+- [x] Exploit DB Web PoC更新监控，如与Web组件记录关键词匹配则提醒（Slack api（硬编码））  
+***
+![](https://screenshot.net/zh/rq49lam)  
+![](https://screenshot.net/zh/wj40rfl)  
