@@ -1,7 +1,8 @@
 >一个用于漏洞赏金项目的胶水脚本，粘合了大量来自Github的轮子，有部分轮子经过小幅度修改  
 https://github.com/fngoo/sh/blob/master/click_one.sh  
 ***
-脚本的输入已写死
+**因为需要随时通过Github的文件控制输入和代码修改，所以脚本的输入已写死**  
+***
 ```
 仅适用于Debian Server  
 apt update
@@ -12,7 +13,7 @@ bash sh/du_hast.sh
 ***
 - [x] 一键部署，SSH进程分离（screen）
 - [x] 根据服务器配置控制线程数（parallel)
-- [x] Web实现代码热插拔（Github）
+- [x] Web代码热插拔（Github）
 - [x] Web控制输入（Github repo（硬编码））  
 ***
 - [x] DNS解析
