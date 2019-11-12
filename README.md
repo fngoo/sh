@@ -17,7 +17,7 @@ bash sh/du_hast.sh
 ***
 - [x] 一键部署
 - [x] 运行后与SSH进程分离
-- [x] 根据服务器配置控制并行数
+- [x] 根据服务器配置控制并行数（parallel）
 - [x] Web控制代码修改热部署（git clone套娃）  
 - [x] Web控制输入（curl 特定仓库文件）  
 ***
