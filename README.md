@@ -1,7 +1,7 @@
 >一个胶水脚本,可以把服务器变成漏洞赏金猎人的好伙伴，粘合了大量来自Github的轮子，有部分轮子经过小幅度修改  
 https://github.com/fngoo/sh/blob/master/click_one.sh  
 ***
-**因为需要随时通过Github的文件控制输入，所以脚本的输入已写死**  
+**脚本的输入采用硬编码**  
 ***
 ```
 仅适用于Debian Server  
