@@ -19,7 +19,7 @@ bash sh/du_hast.sh
 - [x] 运行后与SSH进程分离
 - [x] 根据服务器配置控制并行数（parallel）
 - [x] Web控制代码修改热部署（git clone套娃）  
-- [x] Web控制输入（curl 特定仓库文件）  
+- [x] Web控制输入（curl指定仓库文件（硬编码））  
 ***
 - [x] DNS解析
 - [x] 子域名收集
