@@ -1,3 +1,4 @@
+
 ```
 apt update
 yes|apt install git
@@ -5,7 +6,8 @@ git clone https://github.com/fngoo/sh
 bash sh/du_hast.sh
 ```
 
-- [x] Debian一键部署
+- [x] Debian一键部署，SSH进程分离（screen）
+- [x] 根据服务器配置控制线程数（parallel)
 - [x] Web实现代码热插拔（Github）
 - [x] Web控制输入（Github）
 - [x] DNS解析
@@ -18,6 +20,7 @@ bash sh/du_hast.sh
 - [x] Web组件识别
 - [x] 端点爬取
 - [ ] waybackMachine URL
+- [x] HTTP状态码识别
 - [x] 端点隐藏参数发现
 - [x] 端点XSS扫描（GET方法）
 - [x] html敏感信息
