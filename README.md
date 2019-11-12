@@ -1,4 +1,4 @@
-
+Debian Server
 ```
 apt update
 yes|apt install git
@@ -7,7 +7,7 @@ bash sh/du_hast.sh
 ```
 ***
 此shell程序用于可自动化测试的攻击面  
-用了大量轮子，有部分轮子经过小幅度修改  
+粘合了大量来自Github的轮子，有部分轮子经过小幅度修改  
 https://github.com/fngoo/sh/blob/master/click_one.sh
 ***
 - [x] Debian一键部署，SSH进程分离（screen）
