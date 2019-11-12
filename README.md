@@ -9,16 +9,16 @@ https://github.com/fngoo/sh/blob/master/click_one.sh
 ***
 - [x] DNS解析
 - [x] 子域名收集
-- [x] Github信息泄露
-- [x] 云存储桶/容器 泄露/错误配置（AWS S3/AZURE/GOOGLE CLOUD)
-- [x] 子域名劫持（包含引用的JavaScript所属域名）
+- [x] Github敏感信息发现
+- [x] 云存储桶/容器检测 泄露/错误配置（AWS S3/AZURE/GOOGLE CLOUD)
+- [x] 子域名劫持探测（包含引用的JavaScript所属域名）
 - [ ] HTTP Smuggling
-- [x] Web服务截图
+- [x] 常见Web服务端口截图
 - [x] Web组件识别
 - [x] 端点爬取
 - [ ] waybackMachine URL
 - [x] 端点隐藏参数发现
-- [x] 端点XSS扫描（GET方法）
+- [x] XSS扫描（GET方法）
 - [x] HTML敏感信息
 - [x] JavaScript敏感信息
 - [x] JavaScript中端点提取
