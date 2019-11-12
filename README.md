@@ -6,9 +6,11 @@ git clone https://github.com/fngoo/sh
 bash sh/du_hast.sh
 ```
 ***
-此shell程序用于可自动化测试的攻击面  
+此shell脚本用于可自动化测试的攻击面  
 粘合了大量来自Github的轮子，有部分轮子经过小幅度修改  
 https://github.com/fngoo/sh/blob/master/click_one.sh
+***
+勿将此shell脚本用于非授权的测试
 ***
 - [x] Debian一键部署，SSH进程分离（screen）
 - [x] 根据服务器配置控制线程数（parallel)
