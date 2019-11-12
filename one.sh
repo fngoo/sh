@@ -48,6 +48,7 @@ then
     > /root/script/domains_Github/domains/comm.txt
     > /root/script/domains_Github/domains/domains_urlwatch.txt
 fi
+sleep 6
 
 
 
@@ -90,6 +91,7 @@ then
     > /root/script/domains_Github/domains/mmoc.txt
     > /root/script/domains_Github/domains/domains_urlwatch.txt
 fi
+sleep 6
 
 
 
@@ -162,6 +164,7 @@ then
     > /root/script/domains_Github/wildcards/wilds.txt
     > /root/script/domains_Github/wildcards/domains_urlwatch.txt
 fi
+sleep 6
 
 
 
@@ -231,6 +234,7 @@ then
     > /root/script/domains_Github/wildcards/cards.txt
     > /root/script/domains_Github/wildcards/domains_urlwatch.txt
 fi
+sleep 6
 
 
 
@@ -286,3 +290,4 @@ then
     > /root/script/domains_Github/0_subdomain/peek.txt
     > /root/script/domains_Github/0_subdomain/domains_urlwatch.txt
 fi
+sleep 6
