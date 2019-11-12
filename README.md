@@ -37,7 +37,7 @@ bash sh/du_hast.sh
 - [x] JavaScript敏感信息
 - [x] JavaScript端点提取
 - [x] 敏感目录/文件扫描，截图
-- [x] 漏洞扫描及部分PoC利用
+- [x] 漏洞扫描及部分PoC利用（无cookie）
 - [x] 主机开放端口扫描及端口服务识别  
 ***
 - [x] 新输出提醒（Slack api（硬编码）)
