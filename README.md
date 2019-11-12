@@ -1,8 +1,32 @@
+注意 脚本目标输入及Slack api采用硬编码，使用时需修改以下文件指定行数
+https://github.com/fngoo/new_Ex/blob/master/new_Ex.sh
+96
+197
+https://github.com/fngoo/sh/blob/master/one.sh
+15
+40
+58
+83
+102
+156
+175
+227
+287
+***
+适用于Debian Server
+注意，此shell脚本的行为包括端口扫描，大量发包，长期占用CPU
+```
+apt update
+yes|apt install git
+git clone https://github.com/fngoo/sh
+bash sh/du_hast.sh
+```
+***
 用于可自动化测试的攻击面  
 粘合了大量来自Github的轮子，有部分轮子经过小幅度修改  
 https://github.com/fngoo/sh/blob/master/click_one.sh
 ***
-- [x] Debian一键部署，SSH进程分离（screen）
+- [x] 一键部署，SSH进程分离（screen）
 - [x] 根据服务器配置控制线程数（parallel)
 - [x] Web实现代码热插拔（Github）
 - [x] Web控制输入（Github repo（硬编码））  
