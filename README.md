@@ -1,7 +1,7 @@
 >一个用于漏洞赏金项目的胶水脚本，粘合了大量来自Github的轮子，有部分轮子经过小幅度修改  
 https://github.com/fngoo/sh/blob/master/click_one.sh  
 ***
-**因为需要随时通过Github的文件控制输入和代码修改，所以脚本的输入已写死**  
+**因为需要随时通过Github的文件控制输入和修改代码，所以脚本的输入已写死**  
 ***
 ```
 仅适用于Debian Server  
