@@ -21,7 +21,7 @@ bash sh/du_hast.sh
 - [x] 子域名收集
 - [x] Github敏感信息发现
 - [x] 云存储桶/容器检测 泄露/错误配置
-- [x] 子域名及引用的JavaScript所属域名劫持探测
+- [x] 子域名及二阶子域名劫持探测
 - [ ] HTTP Smuggling
 - [x] 常见Web服务端口截图
 - [x] Web组件识别
