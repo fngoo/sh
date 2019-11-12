@@ -1,20 +1,7 @@
 >一个用于漏洞赏金项目的胶水脚本，粘合了大量来自Github的轮子，有部分轮子经过小幅度修改  
 https://github.com/fngoo/sh/blob/master/click_one.sh  
 ***
-脚本采用硬编码，使用时需修改以下文件指定行数  
-https://github.com/fngoo/new_Ex/blob/master/new_Ex.sh  
-96  
-197  
-https://github.com/fngoo/sh/blob/master/one.sh  
-15  
-40  
-58  
-83  
-102  
-156  
-175  
-227  
-287  
+脚本的输入采用硬编码并且使用了大量git clone套娃，故使用前需要数个fork及edit操作  
 ***
 注意，此shell脚本包括端口扫描，大量发包，长期占用CPU等行为  
 **在使用本工具进行检测时，您应确保该行为符合当地的法律法规，并且已经取得了足够的授权。请勿对非授权目标进行扫描。**  
