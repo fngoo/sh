@@ -22,7 +22,7 @@ bash sh/du_hast.sh
 - [x] Web控制输入（curl指定仓库文件（硬编码））  
 ***
 - [x] DNS解析
-- [x] 子域名收集
+- [x] 子域名收集（组合）
 - [x] Github敏感信息发现
 - [x] 云存储桶/容器检测（s3 bucket/azure/google bucket）
 - [x] 子域名及二阶子域名劫持探测
