@@ -4,7 +4,7 @@ https://github.com/fngoo/sh/blob/master/click_one.sh
 **脚本输入采用硬编码**  
 ***
 ```
-仅测试过Debian Server VPS  
+仅测试过Debian9.x VPS  
 apt update
 yes|apt install git
 git clone https://github.com/fngoo/sh
