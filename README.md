@@ -4,7 +4,7 @@ https://github.com/fngoo/sh/blob/master/click_one.sh
 **脚本的输入采用硬编码**  
 ***
 ```
-仅适用于Debian Server  
+仅测试过Debian Server  
 apt update
 yes|apt install git
 git clone https://github.com/fngoo/sh
