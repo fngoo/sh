@@ -37,7 +37,7 @@ bash sh/du_hast.sh
 - [x] JavaScript敏感信息
 - [x] JavaScript端点提取
 - [x] 敏感目录/文件扫描，截图
-- [x] xray Web漏洞扫描（未获取登录后cookie）
+- [x] 最新款xray Web漏洞扫描（未获取登录后cookie）
 - [ ] 组件及端口服务关键词相关PoC利用  
 - [x] 主机开放端口扫描及端口服务识别  
 ***
