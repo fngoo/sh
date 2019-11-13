@@ -46,4 +46,5 @@ bash sh/du_hast.sh
 - [x] Exploit DB Web PoC更新监控，如与Web组件记录关键词匹配则提醒（Slack api（硬编码））  
 - [ ] Exploit DB PoC更新监控，如与端口服务记录关键词匹配则提醒（Slack api（硬编码））  
 ***
+Web  
 ![](https://github.com/fngoo/sh/blob/master/image/example.png)![](https://github.com/fngoo/sh/blob/master/image/txt.png)  
