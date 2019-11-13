@@ -1,4 +1,4 @@
->一个用于渗透测试获取登录cookie前的胶水脚本,可以把服务器变成漏洞赏金猎人的好伙伴，粘合了大量来自Github的轮子，有部分轮子fork后经过小幅度修改，详见：  
+>一段胶水shell,可以把服务器变成漏洞赏金猎人的好伙伴，粘合了大量来自Github的轮子，有部分轮子fork后经过小幅度修改，详见：  
 https://github.com/fngoo/sh/blob/master/click_one.sh  
 ***
 **脚本输入采用硬编码**  
