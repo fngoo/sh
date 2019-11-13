@@ -4,6 +4,7 @@ https://github.com/fngoo/sh/blob/master/click_one.sh
 **脚本输入采用硬编码**  
 ***
 ```
+注意，此shell脚本包含端口扫描，大量发包，长期占用CPU等行为  
 仅测试过Debian9.x VPS  
 apt update
 yes|apt install git
@@ -11,7 +12,6 @@ git clone https://github.com/fngoo/sh
 bash sh/du_hast.sh
 ```
 ***
-注意，此shell脚本包含端口扫描，大量发包，长期占用CPU等行为  
 **在使用本工具进行检测时，您应确保该行为符合当地的法律法规，并且已经取得了足够的授权。请勿对非授权目标进行扫描。**  
 **本程序仅供于学习交流，如您在使用本工具的过程中存在任何非法行为，您需自行承担相应后果，本程序开发者将不承担任何法律及连带责任。**
 ***
