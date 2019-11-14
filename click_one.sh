@@ -133,6 +133,10 @@ sed "s,ip=\"N\/A\",continue,g" host2ip.py host2ip.py > 1.py ; mv 1.py host2ip.py
 cd /root/
 yes|apt install nmap
 cd /root/script/6_port
+git clone https://github.com/lanpan999/Check_Unauth
+cd Check_Unauth
+python3 -m pip install -r requirements.txt
+cd /root/script/6_port
 git clone https://github.com/fngoo/masscan_to_nmap-1
 cd masscan_to_nmap-1
 pip install prettytable
