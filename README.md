@@ -40,6 +40,7 @@ bash sh/du_hast.sh
 - [x] xray更新及Web漏洞扫描（未获取登录后cookie）
 - [ ] 组件及端口服务关键词相关PoC利用  
 - [x] 主机开放端口扫描及端口服务识别  
+- [x] 默认端口服务未授权检测（ftp，Memcached，mongodb，zookeeper，Redis，elasticsearch）  
 ***
 - [x] 新输出提醒（Slack api（硬编码）)
 - [x] Web端查看输出（Python SimpleHTTPServer）
