@@ -124,10 +124,6 @@ pip install vl
 mkdir /root/script/5_dir
 cd /root/script/5_dir
 git clone https://github.com/maurosoria/dirsearch
-git clone https://github.com/fngoo/dir
-rm dirsearch/default.conf ; mv dir/default.conf dirsearch/default.conf
-mv dir/dict_mode_dict.txt dirsearch/dict_mode_dict.txt
-rm -r dir
 
 mkdir /root/script/6_port
 cd /root/script/6_port
