@@ -124,6 +124,7 @@ pip install vl
 mkdir /root/script/5_dir
 cd /root/script/5_dir
 git clone https://github.com/maurosoria/dirsearch
+echo "home/template/wxserver.asmx" >> /root/script/5_dir/dirsearch/db/dicc.txt
 
 mkdir /root/script/6_port
 cd /root/script/6_port
