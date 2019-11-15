@@ -36,6 +36,7 @@ bash sh/du_hast.sh
 - [x] 隐藏参数发现
 - [x] XSS
 - [x] HTML敏感信息
+- [x] CRLF Injection（如存在，输出至HTML敏感信息结果文本）
 - [x] JavaScript敏感信息
 - [x] JavaScript端点提取
 - [x] 敏感目录/文件扫描，截图
