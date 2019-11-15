@@ -44,6 +44,11 @@ bash sh/du_hast.sh
 - [x] 主机开放端口扫描及端口服务识别  
 - [x] 默认端口服务未授权检测（ftp，Memcached，mongodb，zookeeper，Redis，elasticsearch）  
 ***
+- [x] 新输出提醒（Slack api（硬编码）)
+- [x] Web端查看输出（Python SimpleHTTPServer）
+- [x] Exploit DB Web PoC更新监控，如与Web组件记录关键词匹配则提醒（Slack api（硬编码））  
+- [ ] Exploit DB PoC更新监控，如与端口服务记录关键词匹配则提醒（Slack api（硬编码））  
+***
 输出zip文件，并解压一份至Web端以便快速浏览  
 ![](https://github.com/fngoo/sh/blob/master/image/example.png)![](https://github.com/fngoo/sh/blob/master/image/txt.png)  
 ___
