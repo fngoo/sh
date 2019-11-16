@@ -84,6 +84,7 @@ git clone https://github.com/blechschmidt/massdns
 cd massdns ; make ; make install
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 
+pip3 install awscli --upgrade --user
 mkdir /root/script/1_aws
 cd /root/script/1_aws
 git clone https://github.com/fngoo/AWSBucketDump && cd AWSBucketDump && python3 -m pip install -r requirements.txt
