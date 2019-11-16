@@ -10,4 +10,4 @@ screen -x -S http -X stuff "$cmd"
 screen -x -S http -X stuff $'\n'
 
 
-echo "output.zip" ; echo "cd /root/zip" ; echo "output.txt" ; echo "http://ip:62345/z_juice"
+echo "output.zip------cd /root/zip" ; echo "output.txt------/root/z_juice" ; echo "output.web------http://ip:62345/z_juice"
