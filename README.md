@@ -52,9 +52,8 @@ https://github.com/arkadiyt/bounty-targets-data
 - [x] Web端查看输出（Python SimpleHTTPServer）
 - [x] Exploit DB Web PoC更新监控，如与Web组件记录关键词匹配则提醒（Slack api（硬编码））  
 - [ ] Exploit DB PoC更新监控，如与端口服务记录关键词匹配则提醒（Slack api（硬编码））  
-***
-txt文本形式快速输出有价值信息  
-生成zip文件，并解压一份至Web端以便快速浏览  
+- [x] txt文本形式快速输出有价值信息  
+- [x] 生成zip文件，并解压一份至Web端以便快速浏览  
 ![](https://github.com/fngoo/sh/blob/master/image/example.png)![](https://github.com/fngoo/sh/blob/master/image/txt.png)  
 ___
 **网易云:介是嘛曲**
