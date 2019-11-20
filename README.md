@@ -2,7 +2,7 @@
 https://github.com/fngoo/sh/blob/master/click_one.sh  
 ***
 **此脚本输入采用硬编码，如需快速使用请看**  
-**https://github.com/fngoo/kuruma**
+**https://github.com/fngoo/sh/blob/master/how.md**
 ***
 ```
 注意，此shell脚本包含端口扫描，大量发包，长期占用CPU等行为  
