@@ -20,6 +20,7 @@ bash sh/du_hast.sh
 - [x] Web控制输入目标（one.sh中通过cURL硬编码GitHub仓库地址）  
 一部分赏金目标来源于项目  
 https://github.com/arkadiyt/bounty-targets-data  
+另一部分目标为自定目标
 - [x] 定时循环，检测到仓库文件变动即工作  
 ***
 **流程**
