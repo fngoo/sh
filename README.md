@@ -8,7 +8,7 @@ https://github.com/fngoo/sh/blob/master/click_one.sh
 注意，此shell脚本包含端口扫描，大量发包，长期占用CPU等行为  
 仅测试过Debian9.x VPS  
 apt update
-yes|apt install git
+apt install -y -q git
 git clone https://github.com/fngoo/sh
 bash sh/du_hast.sh
 ```
