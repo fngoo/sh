@@ -1,10 +1,5 @@
 >一段胶水shell,可以把服务器变成漏洞赏金猎人的好伙伴，粘合了大量来自Github的轮子，有部分轮子fork后经过小幅度修改，详见：  
 https://github.com/fngoo/sh/blob/master/click_one.sh  
-***
-**此脚本输入采用硬编码**  
-**如需快速开始请看**  
-**https://github.com/fngoo/sh/blob/master/how.md**
-***
 ```
 注意，此shell脚本包含端口扫描，大量发包，长期占用CPU等行为  
 仅测试过Debian9.x VPS  
@@ -12,6 +7,9 @@ apt update
 apt install -y -q git
 git clone https://github.com/fngoo/sh
 bash sh/du_hast.sh
+**此脚本输入采用硬编码**  
+**如需快速开始请看**  
+**https://github.com/fngoo/sh/blob/master/how.md**
 ```
 ***
 **在使用本工具进行检测时，您应确保该行为符合当地的法律法规，并且已经取得了足够的授权。请勿对非授权目标进行扫描。**  
