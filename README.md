@@ -18,9 +18,9 @@ bash sh/du_hast.sh
 - [x] 运行后创建screen与SSH进程分离
 - [x] 根据服务器配置控制并行数（parallel）
 - [x] Web控制输入目标（one.sh中通过cURL硬编码GitHub仓库地址）  
-一部分目标来源于漏洞赏金目标收集项目  
+一部分来源于漏洞赏金目标收集项目  
 https://github.com/arkadiyt/bounty-targets-data  
-另一部分目标为自定目标
+另一部分为自定目标,同样已写死
 - [x] 定时循环，检测到仓库文件变动即工作  
 ***
 **流程**
