@@ -17,7 +17,7 @@ bash sh/du_hast.sh
 - [x] 一键部署 
 - [x] 运行后创建screen与SSH进程分离
 - [x] 根据服务器配置控制并行数（parallel）
-- [x] Web控制输入目标（硬编码）  
+- [x] Web控制输入目标（硬编码GitHub仓库地址）  
 一部分赏金目标来源于项目  
 https://github.com/arkadiyt/bounty-targets-data  
 - [x] 定时循环，检测到仓库文件变动即工作  
