@@ -156,6 +156,7 @@ make -j
 ```
 **此流程有子域名收集**
 ```
+var为输入，output为输出目录
 var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; export var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; mkdir /root/script/domains_Github/wildcards/domains ;output=/root/script/domains_Github/wildcards/domains ; export output=/root/script/domains_Github/wildcards/domains
 
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
@@ -189,6 +190,7 @@ rm -r $output/*
 ```
 **此流程无子域名收集**
 ```
+var为输入，output为输出目录
 var=/root/script/domains_Github/domains/domains_urlwatch.txt ; export var=/root/script/domains_Github/domains/domains_urlwatch.txt ; mkdir /root/script/domains_Github/domains/domains ;output=/root/script/domains_Github/domains/domains ; export output=/root/script/domains_Github/domains/domains
 
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
