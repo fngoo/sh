@@ -145,6 +145,7 @@ cd /root/script/6_port
 git clone https://github.com/lanpan999/Check_Unauth
 cd Check_Unauth
 python3 -m pip install -r requirements.txt
+python3 -m pip install pymongo
 cd /root/script/6_port
 git clone https://github.com/fngoo/masscan_to_nmap-1
 cd masscan_to_nmap-1
