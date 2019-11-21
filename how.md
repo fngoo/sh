@@ -157,7 +157,7 @@ make -j
 **此流程有子域名收集**
 ```
 var为输入，output为输出目录
-var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; export var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; mkdir /root/script/domains_Github/wildcards/domains ;output=/root/script/domains_Github/wildcards/domains ; export output=/root/script/domains_Github/wildcards/domains
+var=/root/url.txt ; export var=/root/url.txt ; mkdir /root/output ;output=/root/output ; export output=/root/output
 
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 subfinder -dL $var -o /root/script/0_subdomain/0_subfinder.txt  -silent ; cd /root/script/0_subdomain/altdns ; touch /root/script/0_subdomain/0_altdns.txt ; altdns -i $var  -w words.txt -o /root/script/0_subdomain/0_altdns.txt -s 1.txt ; > 1.txt
@@ -189,7 +189,7 @@ git clone https://github.com/fngoo/scan ; mv scan/scan.sh scan.sh ; bash scan.sh
 **此流程无子域名收集**
 ```
 var为输入，output为输出目录
-var=/root/script/domains_Github/domains/domains_urlwatch.txt ; export var=/root/script/domains_Github/domains/domains_urlwatch.txt ; mkdir /root/script/domains_Github/domains/domains ;output=/root/script/domains_Github/domains/domains ; export output=/root/script/domains_Github/domains/domains
+var=/root/url.txt ; export var=/root/url.txt ; mkdir /root/output ;output=/root/output ; export output=/root/output
 
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
