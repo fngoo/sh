@@ -24,9 +24,9 @@ var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; export var=/roo
 for one in `cat $var`
 do
 echo "$one" > /root/script/one.txt
-one=/root/script/one.txt
-subfinder -dL $one -o /root/script/0_subdomain/0_subfinder.txt -silent
-cd /root/script/0_subdomain/altdns ; touch /root/script/0_subdomain/0_altdns.txt ; altdns -i $one -w words.txt -o /root/script/0_subdomain/0_altdns.txt -s 1.txt ; > 1.txt
+txt=/root/script/one.txt
+subfinder -dL $txt -o /root/script/0_subdomain/0_subfinder.txt -silent
+cd /root/script/0_subdomain/altdns ; touch /root/script/0_subdomain/0_altdns.txt ; altdns -i $txt -w words.txt -o /root/script/0_subdomain/0_altdns.txt -s 1.txt ; > 1.txt
 cat /root/script/0_subdomain/0_subfinder.txt >> /root/script/subfinder.txt ; cat /root/script/0_subdomain/0_altdns.txt|grep -o -P ".*?(?=\:)" >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_subfinder.txt ; > /root/script/0_subdomain/0_altdns.txt ; sort -u /root/script/subfinder.txt -o sort.txt ; > /root/script/subfinder.txt ; cat sort.txt > /root/script/subfinder.txt ; rm sort.txt
 rm /root/script/one.txt
 wc -l /root/script/subfinder.txt
@@ -104,9 +104,9 @@ var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; export var=/roo
 for one in `cat $var`
 do
 echo "$one" > /root/script/one.txt
-one=/root/script/one.txt
-subfinder -dL $one -o /root/script/0_subdomain/0_subfinder.txt -silent
-cd /root/script/0_subdomain/altdns ; touch /root/script/0_subdomain/0_altdns.txt ; altdns -i $one -w words.txt -o /root/script/0_subdomain/0_altdns.txt -s 1.txt ; > 1.txt
+txt=/root/script/one.txt
+subfinder -dL $txt -o /root/script/0_subdomain/0_subfinder.txt -silent
+cd /root/script/0_subdomain/altdns ; touch /root/script/0_subdomain/0_altdns.txt ; altdns -i $txt -w words.txt -o /root/script/0_subdomain/0_altdns.txt -s 1.txt ; > 1.txt
 cat /root/script/0_subdomain/0_subfinder.txt >> /root/script/subfinder.txt ; cat /root/script/0_subdomain/0_altdns.txt|grep -o -P ".*?(?=\:)" >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_subfinder.txt ; > /root/script/0_subdomain/0_altdns.txt ; sort -u /root/script/subfinder.txt -o sort.txt ; > /root/script/subfinder.txt ; cat sort.txt > /root/script/subfinder.txt ; rm sort.txt
 rm /root/script/one.txt
 wc -l /root/script/subfinder.txt
