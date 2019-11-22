@@ -25,6 +25,14 @@ subfinder -dL $var -o /root/script/0_subdomain/0_subfinder.txt  -silent ; cd /ro
 cat /root/script/0_subdomain/0_subfinder.txt >>$var ;cat /root/script/0_subdomain/0_altdns.txt|grep -o -P ".*?(?=\:)" >>$var ; > /root/script/0_subdomain/0_subfinder.txt ; > /root/script/0_subdomain/0_altdns.txt ; sort -u $var -o sort.txt ; > $var ; cat sort.txt > $var ; rm sort.txt
 cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
 
+cd /root/script/0_subdomain/massdns
+for brute in `cat $var`
+do
+python scripts/subbrute.py lists/names.txt $brute | massdns -r lists/resolvers.txt --root -t A --hashmap-size 3000 -o S -w results.txt
+awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u results.txt -o results.txt
+cat results.txt >> $var ; sort -u $var -o $var
+done
+
 cd /root/script/0_subdomain/SubDomainizer ; touch /root/script/0_subdomain/0_subdomainizer.txt
 for line in `cat $var`
 do
@@ -33,14 +41,6 @@ done
 cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
 
 cat /root/script/0_subdomain/0_subdomainizer.txt>>$var ;> /root/script/0_subdomain/0_subdomainizer.txt ; sort -u $var -o sort.txt ; > $var ; cat sort.txt >$var ; rm sort.txt
-
-cd /root/script/0_subdomain/massdns
-for brute in `cat $var`
-do
-python scripts/subbrute.py lists/names.txt $brute | massdns -r lists/resolvers.txt —-root -t A --hashmap-size 3000 -o S -w results.txt
-awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u results.txt -o results.txt
-cat results.txt >> $var ; sort -u $var -o $var
-done
 
 #var切片，减小流程压力
 
@@ -95,6 +95,14 @@ subfinder -dL $var -o /root/script/0_subdomain/0_subfinder.txt  -silent ; cd /ro
 cat /root/script/0_subdomain/0_subfinder.txt >>$var ;cat /root/script/0_subdomain/0_altdns.txt|grep -o -P ".*?(?=\:)" >>$var ; > /root/script/0_subdomain/0_subfinder.txt ; > /root/script/0_subdomain/0_altdns.txt ; sort -u $var -o sort.txt ; > $var ; cat sort.txt > $var ; rm sort.txt
 cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
 
+cd /root/script/0_subdomain/massdns
+for brute in `cat $var`
+do
+python scripts/subbrute.py lists/names.txt $brute | massdns -r lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt
+awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u results.txt -o results.txt
+cat results.txt >> $var ; sort -u $var -o $var
+done
+
 cd /root/script/0_subdomain/SubDomainizer ; touch /root/script/0_subdomain/0_subdomainizer.txt
 for line in `cat $var`
 do
@@ -104,16 +112,7 @@ cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A 
 
 cat /root/script/0_subdomain/0_subdomainizer.txt>>$var ;> /root/script/0_subdomain/0_subdomainizer.txt ; sort -u $var -o sort.txt ; > $var ; cat sort.txt >$var ; rm sort.txt
 
-cd /root/script/0_subdomain/massdns
-for brute in `cat $var`
-do
-python scripts/subbrute.py lists/names.txt $brute | massdns -r lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt
-awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u results.txt -o results.txt
-cat results.txt >> $var ; sort -u $var -o $var
-done
-
-
-cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt —-root -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
+cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
 
 cat $var > /root/var.txt
 seq=$(seq 1 10 `wc -l  /root/var.txt | grep -o -P ".*?(?=\ )"`)
