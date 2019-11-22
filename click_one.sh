@@ -74,9 +74,6 @@ git clone https://github.com/infosec-au/altdns
 cd altdns/
 python setup.py install
 cd /root/script/0_subdomain
-git clone https://github.com/lijiejie/subDomainsBrute.git
-pip install dnspython gevent
-cd /root/script/0_subdomain
 git clone https://github.com/nsonaniya2010/SubDomainizer.git
 cd SubDomainizer
 python3 -m pip install -r requirements.txt
