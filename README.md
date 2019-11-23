@@ -49,10 +49,10 @@ https://github.com/arkadiyt/bounty-targets-data
 - [x] 默认端口服务未授权检测（ftp，Memcached，mongodb，zookeeper，Redis，elasticsearch）  
 ***
 **输出**
-- [x] 新输出提醒（Slack api（硬编码）)
+- [x] 新输出提醒（Slack api)
 - [x] Web端查看输出（Python SimpleHTTPServer）
-- [x] Exploit DB Web PoC更新监控，如与Web组件记录关键词匹配则提醒（Slack api（硬编码））  
-- [ ] Exploit DB PoC更新监控，如与端口服务记录关键词匹配则提醒（Slack api（硬编码））  
+- [x] Exploit DB Web PoC更新监控，如与Web组件记录关键词匹配则提醒（Slack api）  
+- [ ] Exploit DB PoC更新监控，如与端口服务记录关键词匹配则提醒（Slack api）  
 - [x] txt文本形式快速输出有价值信息  
 - [x] 生成zip文件，并解压一份至Web端以便快速浏览  
 ![](https://github.com/fngoo/sh/blob/master/image/example.png)![](https://github.com/fngoo/sh/blob/master/image/txt.png)  
