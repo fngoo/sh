@@ -6,6 +6,7 @@ https://github.com/fngoo/sh/blob/master/click_one.sh
 仅测试过Debian9.x VPS  
 apt update
 apt install -y -q git
+cd /root
 git clone https://github.com/fngoo/sh
 bash sh/du_hast.sh
 ```
