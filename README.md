@@ -50,7 +50,7 @@ https://github.com/arkadiyt/bounty-targets-data
 - [x] 默认端口服务未授权检测（ftp，Memcached，mongodb，zookeeper，Redis，elasticsearch）  
 ***
 **输出**
-- [x] 新输出提醒（Slack API
+- [x] 新输出提醒（Slack API）
 - [x] Web端查看输出（Python SimpleHTTPServer）
 - [x] Exploit DB Web PoC更新监控，如与Web组件记录关键词匹配则提醒（Slack API）  
 - [ ] Exploit DB PoC更新监控，如与端口服务记录关键词匹配则提醒（Slack API）  
