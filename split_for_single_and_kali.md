@@ -1,3 +1,4 @@
+**copy to .sh ,and source .sh**
 ```
 cd /root/
 apt update
