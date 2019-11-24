@@ -25,4 +25,109 @@ echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin'>>/root/.profile
 source /root/.profile
 
 apt install -q -y python3-pip
+
+mkdir /root/script
+
+#cd /root/
+#python3 -m pip install --upgrade urlwatch
+#urlwatch
+#git clone https://github.com/fngoo/txt
+#cd txt
+#> /root/.config/urlwatch/urlwatch.yaml
+#cat 1.txt >/root/.config/urlwatch/urlwatch.yaml
+#cd /root/ ; rm -r /root/txt
+#echo '1' > /root/.config/urlwatch/urls.yaml
+#> /root/.config/urlwatch/urls.yaml
+
+mkdir /root/script/git
+cd /root/script/git
+git clone https://github.com/fngoo/github_dis
+pip install truffleHog
+
+mkdir /root/script/0_subdomain
+cd /root/
+go get github.com/subfinder/subfinder
+pip install py-altdns
+cd /root/script/0_subdomain
+git clone https://github.com/infosec-au/altdns
+cd altdns/
+python setup.py install
+cd /root/script/0_subdomain
+git clone https://github.com/nsonaniya2010/SubDomainizer.git
+cd SubDomainizer
+python3 -m pip install -r requirements.txt
+cd /root/script/0_subdomain
+git clone https://github.com/blechschmidt/massdns
+cd massdns ; make ; make install
+cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
+
+pip3 install awscli --upgrade --user
+mkdir /root/script/1_aws
+cd /root/script/1_aws
+git clone https://github.com/fngoo/AWSBucketDump && cd AWSBucketDump && python3 -m pip install -r requirements.txt
+cd /root/script/1_aws
+git clone https://github.com/initstring/cloud_enum ; cd cloud_enum && python3 -m pip install -r requirements.txt
+
+mkdir /root/script/2_subjack
+cd /root/script/2_subjack
+cd /root/
+go get github.com/haccer/subjack
+go get -u github.com/rverton/webanalyze/...
+
+mkdir /root/script/3_httprobe
+cd /root/script/3_httprobe
+cd /root/
+go get -u github.com/tomnomnom/httprobe
+cd /root/script/3_httprobe
+git clone https://github.com/verovaleros/webcrawler ; mv webcrawler/crawler.py crawler.py ; rm -r webcrawler
+cd /root/script/3_httprobe
+git clone https://github.com/s0md3v/Arjun
+cd /root/script/3_httprobe
+git clone https://github.com/fngoo/XSStrike ; cd /root/script/3_httprobe/XSStrike ; pip3 install -r requirements.txt
+cd /root/script/3_httprobe
+#git clone https://github.com/Threezh1/JSFinder
+git clone https://github.com/GerbenJavado/LinkFinder ; cd LinkFinder ; pip3 install -r requirements.txt ; python3 setup.py install
+cd /root/script/3_httprobe
+git clone https://github.com/anouarbensaad/vulnx.git
+cd vulnx
+sed "s,sudo ,,g" install.sh > 1.sh ; mv 1.sh install.sh
+bash install.sh
+
+cd /root/
+go get github.com/tomnomnom/waybackurls
+
+mkdir /root/script/4_getjs
+cd /root/script/4_getjs
+git clone https://github.com/FortyNorthSecurity/EyeWitness
+cd EyeWitness/setup ; bash setup.sh ; bash setup.sh ; pip3 install --upgrade pyasn1-modules
+cd /root/
+go get github.com/003random/getJS
+pip install vl
+
+
+mkdir /root/script/5_dir
+cd /root/script/5_dir
+git clone https://github.com/maurosoria/dirsearch
+echo "home/template/wxserver.asmx" >> /root/script/5_dir/dirsearch/db/dicc.txt
+
+mkdir /root/script/6_port
+cd /root/script/6_port
+git clone https://github.com/gm09519/host2ip
+cd host2ip
+sed "s,ip=\"N\/A\",continue,g" host2ip.py host2ip.py > 1.py ; mv 1.py host2ip.py
+cd /root/
+yes|apt install nmap
+cd /root/script/6_port
+git clone https://github.com/lanpan999/Check_Unauth
+cd Check_Unauth
+python3 -m pip install -r requirements.txt
+python3 -m pip install pymongo
+cd /root/script/6_port
+git clone https://github.com/fngoo/masscan_to_nmap-1
+cd masscan_to_nmap-1
+pip install prettytable
+pip install -r requirements.txt
+git clone https://github.com/robertdavidgraham/masscan
+cd masscan
+make -j
 ```
