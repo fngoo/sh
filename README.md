@@ -19,7 +19,7 @@ bash sh/du_hast.sh
 - [x] 一键部署 
 - [x] 运行后创建screen与SSH进程分离
 - [x] 根据服务器配置控制并行数（parallel）
-- [x] Web控制输入目标（one.sh中通过cURL获取GitHub的仓库文件地址）  
+- [x] Web控制输入目标（one.sh中通过cURL获取GitHub的仓库文件）  
 一部分来源于漏洞赏金目标收集项目  
 https://github.com/arkadiyt/bounty-targets-data  
 另一部分为自定目标  
