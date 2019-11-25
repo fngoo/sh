@@ -3,8 +3,8 @@
 >一段胶水shell,可以把服务器变成漏洞赏金猎人的好伙伴，粘合了大量来自Github的轮子，有部分轮子fork后经过小幅度修改，详见：  
 https://github.com/fngoo/sh/blob/master/click_one.sh  
   
-**此脚本输入通过GitHub文件控制，使用前请看下文特性部分**
-------
+**此脚本输入通过GitHub文件控制，使用前请看下文特性部分**  
+  
 **使用**
 ------
 ``` 
@@ -15,7 +15,6 @@ cd /root
 git clone https://github.com/fngoo/sh
 bash sh/du_hast.sh
 ```
-------
 **特性**
 - [x] 一键部署 
 - [x] 运行后创建screen与SSH进程分离
@@ -25,7 +24,6 @@ bash sh/du_hast.sh
 https://github.com/arkadiyt/bounty-targets-data  
 另一部分为自定目标  
 - [x] 定时循环，检测到仓库文件变动即工作  
-------
 **流程**
 - [x] DNS解析
 - [x] 子域名收集（组合）
@@ -49,7 +47,6 @@ https://github.com/arkadiyt/bounty-targets-data
 - [ ] 组件及端口服务关键词相关PoC利用  
 - [x] 主机开放端口扫描及端口服务识别  
 - [x] 默认端口服务未授权检测（ftp，Memcached，mongodb，zookeeper，Redis，elasticsearch）  
-------
 **输出**
 - [x] 新输出提醒（Slack API）
 - [x] Web端查看输出（Python SimpleHTTPServer）
