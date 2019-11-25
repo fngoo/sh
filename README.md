@@ -2,7 +2,7 @@
 ------
 >一段胶水shell,粘合了大量来自Github的轮子  
   
-简体中文 | [English](./README_EN.md)  
+简体中文 | [English](./README_EN.md) | [Kali](./split_for_kali-Debian7.md)  
   
 #### 注意
 - 此脚本输入通过GitHub文件控制，使用前请看下文特性部分  
