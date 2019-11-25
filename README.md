@@ -21,7 +21,7 @@ bash sh/du_hast.sh
 - [x] Against broken SSH process
 - [x] Parallel based on CPU of server
 - [x] Edit in Web（one.sh : target="curl github_url"）  
-Customize your Input, Single Domain or SubDomain.  
+- Customize your Input, Single Domain or SubDomain.  
 - [x] While true sleep 6s, running if Input changed.   
 ## Flow
 - [x] SubDomain gathering(multi)
