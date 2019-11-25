@@ -24,7 +24,7 @@ bash sh/du_hast.sh
 Customize your Input, Single Domain or SubDomain.  
 - [x] While true sleep 6s, running if Input changed.   
 ## Flow
-- [x] SubDomain(multi)
+- [x] SubDomain gathering(multi)
 - [x] DNS resolve
 - [x] Github sensitive info
 - [x] Cloud based bucket(s3 bucket/Azure/Google bucket)
