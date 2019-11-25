@@ -57,3 +57,5 @@ Customize your Input, Single Domain or SubDomain.
 **Don't be a dick.**   
 ## Author
 Kuruma(Armored)
+## License
+I'm lazy.
