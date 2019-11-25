@@ -1,4 +1,4 @@
-**install**
+## Install
 ```
 #copy to .sh ,then  
 #source .sh  
@@ -146,7 +146,7 @@ git clone https://github.com/robertdavidgraham/masscan
 cd masscan
 make -j
 ```
-**single domain**
+## Single Domain
 ```
 target=/root/url.txt
 
@@ -206,7 +206,7 @@ cd $output;date "+%Y-%m-%d_%H:%M:%S" > /root/time.txt ; sed "s,:,_,g" /root/time
 rm -r $output/*
 echo "output.zip------cd /root/zip" ; echo "output.txt------cd /root/z_juice"
 ```
-**subdomain**
+## SubDomain
 ```
 target=/root/url.txt
 
