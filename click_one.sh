@@ -178,7 +178,7 @@ do
 cd /root
 mkdir /root/sh
 rm -r /root/sh
-git clone https://github.com/fngoo/sh ; chmod 777 sh/*
+git clone https://github.com/fngoo/sh
 bash sh/one.sh
 cd /root ; rm -r sh
 done
