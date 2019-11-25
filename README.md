@@ -2,7 +2,7 @@ Shell-and-Hunter
 ------
 >Connecting with lots of GitHub Repo.  
   
-English | [简体中文](./README_CN.md)  
+English | [简体中文](./README_CN.md) | [Kali Linux](./split_for_kali-Debian7.md)  
   
 #### Notice
 - cURL GitHub URL as Input, Read Features before start.  
