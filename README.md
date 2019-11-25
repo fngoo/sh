@@ -28,7 +28,7 @@ Customize your Input, Single Domain or SubDomain.
 - [x] DNS resolve
 - [x] Github sensitive info
 - [x] Cloud based bucket(s3 bucket/Azure/Google bucket)
-- [x] SubDomain Hijack and Broken Link Hijack
+- [x] SubDomain Hijacking and Broken Link Hijacking
 - [ ] HTTP Smuggling
 - [ ] DNS-server Cache Poison
 - [x] Web services screenshot
