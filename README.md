@@ -4,8 +4,7 @@
 https://github.com/fngoo/sh/blob/master/click_one.sh  
   
 **此脚本输入通过GitHub文件控制，具体说明请看下文特性部分**  
-```
-注意，此shell脚本包含端口扫描，大量发包，长期占用CPU等行为  
+``` 
 仅测试过Debian9.x VPS  
 apt update
 apt install -y -q git
