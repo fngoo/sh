@@ -2,7 +2,7 @@ Shell-and-Hunter
 ------
 >Connecting with lots of GitHub Repo.  
   
-English | [简体中文](./README.md)  
+English | [简体中文](./README_CN.md)  
   
 #### Notice
 - cURL GitHub URL as Input, Read Features before start.  
