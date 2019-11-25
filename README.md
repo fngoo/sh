@@ -58,4 +58,4 @@ Customize your Input, Single Domain or SubDomain.
 ## Author
 Kuruma(Armored)
 ## License
-I'm lazy.
+I don't believe in License.
