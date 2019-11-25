@@ -31,7 +31,7 @@ bash sh/du_hast.sh
 - [x] SubDomain Hijacking and Broken Link Hijacking
 - [ ] HTTP Smuggling
 - [ ] DNS-server Cache Poison
-- [x] Web services screenshot
+- [x] Web service screenshot
 - [x] Web tech analyzing
 - [x] Crawler
 - [ ] waybackMachine URL(memory error)
