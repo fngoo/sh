@@ -25,7 +25,7 @@ echo ""
 head -24 /root/sh/du_hast.sh | tail -1
 echo ""
 echo "replace URL to your blind payload , then copy into /root/script/xss.sh."
-echo "OR NOT, then run without blind vuln"
+echo "OR NOT, then run without potential blind vuln"
 echo "------"
 echo "screen -ls"
 echo "screen -r nameOfScreen"
