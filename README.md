@@ -32,7 +32,7 @@ Customize your Input, Single Domain or SubDomain.
 - [ ] HTTP Smuggling
 - [ ] DNS-server Cache Poison
 - [x] Web services screenshot
-- [x] Web tech analizy
+- [x] Web tech analyzing
 - [x] Crawler
 - [ ] waybackMachine URL(memory error)
 - [x] Param discovery
