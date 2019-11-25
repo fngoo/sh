@@ -13,7 +13,7 @@ mkdir /root/script
 clear
 echo "output.zip------cd /root/zip" ; echo "output.txt------cd /root/z_juice" ; echo "output.web------http://ip:62345/z_juice"
 echo ""
-echo ""
+echo "------"
 head -18 /root/sh/du_hast.sh | tail -1
 #   time=`date "+%Y-%m-%d_%H:%M:%S"` ; echo "curl -X POST -H \"Content-type:application/json\" --data '{\"text\":\"${time}\"}' https://hooks.slack.com/services/token/token/token" > /root/script/slack.sh ; bash /root/script/slack.sh ; rm /root/script/slack.sh
 echo ""
@@ -24,3 +24,7 @@ echo ""
 head -23 /root/sh/du_hast.sh | tail -1
 echo ""
 echo "replace URL to your blind payload , then copy into /root/script/xss.sh"
+echo "------"
+echo "screen -ls"
+echo "screen -r nameOfScreen"
+
