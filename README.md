@@ -4,7 +4,9 @@
 https://github.com/fngoo/sh/blob/master/click_one.sh
 
 简体中文 | [English](./README_EN.md)  
-**此脚本输入通过GitHub文件控制，使用前请看下文特性部分**  
+  
+#### 注意
+- 此脚本输入通过GitHub文件控制，使用前请看下文特性部分  
   
 ## 使用
 ``` 
