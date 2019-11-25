@@ -3,6 +3,7 @@
 cd /root/
 apt update
 yes|apt install ruby ruby-dev libcurl4-openssl-dev libldns-dev vim xdg-utils iceweasel screen aptitude make zlib1g-dev git gcc g++ make libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev libpcap-dev iftop nano wget curl zlib* openssl libssl-dev libsqlite3-dev build-essential libssl-dev libcurl4-openssl-dev libffi-dev python-dev parallel tmux aria2
+apt install --fix-missing
 echo 'set -g prefix C-a'>>/root/.tmux.conf ; echo 'unbind C-b'>>/root/.tmux.conf
 wget https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 tar xzvf ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
@@ -10,7 +11,9 @@ cp ripgrep-11.0.2-x86_64-unknown-linux-musl/rg  /usr/local/bin/
 rm ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz
 
 yes|apt install ruby
+apt install --fix-missing
 yes|apt install ruby-dev
+apt install --fix-missing
 var=$(ruby -v|grep -oP ".\..\..")
 cd /etc/alternatives
 ln -sf /usr/bin/ruby$var ruby
@@ -38,6 +41,7 @@ ln -s /usr/local/bin/python3.6 /usr/bin/python3
 ln -s /usr/local/bin/pip3.6 /usr/bin/pip3
 
 yes|apt install python-pip
+apt install --fix-missing
 rm /usr/bin/lsb_release
 python3 -m pip install --upgrade pip
 python -m pip install --upgrade pip
@@ -140,6 +144,7 @@ cd host2ip
 sed "s,ip=\"N\/A\",continue,g" host2ip.py host2ip.py > 1.py ; mv 1.py host2ip.py
 cd /root/
 yes|apt install nmap
+apt install --fix-missing
 cd /root/script/6_port
 git clone https://github.com/lanpan999/Check_Unauth
 cd Check_Unauth
