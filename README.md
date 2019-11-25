@@ -1,7 +1,7 @@
 >一段胶水shell,可以把服务器变成漏洞赏金猎人的好伙伴，粘合了大量来自Github的轮子，有部分轮子fork后经过小幅度修改，详见：  
 https://github.com/fngoo/sh/blob/master/click_one.sh  
   
-**此脚本输入采用硬编码,具体说明请看下文特性部分**  
+**此脚本输入通过GitHub文件控制,具体说明请看下文特性部分**  
 ```
 注意，此shell脚本包含端口扫描，大量发包，长期占用CPU等行为  
 仅测试过Debian9.x VPS  
@@ -19,7 +19,7 @@ bash sh/du_hast.sh
 - [x] 一键部署 
 - [x] 运行后创建screen与SSH进程分离
 - [x] 根据服务器配置控制并行数（parallel）
-- [x] Web控制输入目标（one.sh中通过cURL硬编码GitHub的仓库文件地址为示例）  
+- [x] Web控制输入目标（one.sh中通过cURL获取GitHub的仓库文件地址）  
 一部分来源于漏洞赏金目标收集项目  
 https://github.com/arkadiyt/bounty-targets-data  
 另一部分为自定目标  
