@@ -1,8 +1,9 @@
 漏洞赏金猎人的好伙伴
 ------
 >一段胶水shell,可以把服务器变成漏洞赏金猎人的好伙伴，粘合了大量来自Github的轮子，有部分轮子fork后经过小幅度修改，详见：  
-https://github.com/fngoo/sh/blob/master/click_one.sh  
-  
+https://github.com/fngoo/sh/blob/master/click_one.sh
+
+简体中文 | [English](./README_EN.md)  
 **此脚本输入通过GitHub文件控制，使用前请看下文特性部分**  
   
 ## 使用
