@@ -18,7 +18,7 @@ bash sh/du_hast.sh
 ```
 ## Features
 - [x] One-click deployment 
-- [x] Against broken SSH process
+- [x] Against unstable SSH process
 - [x] Parallel based on CPU of server
 - [x] Edit in Web（one.sh : target="curl github_url"）  
 - Customize your Input, Single Domain or SubDomain.  
