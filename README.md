@@ -23,6 +23,7 @@ bash sh/du_hast.sh
 - [x] Web based Input（one.sh : target="curl github_url"）  
 - Customize your Input, Single Domain or SubDomain.  
 - [x] While true sleep 6s, running if Input changed.   
+- [x] Auto update tools.   
 ## Flow
 - [x] SubDomain gathering(multi)
 - [x] DNS resolve
