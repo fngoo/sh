@@ -1,6 +1,6 @@
 漏洞赏金猎人的好伙伴
 ------
->一段胶水shell,粘合了大量来自GitHub的轮子,让服务器帮点忙  
+>一段胶水shell,粘合了大量来自GitHub的轮子,用于初步渗透  
   
 简体中文 | [English](./README.md) | [Kali Linux](./split_for_kali-Debian7.md)  
   
