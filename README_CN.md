@@ -45,6 +45,7 @@ https://github.com/arkadiyt/bounty-targets-data
 - [x] JavaScript端点提取
 - [x] 敏感目录/文件扫描，截图
 - [x] xray更新及Web漏洞扫描(未获取登录后cookie)
+- [ ] 绕过CDN
 - [ ] 组件及端口服务关键词相关PoC利用  
 - [x] 主机开放端口扫描及端口服务识别  
 - [x] 默认端口服务未授权检测(ftp，Memcached，mongodb，zookeeper，Redis，elasticsearch)  
