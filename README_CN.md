@@ -25,6 +25,7 @@ bash sh/du_hast.sh
 https://github.com/arkadiyt/bounty-targets-data  
 另一部分为自定目标  
 - [x] 定时循环，检测到仓库文件变动即工作  
+- [x] 自动更新工具   
 ## 流程
 - [x] 子域名收集(组合)
 - [x] DNS解析
