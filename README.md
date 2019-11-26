@@ -19,8 +19,8 @@ bash sh/du_hast.sh
 ## Features
 - [x] One-click deployment 
 - [x] Against unstable SSH process
-- [x] Parallel based on CPU of server
-- [x] Edit in Web（one.sh : target="curl github_url"）  
+- [x] Parallel based on CPU
+- [x] Web based Input（one.sh : target="curl github_url"）  
 - Customize your Input, Single Domain or SubDomain.  
 - [x] While true sleep 6s, running if Input changed.   
 ## Flow
