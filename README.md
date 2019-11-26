@@ -43,6 +43,7 @@ bash sh/du_hast.sh
 - [x] JavaScript endpoint gathering
 - [x] DirScan and screenshot
 - [x] chaitin/XRAY webscan
+- [ ] Bypass CDN
 - [ ] Correct PoC about Web or port tech  
 - [x] Port scanning and tech fingerprint  
 - [x] Unauthorized detection(ftp, Memcached, mongodb, zookeeper, Redis, elasticsearch)  
