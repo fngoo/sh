@@ -10,7 +10,7 @@ screen -x -S http -X stuff "$cmd"
 screen -x -S http -X stuff $'\n'
 
 mkdir /root/script
-reset
+clear
 echo ""
 echo ""
 echo "------"
