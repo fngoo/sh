@@ -25,13 +25,13 @@ do
 echo "$one" > /root/script/one.txt
 txt=/root/script/one.txt
 subfinder -dL $txt -o /root/script/0_subdomain/0_subfinder.txt
-cd /root/script/0_subdomain/altdns ; altdns -r -n -i $txt -w words.txt -o 2.txt -s 3.txt ; cat 3.txt | grep -v "\[" | grep -oP ".*(?=\:)" >> /root/script/subfinder.txt ; > 2.txt ; > 3.txt
+cd /root/script/0_subdomain/altdns ; altdns -r -n -nW -i $txt -w words.txt -o 2.txt -s 3.txt ; cat 3.txt | grep -v "\[" | grep -oP ".*(?=\:)" >> /root/script/subfinder.txt ; > 2.txt ; > 3.txt
 cat /root/script/0_subdomain/0_subfinder.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_subfinder.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
 rm /root/script/one.txt
 wc -l /root/script/subfinder.txt
 done
 
-cat /root/script/subfinder.txt >> $var ; > /root/script/subfinder.txt ; sort -u $var -o sort.txt ; > $var ; cat sort.txt > $var ; rm sort.txt
+cat /root/script/subfinder.txt >> $var ; > /root/script/subfinder.txt ; sort -u $var -o $var
 cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
 
 cd /root/script/0_subdomain/massdns
@@ -39,8 +39,9 @@ for brute in `cat $var`
 do
 python scripts/subbrute.py lists/names.txt $brute | massdns -r lists/resolvers.txt --root -t A --hashmap-size 3000 -o S -w results.txt
 awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u results.txt -o results.txt
-cat results.txt >> $var ; sort -u $var -o $var
+cat results.txt >> f_brute.txt ; sort -u f_brute.txt -o f_brute.txt ; > results.txt
 done
+cat f_brute.txt >> $var ; > f_brute.txt ; sort -u $var -o $var
 
 cd /root/script/0_subdomain/SubDomainizer ; touch /root/script/0_subdomain/0_subdomainizer.txt
 for line in `cat $var`
@@ -99,13 +100,13 @@ do
 echo "$one" > /root/script/one.txt
 txt=/root/script/one.txt
 subfinder -dL $txt -o /root/script/0_subdomain/0_subfinder.txt
-cd /root/script/0_subdomain/altdns ; altdns -r -n -i $txt -w words.txt -o 2.txt -s 3.txt ; cat 3.txt | grep -v "\[" | grep -oP ".*(?=\:)" >> /root/script/subfinder.txt ; > 2.txt ; > 3.txt
+cd /root/script/0_subdomain/altdns ; altdns -r -n -nW -i $txt -w words.txt -o 2.txt -s 3.txt ; cat 3.txt | grep -v "\[" | grep -oP ".*(?=\:)" >> /root/script/subfinder.txt ; > 2.txt ; > 3.txt
 cat /root/script/0_subdomain/0_subfinder.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_subfinder.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
 rm /root/script/one.txt
 wc -l /root/script/subfinder.txt
 done
 
-cat /root/script/subfinder.txt >> $var ; > /root/script/subfinder.txt ; sort -u $var -o sort.txt ; > $var ; cat sort.txt > $var ; rm sort.txt
+cat /root/script/subfinder.txt >> $var ; > /root/script/subfinder.txt ; sort -u $var -o $var
 cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
 
 cd /root/script/0_subdomain/massdns
@@ -113,8 +114,9 @@ for brute in `cat $var`
 do
 python scripts/subbrute.py lists/names.txt $brute | massdns -r lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt
 awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u results.txt -o results.txt
-cat results.txt >> $var ; sort -u $var -o $var
+cat results.txt >> f_brute.txt ; sort -u f_brute.txt -o f_brute.txt ; > results.txt
 done
+cat f_brute.txt >> $var ; > f_brute.txt ; sort -u $var -o $var
 
 cd /root/script/0_subdomain/SubDomainizer ; touch /root/script/0_subdomain/0_subdomainizer.txt
 for line in `cat $var`
