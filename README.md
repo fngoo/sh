@@ -4,10 +4,9 @@ Shell-and-Hunter
   
 English | [简体中文](./README_CN.md) | [Kali Linux](./split_for_kali-Debian7.md)  
   
-#### Notice
-- cURL GitHub URL as Input, Read Features before start.  
-  
 ## Usage
+#### Notice
+- cURL GitHub URL as Input, Read Features before start.Or copy to run and observe.  
 ``` 
 VPS with Debian9.x was tested.  
 apt update
