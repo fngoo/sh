@@ -76,6 +76,10 @@ cd /root/
 go get github.com/subfinder/subfinder
 pip install py-altdns
 cd /root/script/0_subdomain
+git clone https://github.com/aboul3la/Sublist3r
+cd Sublist3r
+pip3 install -r requirements.txt
+cd /root/script/0_subdomain
 git clone https://github.com/infosec-au/altdns
 cd altdns/
 python setup.py install
