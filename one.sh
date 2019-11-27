@@ -2,9 +2,9 @@
 
 #input
 target_wild="curl -L https://github.com/arkadiyt/bounty-targets-data/blob/master/data/wildcards.txt | grep -oP '(?<=\ class\=\"blob\-code\ blob\-code\-inner\ js\-file\-line\"\>).*?(?=\<\/td\>)' | grep -v 'ali' | grep -v '1688' | grep -v 'taobao'"
-target_wild_my="curl -L https://github.com/fngoo/domains/blob/master/wildcards.txt | grep -oP '(?<=\ class\=\"blob\-code\ blob\-code\-inner\ js\-file\-line\"\>).*?(?=\<\/td\>)' | grep -v 'ali' | grep -v '1688' | grep -v 'taobao'"
 target_single="curl -L https://github.com/arkadiyt/bounty-targets-data/blob/master/data/domains.txt | grep -oP '(?<=\ class\=\"blob\-code\ blob\-code\-inner\ js\-file\-line\"\>).*?(?=\<\/td\>)' | grep -v 'ali' | grep -v '1688' | grep -v 'taobao'"
-target_single_my="curl -L https://github.com/fngoo/domains/blob/master/domains.txt | grep -oP '(?<=\ class\=\"blob\-code\ blob\-code\-inner\ js\-file\-line\"\>).*?(?=\<\/td\>)' | grep -v 'ali' | grep -v '1688' | grep -v 'taobao'"
+target_wild_my=""
+target_single_my=""
 
 cd /root/
 mkdir /root/script;mkdir /root/zip;mkdir /root/script/domains_Github;mkdir /root/script/domains_Github/domains;cd /root/script/domains_Github/domains;touch comm.txt;touch mmoc.txt;mkdir /root/script/domains_Github/wildcards;cd /root/script/domains_Github/wildcards;touch wilds.txt;touch cards.txt;mkdir /root/script/domains_Github/0_subdomain;cd /root/script/domains_Github/0_subdomain;touch keep.txt;touch peek.txt;mkdir /root/watch;touch /root/watch/1.txt
@@ -13,7 +13,8 @@ mkdir /root/script;mkdir /root/zip;mkdir /root/script/domains_Github;mkdir /root
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 
 cd /root/script/domains_Github/wildcards
-eval $target_wild >> cards.txt;sed -e "s/\*\.//g" cards.txt|tee sed.txt;sed -e "/\*/d" sed.txt|tee cards.txt;rm -rf sed.txt;sort cards.txt>sort.txt ; > cards.txt ; cat sort.txt >cards.txt ; rm sort.txt ; eval $target_wild_my >> cards.txt;sed -e "s/\*\.//g" cards.txt|tee sed.txt;sed -e "/\*/d" sed.txt|tee cards.txt;rm -rf sed.txt;sort cards.txt>sort.txt ; > cards.txt ; cat sort.txt >cards.txt ; rm sort.txt
+eval $target_wild | sed "s/\*\.//g" | sed "/\*/d" | tee -a cards.txt ; sort -u cards.txt -o cards.txt
+eval $target_wild_my >> cards.txt ; sort -u cards.txt -o cards.txt
 
 comm -3 cards.txt wilds.txt > domains_urlwatch.txt ; sed 's/[[:space:]]//g' domains_urlwatch.txt > space.txt ; > domains_urlwatch.txt ; cat space.txt > domains_urlwatch.txt ; rm space.txt
 if [ -s domains_urlwatch.txt ]
@@ -46,13 +47,9 @@ cat f_brute.txt >> $var ; > f_brute.txt ; sort -u $var -o $var
 cd /root/script/0_subdomain/SubDomainizer ; touch /root/script/0_subdomain/0_subdomainizer.txt
 for line in `cat $var`
 do
-python3 SubDomainizer.py -l $line -o /root/script/0_subdomain/0_subdomainizer.txt; cat /root/script/0_subdomain/0_subdomainizer.txt>>$var ; >/root/script/0_subdomain/0_subdomainizer.txt
+python3 SubDomainizer.py -l $line -o /root/script/0_subdomain/0_subdomainizer.txt; cat /root/script/0_subdomain/0_subdomainizer.txt >> nizer.txt ; > /root/script/0_subdomain/0_subdomainizer.txt
 done
-cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
-
-cat /root/script/0_subdomain/0_subdomainizer.txt>>$var ;> /root/script/0_subdomain/0_subdomainizer.txt ; sort -u $var -o sort.txt ; > $var ; cat sort.txt >$var ; rm sort.txt
-
-#var切片，减小流程压力
+cat nizer.txt >> $var ; > nizer.txt ; sort -u $var -o $var
 
 
 cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
@@ -88,7 +85,8 @@ sleep 6
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 
 cd /root/script/domains_Github/wildcards
-eval $target_wild >> wilds.txt;sed -e "s/\*\.//g" wilds.txt|tee sed.txt;sed -e "/\*/d" sed.txt|tee wilds.txt;rm -rf sed.txt;sort wilds.txt>sort.txt ; > wilds.txt ; cat sort.txt >wilds.txt ; rm sort.txt ; eval $target_wild_my >> wilds.txt;sed -e "s/\*\.//g" wilds.txt|tee sed.txt;sed -e "/\*/d" sed.txt|tee wilds.txt;rm -rf sed.txt;sort wilds.txt>sort.txt ; > wilds.txt ; cat sort.txt >wilds.txt ; rm sort.txt
+eval $target_wild | sed "s/\*\.//g" | sed "/\*/d" | tee -a wilds.txt ; sort -u wilds.txt -o wilds.txt
+eval $target_wild_my >> wilds.txt ; sort -u wilds.txt -o wilds.txt
 
 comm -3 wilds.txt cards.txt > domains_urlwatch.txt ; sed 's/[[:space:]]//g' domains_urlwatch.txt > space.txt ; > domains_urlwatch.txt ; cat space.txt > domains_urlwatch.txt ; rm space.txt
 if [ -s domains_urlwatch.txt ]
@@ -121,11 +119,10 @@ cat f_brute.txt >> $var ; > f_brute.txt ; sort -u $var -o $var
 cd /root/script/0_subdomain/SubDomainizer ; touch /root/script/0_subdomain/0_subdomainizer.txt
 for line in `cat $var`
 do
-python3 SubDomainizer.py -l $line -o /root/script/0_subdomain/0_subdomainizer.txt; cat /root/script/0_subdomain/0_subdomainizer.txt>>$var ; >/root/script/0_subdomain/0_subdomainizer.txt
+python3 SubDomainizer.py -l $line -o /root/script/0_subdomain/0_subdomainizer.txt; cat /root/script/0_subdomain/0_subdomainizer.txt >> nizer.txt ; > /root/script/0_subdomain/0_subdomainizer.txt
 done
-cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
+cat nizer.txt >> $var ; > nizer.txt ; sort -u $var -o $var
 
-cat /root/script/0_subdomain/0_subdomainizer.txt>>$var ;> /root/script/0_subdomain/0_subdomainizer.txt ; sort -u $var -o sort.txt ; > $var ; cat sort.txt >$var ; rm sort.txt
 
 cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt > $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
 
@@ -160,7 +157,8 @@ sleep 6
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 
 cd /root/script/domains_Github/domains
-eval $target_single >> mmoc.txt;sort mmoc.txt>sort.txt ; > mmoc.txt ; cat sort.txt >mmoc.txt ; rm sort.txt ; eval $target_single_my >> mmoc.txt;sort mmoc.txt>sort.txt ; > mmoc.txt ; cat sort.txt >mmoc.txt ; rm sort.txt
+eval $target_single >> mmoc.txt ; sort -u mmoc.txt -o mmoc.txt
+eval $target_single_my >> mmoc.txt ; sort -u mmoc.txt -o mmoc.txt
 
 comm -3 mmoc.txt comm.txt > domains_urlwatch.txt ; sed 's/[[:space:]]//g' domains_urlwatch.txt > space.txt ; > domains_urlwatch.txt ; cat space.txt > domains_urlwatch.txt ; rm space.txt
 if [ -s domains_urlwatch.txt ]
@@ -198,7 +196,8 @@ sleep 6
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 
 cd /root/script/domains_Github/domains
-eval $target_single >> comm.txt;sort comm.txt>sort.txt ; > comm.txt ; cat sort.txt >comm.txt ; rm sort.txt ; eval $target_single_my >> comm.txt;sort comm.txt>sort.txt ; > comm.txt ; cat sort.txt >comm.txt ; rm sort.txt
+eval $target_single >> comm.txt ; sort -u comm.txt -o comm.txt
+eval $target_single_my >> comm.txt ; sort -u comm.txt -o comm.txt
 
 comm -3  comm.txt  mmoc.txt > domains_urlwatch.txt ; sed 's/[[:space:]]//g' domains_urlwatch.txt > space.txt ; > domains_urlwatch.txt ; cat space.txt > domains_urlwatch.txt ; rm space.txt
 if [ -s domains_urlwatch.txt ]
