@@ -60,6 +60,7 @@ bash sh/du_hast.sh
 ## Author
 Kuruma(Armored)
 ## Connection
->part_1="https://hooks.sla" ; part_2="ck.com/services/TM26L9ZEE/BR1F5" ; part_3="JF96/ENPsUGGJr" ; part_4="9LLyTqZ4WitEOLA" ; url=$part_1$part_2$part_3$part_4 ; curl -X POST -H "Content-type:application/json" --data '{"text":"MESSAGE"}' $url
+>part_1="https://hooks.sla" ; part_2="ck.com/services/TM26L9ZEE/BR1F5" ; part_3="JF96/ENPsUGGJr" ; part_4="9LLyTqZ4WitEOLA" ; url=$part_1$part_2$part_3$part_4  
+curl -X POST -H "Content-type:application/json" --data '{"text":"MESSAGE"}' $url
 ## License
 I don't believe in License.
