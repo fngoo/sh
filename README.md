@@ -6,7 +6,7 @@ English | [简体中文](./README_CN.md) | [Kali Linux](./split_for_kali-Debian7
   
 ## Usage
 #### Notice
-- cURL GitHub URL as Input, Read Features before start.Or copy to run and observe.  
+- cURL GitHub URL as Input, Read Features before start.Or just run with given target.  
 ``` 
 VPS with Debian9.x was tested.  
 apt update
