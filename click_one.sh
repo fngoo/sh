@@ -83,8 +83,8 @@ cd /root/script/0_subdomain
 git clone https://github.com/infosec-au/altdns
 cd altdns/
 python setup.py install
-git clone https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056
-cat 86a06c5dc309d08580a018c66354a056/all.txt >> words.txt ; rm -r 86a06c5dc309d08580a018c66354a056
+#git clone https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056
+#cat 86a06c5dc309d08580a018c66354a056/all.txt >> words.txt ; rm -r 86a06c5dc309d08580a018c66354a056
 cd /root/script/0_subdomain
 git clone https://github.com/nsonaniya2010/SubDomainizer.git
 cd SubDomainizer
