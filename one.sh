@@ -21,6 +21,7 @@ if [ -s domains_urlwatch.txt ]
 then
 var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; export var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; mkdir /root/script/domains_Github/wildcards/domains ;output=/root/script/domains_Github/wildcards/domains ; export output=/root/script/domains_Github/wildcards/domains
 
+cd /root/script/0_subdomain ; rm -r Sublist3r ; git clone https://github.com/aboul3la/Sublist3r ; cd Sublist3r ; pip3 install -r requirements.txt
 for one in `cat $var`
 do
 echo "$one" > /root/script/one.txt
@@ -93,6 +94,7 @@ if [ -s domains_urlwatch.txt ]
 then
 var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; export var=/root/script/domains_Github/wildcards/domains_urlwatch.txt ; mkdir /root/script/domains_Github/wildcards/domains ;output=/root/script/domains_Github/wildcards/domains ; export output=/root/script/domains_Github/wildcards/domains
 
+cd /root/script/0_subdomain ; rm -r Sublist3r ; git clone https://github.com/aboul3la/Sublist3r ; cd Sublist3r ; pip3 install -r requirements.txt
 for one in `cat $var`
 do
 echo "$one" > /root/script/one.txt
