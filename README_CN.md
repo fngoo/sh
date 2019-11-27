@@ -63,6 +63,5 @@ https://github.com/arkadiyt/bounty-targets-data
 ## 作者
 作者：你好  
 联系：  
-```
-part_1="https://hooks.sla" ; part_2="ck.com/services/TM26L9ZEE/BR1F5" ; part_3="JF96/ENPsUGGJr" ; part_4="9LLyTqZ4WitEOLA" ; url=$part_1$part_2$part_3$part_4 ; curl -X POST -H "Content-type:application/json" --data '{"text":"HelloWorld!!"}' $url
-```
+>part_1="https://hooks.sla" ; part_2="ck.com/services/TM26L9ZEE/BR1F5" ; part_3="JF96/ENPsUGGJr" ; part_4="9LLyTqZ4WitEOLA" ; url=$part_1$part_2$part_3$part_4 ; curl -X POST -H "Content-type:application/json" --data '{"text":"MESSAGE"}' $url
+
