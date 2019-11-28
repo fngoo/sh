@@ -13,7 +13,7 @@ apt update
 apt install -y -q git
 cd /root
 git clone https://github.com/fngoo/sh
-source sh/du_hast.sh
+bash sh/du_hast.sh
 ```
 ## Features
 - [x] One-click deployment 
