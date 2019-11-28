@@ -84,7 +84,7 @@ git clone https://github.com/infosec-au/altdns
 cd altdns/
 python setup.py install
 git clone https://github.com/assetnote/commonspeak2-wordlists
-mv commonspeak2-wordlists/subdomains/subdomains.txt >> words_large.txt ; cat words.txt >> words_large.txt
+mv commonspeak2-wordlists/subdomains/subdomains.txt words_large.txt ; cat words.txt >> words_large.txt
 rm -r commonspeak2-wordlists
 #git clone https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056
 #cat 86a06c5dc309d08580a018c66354a056/all.txt >> words.txt ; rm -r 86a06c5dc309d08580a018c66354a056
