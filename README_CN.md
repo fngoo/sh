@@ -5,7 +5,7 @@
 简体中文 | [English](./README.md) | [Kali Linux](./split_for_kali-Debian7.md)  
     
 ## 使用
-输入 ---> 流程 ---> 输出
+自定义sh/one.sh中的输入 ---> bash sh/du_hast.sh ---> 流程 ---> 输出
 #### 注意
 - 此脚本输入通过GitHub文件控制，使用前请看下文特性部分，或者以示例目标直接运行。  
 ``` 
