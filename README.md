@@ -5,6 +5,7 @@ Shell-and-Hunter
 English | [简体中文](./README_CN.md) | [Kali Linux](./split_for_kali-Debian7.md)  
   
 ## Usage
+Input ---> Flow ---> Output
 #### Notice
 - cURL GitHub URL as Input, Read Features before start.Or just run with given target.  
 ``` 
