@@ -13,7 +13,7 @@ apt update
 apt install -y -q git
 cd /root
 git clone https://github.com/fngoo/sh
-bash sh/du_hast.sh
+source sh/du_hast.sh
 ```
 ## 特性
 - [x] 一键部署 
