@@ -73,7 +73,7 @@ pip install truffleHog
 
 mkdir /root/script/0_subdomain
 cd /root/
-go get github.com/subfinder/subfinder
+#go get github.com/subfinder/subfinder
 pip install py-altdns
 cd /root/script/0_subdomain
 git clone https://github.com/aboul3la/Sublist3r
@@ -85,10 +85,10 @@ cd altdns/
 python setup.py install
 #git clone https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056
 #cat 86a06c5dc309d08580a018c66354a056/all.txt >> words.txt ; rm -r 86a06c5dc309d08580a018c66354a056
-cd /root/script/0_subdomain
-git clone https://github.com/nsonaniya2010/SubDomainizer.git
-cd SubDomainizer
-python3 -m pip install -r requirements.txt
+#cd /root/script/0_subdomain
+#git clone https://github.com/nsonaniya2010/SubDomainizer.git
+#cd SubDomainizer
+#python3 -m pip install -r requirements.txt
 cd /root/script/0_subdomain
 git clone https://github.com/blechschmidt/massdns
 cd massdns ; make ; make install
