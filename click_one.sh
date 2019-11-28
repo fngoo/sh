@@ -83,6 +83,9 @@ cd /root/script/0_subdomain
 git clone https://github.com/infosec-au/altdns
 cd altdns/
 python setup.py install
+git clone https://github.com/assetnote/commonspeak2-wordlists
+cat commonspeak2-wordlists/subdomains/subdomains.txt >> words.txt
+rm -r commonspeak2-wordlists
 #git clone https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056
 #cat 86a06c5dc309d08580a018c66354a056/all.txt >> words.txt ; rm -r 86a06c5dc309d08580a018c66354a056
 #cd /root/script/0_subdomain
