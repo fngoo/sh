@@ -26,6 +26,7 @@ head -24 /root/sh/du_hast.sh | tail -1 >> /root/sh/readme.txt
 echo "" >> /root/sh/readme.txt
 echo "replace URL to your blind payload , vi /root/script/xss.sh" >> /root/sh/readme.txt
 echo "OR NOT, then run without potential blind vuln" >> /root/sh/readme.txt
+echo -e "\n"
 echo "" >> /root/sh/readme.txt
 echo "" >> /root/sh/readme.txt
 echo "" >> /root/sh/readme.txt
