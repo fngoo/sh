@@ -27,7 +27,7 @@ do
 echo "$one" > /root/script/one.txt
 txt=/root/script/one.txt
 cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root/script/0_subdomain/0_sublist.txt ; sleep 6 ; cat /root/script/0_subdomain/0_sublist.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_sublist.txt
-cd /root/script/0_subdomain/SubDomainizer ; touch /root/script/0_subdomain/0_subdomainizer.txt ; python3 SubDomainizer.py -l $one -o /root/script/0_subdomain/0_subdomainizer.txt ; cat /root/script/0_subdomain/0_subdomainizer.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_subdomainizer.txt
+cd /root/script/0_subdomain/SubDomainizer ; touch /root/script/0_subdomain/0_subdomainizer.txt ; python3 SubDomainizer.py -u $one -o /root/script/0_subdomain/0_subdomainizer.txt ; cat /root/script/0_subdomain/0_subdomainizer.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_subdomainizer.txt
 cd /root/script/0_subdomain/altdns ; altdns -n -i $txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; > 2.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt ; altdns -n -i /root/script/subfinder.txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; rm 2.txt
 sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
 rm /root/script/one.txt
@@ -80,7 +80,7 @@ do
 echo "$one" > /root/script/one.txt
 txt=/root/script/one.txt
 cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root/script/0_subdomain/0_sublist.txt ; sleep 6 ; cat /root/script/0_subdomain/0_sublist.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_sublist.txt
-cd /root/script/0_subdomain/SubDomainizer ; touch /root/script/0_subdomain/0_subdomainizer.txt ; python3 SubDomainizer.py -l $one -o /root/script/0_subdomain/0_subdomainizer.txt ; cat /root/script/0_subdomain/0_subdomainizer.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_subdomainizer.txt
+cd /root/script/0_subdomain/SubDomainizer ; touch /root/script/0_subdomain/0_subdomainizer.txt ; python3 SubDomainizer.py -u $one -o /root/script/0_subdomain/0_subdomainizer.txt ; cat /root/script/0_subdomain/0_subdomainizer.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_subdomainizer.txt
 cd /root/script/0_subdomain/altdns ; altdns -n -i $txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; > 2.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt ; altdns -n -i /root/script/subfinder.txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; rm 2.txt
 sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
 rm /root/script/one.txt
