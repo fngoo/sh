@@ -41,5 +41,5 @@ echo "output.zip------cd /root/zip" ; echo "output.txt------cd /root/z_juice" ; 
 echo ""
 echo "------> Configure ! ! !"
 echo "cat /root/sh/readme.txt"
-
+echo -e "\n"
 
