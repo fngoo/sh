@@ -26,12 +26,20 @@ head -24 /root/sh/du_hast.sh | tail -1 >> /root/sh/readme.txt
 echo "" >> /root/sh/readme.txt
 echo "replace URL to your blind payload , vi /root/script/xss.sh" >> /root/sh/readme.txt
 echo "OR NOT, then run without potential blind vuln" >> /root/sh/readme.txt
+echo "" >> /root/sh/readme.txt
+echo "" >> /root/sh/readme.txt
+echo "" >> /root/sh/readme.txt
+echo "" >> /root/sh/readme.txt
+echo "" >> /root/sh/readme.txt
+echo "" >> /root/sh/readme.txt
 echo "------> statu"
 echo "screen -ls"
 echo "screen -r nameOfScreen"
+echo ""
 echo "------> output will be"
 echo "output.zip------cd /root/zip" ; echo "output.txt------cd /root/z_juice" ; echo "output.web------http://ip:62345/z_juice"
-echo "------> configure"
+echo ""
+echo "------> Configure ! ! !"
 echo "cat /root/sh/readme.txt"
 
 
