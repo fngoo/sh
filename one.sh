@@ -29,14 +29,10 @@ txt=/root/script/one.txt
 cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root/script/0_subdomain/0_sublist.txt ; sleep 6 ; cat /root/script/0_subdomain/0_sublist.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_sublist.txt
 cd /root/script/0_subdomain/altdns ; altdns -i $txt -w words_large.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; > 2.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
 cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; cat results.txt >> /root/script/subfinder.txt ; rm results.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
-altdns -i /root/script/subfinder.txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; rm 2.txt
-sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
-cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
-cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; cat results.txt >> /root/script/result.txt ; rm results.txt ; sort -u /root/script/result.txt -o /root/script/result.txt
 rm /root/script/one.txt
 wc -l /root/script/subfinder.txt
 done
-cat /root/script/result.txt >> $var ; sort -u $var -o $var ; rm /root/script/result.txt
+cat /root/script/subfinder.txt >> $var ; sort -u $var -o $var ; rm /root/script/subfinder.txt
 
 cat $var > /root/var.txt
 seq=$(seq 1 10 `wc -l  /root/var.txt | grep -o -P ".*?(?=\ )"`)
@@ -85,14 +81,10 @@ txt=/root/script/one.txt
 cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root/script/0_subdomain/0_sublist.txt ; sleep 6 ; cat /root/script/0_subdomain/0_sublist.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_sublist.txt
 cd /root/script/0_subdomain/altdns ; altdns -i $txt -w words_large.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; > 2.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
 cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; cat results.txt >> /root/script/subfinder.txt ; rm results.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
-altdns -i /root/script/subfinder.txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; rm 2.txt
-sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
-cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
-cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; cat results.txt >> /root/script/result.txt ; rm results.txt ; sort -u /root/script/result.txt -o /root/script/result.txt
 rm /root/script/one.txt
 wc -l /root/script/subfinder.txt
 done
-cat /root/script/result.txt >> $var ; sort -u $var -o $var ; rm /root/script/result.txt
+cat /root/script/subfinder.txt >> $var ; sort -u $var -o $var ; rm /root/script/subfinder.txt
 
 cat $var > /root/var.txt
 seq=$(seq 1 10 `wc -l  /root/var.txt | grep -o -P ".*?(?=\ )"`)
