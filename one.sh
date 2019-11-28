@@ -27,7 +27,9 @@ do
 echo "$one" > /root/script/one.txt
 txt=/root/script/one.txt
 cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root/script/0_subdomain/0_sublist.txt ; sleep 6 ; cat /root/script/0_subdomain/0_sublist.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_sublist.txt
-cd /root/script/0_subdomain/altdns ; altdns -i $txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; > 2.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt ; altdns -i /root/script/subfinder.txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; rm 2.txt
+cd /root/script/0_subdomain/altdns ; altdns -i $txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; > 2.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
+cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt >> /root/script/subfinder.txt ; rm results.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
+altdns -i /root/script/subfinder.txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; rm 2.txt
 sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt >> /root/script/result.txt ; rm results.txt ; sort -u /root/script/result.txt -o /root/script/result.txt
@@ -81,7 +83,9 @@ do
 echo "$one" > /root/script/one.txt
 txt=/root/script/one.txt
 cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root/script/0_subdomain/0_sublist.txt ; sleep 6 ; cat /root/script/0_subdomain/0_sublist.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_sublist.txt
-cd /root/script/0_subdomain/altdns ; altdns -i $txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; > 2.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt ; altdns -i /root/script/subfinder.txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; rm 2.txt
+cd /root/script/0_subdomain/altdns ; altdns -i $txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; > 2.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
+cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt >> /root/script/subfinder.txt ; rm results.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
+altdns -i /root/script/subfinder.txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; rm 2.txt
 sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt >> /root/script/result.txt ; rm results.txt ; sort -u /root/script/result.txt -o /root/script/result.txt
