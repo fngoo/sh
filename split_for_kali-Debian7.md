@@ -38,8 +38,30 @@ echo 'export GOPATH=/root/GOPATH'>>/root/.profile
 echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin'>>/root/.profile
 source /root/.profile
 
+wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
+tar zxvf Python-3.6.9.tgz && rm -rf Python-3.6.9.tgz
+cd Python-3.6.9
+./configure --enable-loadable-sqlite-extensions ; make ;  make install
 apt install -q -y python3-pip
 apt install --fix-missing
+
+rm -rf /usr/bin/python3
+rm -rf /usr/bin/pip3
+ln -s /usr/local/bin/python3.6 /usr/bin/python3
+ln -s /usr/local/bin/pip3.6 /usr/bin/pip3
+
+yes|apt install python-pip
+apt install --fix-missing
+rm /usr/bin/lsb_release
+python3 -m pip install --upgrade pip
+python -m pip install --upgrade pip
+#wget https://bootstrap.pypa.io/get-pip.py
+#python get-pip.py
+#rm -r get-pip.py
+
+cd /root/
+#git clone https://github.com/fngoo/xunfeng ; sh xunfeng/xunfeng.sh ; rm -r /root/xunfeng
+
 
 mkdir /root/script
 
@@ -61,7 +83,7 @@ pip install truffleHog
 
 mkdir /root/script/0_subdomain
 cd /root/
-go get github.com/subfinder/subfinder
+#go get github.com/subfinder/subfinder
 pip install py-altdns
 cd /root/script/0_subdomain
 git clone https://github.com/aboul3la/Sublist3r
@@ -71,12 +93,12 @@ cd /root/script/0_subdomain
 git clone https://github.com/infosec-au/altdns
 cd altdns/
 python setup.py install
-git clone https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056
-cat 86a06c5dc309d08580a018c66354a056/all.txt >> words.txt ; rm -r 86a06c5dc309d08580a018c66354a056
-cd /root/script/0_subdomain
-git clone https://github.com/nsonaniya2010/SubDomainizer.git
-cd SubDomainizer
-python3 -m pip install -r requirements.txt
+#git clone https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056
+#cat 86a06c5dc309d08580a018c66354a056/all.txt >> words.txt ; rm -r 86a06c5dc309d08580a018c66354a056
+#cd /root/script/0_subdomain
+#git clone https://github.com/nsonaniya2010/SubDomainizer.git
+#cd SubDomainizer
+#python3 -m pip install -r requirements.txt
 cd /root/script/0_subdomain
 git clone https://github.com/blechschmidt/massdns
 cd massdns ; make ; make install
@@ -104,7 +126,7 @@ git clone https://github.com/verovaleros/webcrawler ; mv webcrawler/crawler.py c
 cd /root/script/3_httprobe
 git clone https://github.com/s0md3v/Arjun
 cd /root/script/3_httprobe
-git clone https://github.com/fngoo/XSStrike ; cd /root/script/3_httprobe/XSStrike ; pip3 install -r requirements.txt
+git clone https://github.com/s0md3v/XSStrike ; cd /root/script/3_httprobe/XSStrike ; pip3 install -r requirements.txt
 cd /root/script/3_httprobe
 #git clone https://github.com/Threezh1/JSFinder
 git clone https://github.com/GerbenJavado/LinkFinder ; cd LinkFinder ; pip3 install -r requirements.txt ; python3 setup.py install
@@ -170,7 +192,6 @@ do
 echo "$one" > /root/script/one.txt
 txt=/root/script/one.txt
 cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root/script/0_subdomain/0_sublist.txt ; sleep 6 ; cat /root/script/0_subdomain/0_sublist.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_sublist.txt
-cd /root/script/0_subdomain/SubDomainizer ; touch /root/script/0_subdomain/0_subdomainizer.txt ; echo "python3 SubDomainizer.py -k -u $one -o /root/script/0_subdomain/0_subdomainizer.txt" > 1.sh ; timeout 166 bash 1.sh ; rm 1.sh ; cat /root/script/0_subdomain/0_subdomainizer.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_subdomainizer.txt
 cd /root/script/0_subdomain/altdns ; altdns -i $txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; > 2.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt ; altdns -i /root/script/subfinder.txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; rm 2.txt
 sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
 cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt >> /root/script/result.txt ; rm results.txt ; sort -u /root/script/result.txt -o /root/script/result.txt
