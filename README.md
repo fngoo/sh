@@ -1,6 +1,6 @@
 Shell-and-Hunter
 ------
->Recon script.Connecting with lots of GitHub Repo.  
+>Recon script for VPS.Connecting with lots of GitHub Repo.  
   
 English | [简体中文](./README_CN.md) | [Kali Linux](./split_for_kali-Debian7.md)  
   
