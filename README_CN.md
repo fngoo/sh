@@ -27,7 +27,7 @@ https://github.com/arkadiyt/bounty-targets-data
 - [x] 定时循环，检测到仓库文件变动即工作  
 - [x] 自动更新工具   
 ## 流程
-- [x] 子域名收集(组合)
+- [x] 子域名收集(组合 | 泛解析检测)
 - [x] DNS解析
 - [x] Github敏感信息发现
 - [x] 云存储桶/容器检测(s3 bucket/Azure/Google bucket)
