@@ -7,7 +7,7 @@ English | [简体中文](./README_CN.md) | [Kali Linux](./split_for_kali-Debian7
 ## Usage
 Edit sh/one.sh Input ---> bash sh/du_hast.sh
 #### Notice
-- cURL GitHub URL as Input, Read Features before start.Or just run with given target.  
+- cURL GitHub URL as Input, replace input(sh/one.sh).Or just run with given target.  
 ``` 
 VPS with Debian9.x was tested.  
 apt update
