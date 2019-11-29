@@ -25,7 +25,7 @@ bash sh/du_hast.sh
 - [x] While true sleep 6s, running if Input changed.   
 - [x] Auto update tools.   
 ## Flow
-- [x] SubDomain gathering(multi)
+- [x] SubDomain gathering(multi | wildcard records detection)
 - [x] DNS resolve
 - [x] Github sensitive info
 - [x] Cloud based bucket(s3 bucket/Azure/Google bucket)
