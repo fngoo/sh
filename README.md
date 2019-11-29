@@ -24,7 +24,7 @@ bash sh/du_hast.sh
 - Customize your Input, Single Domain or SubDomain.  
 - [x] While true sleep 6s, running if Input changed.   
 - [x] Auto update tools.   
-## Flow
+## [Flow](./click_one.sh)
 - [x] SubDomain gathering(multi)
 - [x] DNS resolve(remove wildcard records)
 - [x] Github sensitive info
