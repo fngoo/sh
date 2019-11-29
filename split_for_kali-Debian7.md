@@ -93,6 +93,9 @@ cd /root/script/0_subdomain
 git clone https://github.com/infosec-au/altdns
 cd altdns/
 python setup.py install
+git clone https://github.com/assetnote/commonspeak2-wordlists
+mv commonspeak2-wordlists/subdomains/subdomains.txt words_large.txt ; cat words.txt >> words_large.txt
+rm -r commonspeak2-wordlists
 #git clone https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056
 #cat 86a06c5dc309d08580a018c66354a056/all.txt >> words.txt ; rm -r 86a06c5dc309d08580a018c66354a056
 #cd /root/script/0_subdomain
@@ -192,13 +195,38 @@ do
 echo "$one" > /root/script/one.txt
 txt=/root/script/one.txt
 cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root/script/0_subdomain/0_sublist.txt ; sleep 6 ; cat /root/script/0_subdomain/0_sublist.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_sublist.txt
-cd /root/script/0_subdomain/altdns ; altdns -i $txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; > 2.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt ; altdns -i /root/script/subfinder.txt -w words.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; rm 2.txt
-sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
-cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt >> /root/script/result.txt ; rm results.txt ; sort -u /root/script/result.txt -o /root/script/result.txt
-rm /root/script/one.txt
-wc -l /root/script/subfinder.txt
+if [ -s /root/script/subfinder.txt ]
+then
+cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; rg -oP "\ A.*" results.txt > ag.txt ; sort -u ag.txt -o ag.txt
+for line in `cat ag.txt`
+do
+num=`rg -oP "$line" results.txt | wc -l`
+if [ $num -gt 666 ]
+then
+grep -v "$line" results.txt > grep_v.txt ; mv grep_v.txt results.txt
+fi
 done
-cat /root/script/result.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt -t A --hashmap-size 3000 -o S -w results.txt --root ; awk -F ". " '{print $1}' "results.txt" > "wordlist-filtered.txt" && mv "wordlist-filtered.txt" "results.txt" ; sort -u "results.txt" -o "results.txt" ; cat results.txt >> $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var ; rm /root/script/result.txt
+> ag.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; cat results.txt >> /root/script/massdns.txt ; rm results.txt ; sort -u /root/script/massdns.txt -o /root/script/massdns.txt
+fi
+cat /root/script/massdns.txt >> $var ; rm /root/script/massdns.txt ; cat /root/script/subfinder.txt >> $var ; > /root/script/subfinder.txt
+cd /root/script/0_subdomain/altdns ; altdns -i $txt -w words_large.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; > 2.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
+if [ -s /root/script/subfinder.txt ]
+then
+cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; rg -oP "\ A.*" results.txt > ag.txt ; sort -u ag.txt -o ag.txt
+> /root/script/one.txt ; > /root/script/subfinder.txt
+for line in `cat ag.txt`
+do
+num=`rg -oP "$line" results.txt | wc -l`
+if [ $num -gt 666 ]
+then
+grep -v "$line" results.txt > grep_v.txt ; mv grep_v.txt results.txt
+fi
+done
+> ag.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; cat results.txt >> /root/script/massdns.txt ; rm results.txt ; sort -u /root/script/massdns.txt -o /root/script/massdns.txt
+fi
+cat /root/script/massdns.txt >> $var ; rm /root/script/massdns.txt
+sort -u $var -o $var
+done
 
 
 git clone https://github.com/fngoo/cloud ; bash cloud/cloud.sh ; rm -r cloud ; cd /root/script/2_subjack ; cd $output ; touch 2_Takeover1.txt;touch 2_Takeover2.txt;subjack -w $var   -ssl -a -o $output/2_Takeover1.txt  ; subjack -w $var    -a -o $output/2_Takeover2.txt ; cd /root/script/3_httprobe ; mkdir $output/3_js ; cat $var|httprobe  -p 81 8443 8080 8000 8880 | tee -a httprobe.txt ; git clone https://github.com/fngoo/remove ; mv remove/remove.sh remove.sh ; bash remove.sh ; rm -r remove ; rm remove.sh ; git clone https://github.com/fngoo/crawler ; mv crawler/crawler.sh crawler.sh ; bash crawler.sh ; rm -r crawler ; rm crawler.sh ; git clone https://github.com/fngoo/params ; mv params/params.sh params.sh ; bash params.sh ; rm params.sh ; rm -r params ; git clone https://github.com/fngoo/gethtml ; mv gethtml/gethtml.sh gethtml.sh ; bash gethtml.sh ; rm -r gethtml ; rm gethtml.sh ; git clone https://github.com/fngoo/html_grep ; mv html_grep/html_grep.sh html_grep.sh ; bash html_grep.sh ; rm -r html_grep ; rm html_grep.sh ; git clone https://github.com/fngoo/extractjs ; mv extractjs/extractjs.sh extractjs.sh ; bash extractjs.sh ; rm extractjs.sh ; rm -r extractjs ; cat getjs.txt|grep -o -P "(?<=//).*?(?=/)" >> grep.txt ; sort -u grep.txt -o jstakeover.txt ; cd $output ; touch 3_2_takeover1.txt;touch 3_2_takeover2.txt;subjack -w /root/script/3_httprobe/jstakeover.txt  -ssl -a -o $output/3_2_takeover1.txt ; subjack -w /root/script/3_httprobe/jstakeover.txt  -a -o $output/3_2_takeover2.txt ; cd /root/script/3_httprobe; git clone https://github.com/fngoo/getjs ; mv getjs/getjs.sh getjs.sh ; bash getjs.sh ;  rm -f getjs.sh ; rm -r getjs ; mv httprobe.txt $output/3_httprobe.txt; mv getjs.txt $output/3_getjs.txt ; > grep.txt ; > jstakeover.txt ; cd /root/script/4_getjs ; git clone https://github.com/fngoo/grep ; mv grep/grep.sh grep.sh ; rm -rf grep ; output=$output ; cd $output/3_js ; bash /root/script/4_getjs/grep.sh ; rm /root/script/4_getjs/grep.sh
