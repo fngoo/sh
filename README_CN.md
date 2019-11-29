@@ -26,7 +26,7 @@ https://github.com/arkadiyt/bounty-targets-data
 另一部分为自定目标  
 - [x] 定时循环，检测到仓库文件变动即工作  
 - [x] 自动更新工具   
-## 流程
+## [流程](./click_one.sh)
 - [x] 子域名收集(组合)
 - [x] DNS解析(去除泛解析域名)
 - [x] Github敏感信息发现
@@ -50,7 +50,7 @@ https://github.com/arkadiyt/bounty-targets-data
 - [ ] 组件及端口服务关键词相关PoC利用  
 - [x] 主机开放端口扫描及端口服务识别  
 - [x] 默认端口服务未授权检测(ftp，Memcached，mongodb，zookeeper，Redis，elasticsearch)  
-## 输出
+## [输出](./image)
 - [x] 新输出提醒(Slack API)
 - [x] Web端查看输出(Python SimpleHTTPServer)
 - [x] Exploit DB Web PoC更新监控，如与Web组件记录关键词匹配则提醒(Slack API)  
