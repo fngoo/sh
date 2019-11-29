@@ -1,6 +1,6 @@
 漏洞赏金猎人的好伙伴
 ------
->一段用于VPS的胶水shell,粘合了大量来自GitHub的轮子,用于大规模信息搜集  
+>一段用于VPS的胶水shell,粘合了[大量来自GitHub的轮子](./click_one.sh),用于大规模信息搜集  
   
 简体中文 | [English](./README.md) | [Kali Linux](./split_for_kali-Debian7.md)  
     
@@ -26,7 +26,7 @@ https://github.com/arkadiyt/bounty-targets-data
 另一部分为自定目标  
 - [x] 定时循环，检测到仓库文件变动即工作  
 - [x] 自动更新工具   
-## [流程](./click_one.sh)
+## 流程
 - [x] 子域名收集(组合)
 - [x] DNS解析(去除泛解析域名)
 - [x] Github敏感信息发现
