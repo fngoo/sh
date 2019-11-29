@@ -7,7 +7,7 @@
 ## 使用
 自定义sh/one.sh中的输入 ---> bash sh/du_hast.sh
 #### 注意
-- 此脚本输入通过GitHub文件控制，使用前请看下文特性部分，或者以示例目标直接运行。  
+- 此脚本输入通过GitHub文件控制，使用前请修改sh/one.sh中输入部分，或者以示例目标直接运行。  
 ``` 
 仅测试过Debian9.x VPS  
 apt update
