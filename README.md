@@ -1,6 +1,6 @@
 Shell-and-Hunter
 ------
->Recon script for VPS.Connecting with lots of GitHub Repo.  
+>Recon script for VPS.Connecting with [lots of GitHub Repo](./click_one.sh).  
   
 English | [简体中文](./README_CN.md) | [Kali Linux](./split_for_kali-Debian7.md)  
   
@@ -24,7 +24,7 @@ bash sh/du_hast.sh
 - Customize your Input, Single Domain or SubDomain.  
 - [x] While true sleep 6s, running if Input changed.   
 - [x] Auto update tools.   
-## [Flow](./click_one.sh)
+## Flow
 - [x] SubDomain gathering(multi)
 - [x] DNS resolve(remove wildcard records)
 - [x] Github sensitive info
