@@ -30,7 +30,9 @@ echo ""
 echo ""
 echo ""
 echo "GitHub cookie"
-echo "63 : vi /root/script/git/github_dis/github.py"
+echo "token=\"\""
+echo "sed "s/'token': 'token'token 'token': 'token'/${token}/g" /root/script/git/github_dis/github.py > 1.txt ; mv 1.txt /root/script/git/github_dis/github.py"
+echo "vi /root/script/cookie.sh"
 echo "" >> /root/sh/readme.txt
 echo "" >> /root/sh/readme.txt
 echo "" >> /root/sh/readme.txt
