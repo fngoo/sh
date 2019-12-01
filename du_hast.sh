@@ -29,7 +29,7 @@ echo "OR NOT, then run without potential blind vuln" >> /root/sh/readme.txt
 echo ""
 echo ""
 echo ""
-echo "GitHub TOKEN"
+echo "GitHub cookie"
 echo "63 : vi /root/script/git/github_dis/github.py"
 echo "" >> /root/sh/readme.txt
 echo "" >> /root/sh/readme.txt
