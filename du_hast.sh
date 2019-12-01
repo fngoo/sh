@@ -26,13 +26,13 @@ head -24 /root/sh/du_hast.sh | tail -1 >> /root/sh/readme.txt
 echo "" >> /root/sh/readme.txt
 echo "replace URL to your blind payload , vi /root/script/xss.sh" >> /root/sh/readme.txt
 echo "OR NOT, then run without potential blind vuln" >> /root/sh/readme.txt
-echo ""
-echo ""
-echo ""
-echo "GitHub cookie"
-echo "token=\"\""
-echo "sed "s/'token': 'token'token 'token': 'token'/${token}/g" /root/script/git/github_dis/github.py > 1.txt ; mv 1.txt /root/script/git/github_dis/github.py"
-echo "vi /root/script/cookie.sh"
+echo "" >> /root/sh/readme.txt
+echo "" >> /root/sh/readme.txt
+echo "" >> /root/sh/readme.txt
+echo "GitHub cookie" >> /root/sh/readme.txt
+echo "token=\"\"" >> /root/sh/readme.txt
+echo "sed "s/'token': 'token'token 'token': 'token'/${token}/g" /root/script/git/github_dis/github.py > 1.txt ; mv 1.txt /root/script/git/github_dis/github.py" >> /root/sh/readme.txt
+echo "vi /root/script/cookie.sh" >> /root/sh/readme.txt
 echo "" >> /root/sh/readme.txt
 echo "" >> /root/sh/readme.txt
 echo "" >> /root/sh/readme.txt
