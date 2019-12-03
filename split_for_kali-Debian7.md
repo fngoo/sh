@@ -11,6 +11,7 @@ mkdir /root/script
 #replace URL to your blind payload , then copy into /root/script/xss.sh
 #token=""
 #sed "s/'token': 'token'token 'token': 'token'/${token}/g" /root/script/git/github_dis/github.py > 1.txt ; mv 1.txt /root/script/git/github_dis/github.py
+#/root/script/cookie.sh
   
 cd /root/
 apt update
