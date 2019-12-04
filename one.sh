@@ -251,3 +251,4 @@ cd /root/script/domains_Github/domains/domains ; rm -rf *
 > /root/script/domains_Github/domains/domains_urlwatch.txt
 fi
 sleep 6
+exit
