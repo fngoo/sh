@@ -41,26 +41,10 @@ echo 'export GOPATH=/root/GOPATH'>>/root/.profile
 echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin'>>/root/.profile
 source /root/.profile
 
-wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
-tar zxvf Python-3.6.9.tgz && rm -rf Python-3.6.9.tgz
-cd Python-3.6.9
-./configure --enable-loadable-sqlite-extensions ; make ;  make install
-apt install -q -y python3-pip
-apt install --fix-missing
-
-rm -rf /usr/bin/python3
-rm -rf /usr/bin/pip3
-ln -s /usr/local/bin/python3.6 /usr/bin/python3
-ln -s /usr/local/bin/pip3.6 /usr/bin/pip3
-
-yes|apt install python-pip
-apt install --fix-missing
-rm /usr/bin/lsb_release
-python3 -m pip install --upgrade pip
-python -m pip install --upgrade pip
-#wget https://bootstrap.pypa.io/get-pip.py
-#python get-pip.py
-#rm -r get-pip.py
+apt install -y -q python3-pip
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+rm get-pip.py
 
 cd /root/
 #git clone https://github.com/fngoo/xunfeng ; sh xunfeng/xunfeng.sh ; rm -r /root/xunfeng
