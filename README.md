@@ -35,7 +35,7 @@ bash sh/du_hast.sh
 - [x] Web service screenshot
 - [x] Web tech analyzing
 - [x] Crawler
-- [ ] waybackMachine URL(memory error)
+- [x] waybackMachine URL
 - [x] Param discovery
 - [x] XSS
 - [x] HTML sensitive keyword
