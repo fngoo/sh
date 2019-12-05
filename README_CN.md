@@ -37,7 +37,7 @@ https://github.com/arkadiyt/bounty-targets-data
 - [x] 常见Web服务端口截图
 - [x] Web组件识别
 - [x] 爬虫
-- [x] waybackMachine URL(易崩溃)
+- [x] waybackMachine URL
 - [x] 隐藏参数发现
 - [x] XSS
 - [x] HTML敏感信息
