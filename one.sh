@@ -26,7 +26,7 @@ for one in `cat $var`
 do
 echo "$one" > /root/script/one.txt
 txt=/root/script/one.txt
-cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root/script/0_subdomain/0_sublist.txt ; sleep 6 ; cat /root/script/0_subdomain/0_sublist.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_sublist.txt
+cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root/script/0_subdomain/0_sublist.txt ; sleep=`shuf -i 6-16 -n1` ; sleep $sleep ; cat /root/script/0_subdomain/0_sublist.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_sublist.txt
 if [ -s /root/script/subfinder.txt ]
 then
 bash /root/script/0_subdomain/massdns/scripts/get-resolvers.sh
@@ -109,7 +109,7 @@ for one in `cat $var`
 do
 echo "$one" > /root/script/one.txt
 txt=/root/script/one.txt
-cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root/script/0_subdomain/0_sublist.txt ; sleep 6 ; cat /root/script/0_subdomain/0_sublist.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_sublist.txt
+cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root/script/0_subdomain/0_sublist.txt ; sleep=`shuf -i 6-16 -n1` ; sleep $sleep ; cat /root/script/0_subdomain/0_sublist.txt >> /root/script/subfinder.txt ; > /root/script/0_subdomain/0_sublist.txt
 if [ -s /root/script/subfinder.txt ]
 then
 bash /root/script/0_subdomain/massdns/scripts/get-resolvers.sh
