@@ -7,7 +7,7 @@ target_wild_my=""
 target_single_my=""
 
 cd /root/
-mkdir /root/script;mkdir /root/zip;mkdir /root/script/domains_Github;mkdir /root/script/domains_Github/domains;cd /root/script/domains_Github/domains;touch comm.txt;touch mmoc.txt;mkdir /root/script/domains_Github/wildcards;cd /root/script/domains_Github/wildcards;touch wilds.txt;touch cards.txt;mkdir /root/script/domains_Github/0_subdomain;cd /root/script/domains_Github/0_subdomain;touch keep.txt;touch peek.txt;mkdir /root/watch;touch /root/watch/1.txt
+mkdir /root/script;mkdir /root/zip;mkdir /root/script/domains_Github;mkdir /root/script/domains_Github/domains;cd /root/script/domains_Github/domains;touch comm.txt;touch mmoc.txt;mkdir /root/script/domains_Github/wildcards;cd /root/script/domains_Github/wildcards;touch wilds.txt;touch cards.txt;mkdir /root/script/domains_Github/0_subdomain;cd /root/script/domains_Github/0_subdomain;touch keep.txt;touch peek.txt
 
 #wildcards.txt
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
@@ -30,7 +30,7 @@ cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root
 if [ -s /root/script/subfinder.txt ]
 then
 bash /root/script/0_subdomain/massdns/scripts/get-resolvers.sh
-cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; rg -oP "\ A.*" results.txt > ag.txt ; sort -u ag.txt -o ag.txt
+cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 666 -o S -w results.txt ; rg -oP "\ A.*" results.txt > ag.txt ; sort -u ag.txt -o ag.txt
 for line in `cat ag.txt`
 do
 num=`rg -oP "$line" results.txt | wc -l`
@@ -46,7 +46,7 @@ cat /root/script/massdns.txt >> $var ; rm /root/script/massdns.txt ; cat /root/s
 cd /root/script/0_subdomain/altdns ; altdns -i $txt -w words_large.txt -o 2.txt ; cat 2.txt >> /root/script/subfinder.txt ; > 2.txt ; sort -u /root/script/subfinder.txt -o /root/script/subfinder.txt
 if [ -s /root/script/subfinder.txt ]
 then
-cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; rg -oP "\ A.*" results.txt > ag.txt ; sort -u ag.txt -o ag.txt
+cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 666 -o S -w results.txt ; rg -oP "\ A.*" results.txt > ag.txt ; sort -u ag.txt -o ag.txt
 > /root/script/one.txt ; > /root/script/subfinder.txt
 for line in `cat ag.txt`
 do
@@ -62,7 +62,7 @@ cat /root/script/massdns.txt >> $var ; rm /root/script/massdns.txt
 sort -u $var -o $var
 done
 bash /root/script/0_subdomain/massdns/scripts/get-resolvers.sh
-cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; mv results.txt $var
+cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 666 -o S -w results.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; mv results.txt $var
 
 
 cat $var > /root/var.txt
@@ -72,7 +72,7 @@ do
 add=$((i+5))
 sed -n ''$i','$add'p' /root/var.txt > $var ; var=$var ; export var=$var
 
-git clone https://github.com/fngoo/module ; bash module/wild.sh ; rm -r module
+cd /root/scirpt ; git clone https://github.com/fngoo/module ; bash module/wild.sh ; rm -r /root/scirpt/module
 
 #var切片结束
 done
@@ -107,7 +107,7 @@ cd /root/script/0_subdomain/Sublist3r ; python3 sublist3r.py -v -d $one -o /root
 if [ -s /root/script/subfinder.txt ]
 then
 bash /root/script/0_subdomain/massdns/scripts/get-resolvers.sh
-cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; rg -oP "\ A.*" results.txt > ag.txt ; sort -u ag.txt -o ag.txt
+cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 666 -o S -w results.txt ; rg -oP "\ A.*" results.txt > ag.txt ; sort -u ag.txt -o ag.txt
 for line in `cat ag.txt`
 do
 num=`rg -oP "$line" results.txt | wc -l`
@@ -123,7 +123,7 @@ cd /root/script/0_subdomain/altdns ; altdns -i $txt -w words_large.txt -o 2.txt 
 if [ -s /root/script/subfinder.txt ]
 then
 bash /root/script/0_subdomain/massdns/scripts/get-resolvers.sh
-cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; rg -oP "\ A.*" results.txt > ag.txt ; sort -u ag.txt -o ag.txt
+cat /root/script/subfinder.txt | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 666 -o S -w results.txt ; rg -oP "\ A.*" results.txt > ag.txt ; sort -u ag.txt -o ag.txt
 > /root/script/one.txt ; > /root/script/subfinder.txt
 for line in `cat ag.txt`
 do
@@ -139,7 +139,7 @@ cat /root/script/massdns.txt >> $var ; rm /root/script/massdns.txt
 sort -u $var -o $var
 done
 bash /root/script/0_subdomain/massdns/scripts/get-resolvers.sh
-cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; mv results.txt $var
+cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 666 -o S -w results.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; mv results.txt $var
 
 
 cat $var > /root/var.txt
@@ -149,7 +149,7 @@ do
 add=$((i+5))
 sed -n ''$i','$add'p' /root/var.txt > $var ; var=$var ; export var=$var
 
-git clone https://github.com/fngoo/module ; bash module/wild.sh ; rm -r module
+cd /root/scirpt ; git clone https://github.com/fngoo/module ; bash module/wild.sh ; rm -r /root/scirpt/module
 
 #var切片结束
 done
@@ -173,7 +173,7 @@ comm -3 mmoc.txt comm.txt > domains_urlwatch.txt ; sed 's/[[:space:]]//g' domain
 if [ -s domains_urlwatch.txt ]
 then
 var=/root/script/domains_Github/domains/domains_urlwatch.txt ; export var=/root/script/domains_Github/domains/domains_urlwatch.txt ; mkdir /root/script/domains_Github/domains/domains ;output=/root/script/domains_Github/domains/domains ; export output=/root/script/domains_Github/domains/domains
-cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; cat results.txt >> $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
+cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 666 -o S -w results.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; cat results.txt >> $var ; rm results.txt ; sort -u $var -o $var
 
 cat $var > /root/var.txt
 seq=$(seq 1 5 `wc -l  /root/var.txt | grep -o -P ".*?(?=\ )"`)
@@ -182,7 +182,7 @@ do
 add=$((i+5))
 sed -n ''$i','$add'p' /root/var.txt > $var ; var=$var ; export var=$var
 
-git clone https://github.com/fngoo/module ; bash module/single.sh ; rm -r module
+cd /root/scirpt ; git clone https://github.com/fngoo/module ; bash module/single.sh ; rm -r /root/scirpt/module
 
 #var切片结束
 done
@@ -205,7 +205,7 @@ comm -3  comm.txt  mmoc.txt > domains_urlwatch.txt ; sed 's/[[:space:]]//g' doma
 if [ -s domains_urlwatch.txt ]
 then
 var=/root/script/domains_Github/domains/domains_urlwatch.txt ; export var=/root/script/domains_Github/domains/domains_urlwatch.txt ; mkdir /root/script/domains_Github/domains/domains ;output=/root/script/domains_Github/domains/domains ; export output=/root/script/domains_Github/domains/domains
-cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 1666 -o S -w results.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; cat results.txt >> $var ; rm results.txt ; cat $var|tee -a /root/watch/1.txt ; sort -u /root/watch/1.txt -o /root/watch/1.txt ; sort -u $var -o $var
+cat $var | massdns -r /root/script/0_subdomain/massdns/lists/resolvers.txt --root -t A -s 666 -o S -w results.txt ; awk -F ". " '{print $1}' results.txt > wordlist-filtered.txt && mv wordlist-filtered.txt results.txt ; sort -u results.txt -o results.txt ; cat results.txt >> $var ; rm results.txt ; sort -u $var -o $var
 
 cat $var > /root/var.txt
 seq=$(seq 1 5 `wc -l  /root/var.txt | grep -o -P ".*?(?=\ )"`)
@@ -214,7 +214,7 @@ do
 add=$((i+5))
 sed -n ''$i','$add'p' /root/var.txt > $var ; var=$var ; export var=$var
 
-git clone https://github.com/fngoo/module ; bash module/single.sh ; rm -r module
+cd /root/scirpt ; git clone https://github.com/fngoo/module ; bash module/single.sh ; rm -r /root/scirpt/module
 
 #var切片结束
 done
