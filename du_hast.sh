@@ -1,5 +1,5 @@
 yes|apt install screen
-screen -dmS $"bash"
+screen -L -dmS $"bash"
 cmd=$"source /root/sh/click_one.sh"
 screen -x -S bash -X stuff "$cmd"
 screen -x -S bash -X stuff $'\n'
